@@ -181,8 +181,8 @@ const Hero: React.FC = () => {
             <source src="/images/payzon.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/10" />
         </div>
 
         {/* Navigation Arrows - Fixed Position */}

@@ -2,8 +2,8 @@ import { Facebook, Youtube, Linkedin, Instagram, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16 px-8">
-      <div className="container mx-auto px-4">
+    <footer className=" text-white py-16 px-8" style={{backgroundImage: 'url(/images/bg-footer1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>

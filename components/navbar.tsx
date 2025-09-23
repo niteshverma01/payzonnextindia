@@ -177,7 +177,7 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
@@ -248,7 +248,7 @@ const Navbar: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
                   <div
                     className={`flex justify-center items-center  text-sm ${
-                      isScrolled ? "text-black" : "text-white"
+                      isScrolled ? "text-black -mt-2" : "text-white"
                     }`}
                   >
                     <div
@@ -271,12 +271,12 @@ const Navbar: React.FC = () => {
 
                       {/* WhatsApp Contact */}
                       <div className="flex items-center gap-2 whitespace-nowrap  px-3 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                        <FaWhatsapp className="text-3xl text-green-400" />
+                        <FaWhatsapp className="text-4xl text-green-400" />
                         <a
                           href="https://wa.me/919243837546"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-semibold text-base"
+                          className="font-bold text-lg"
                         >
                           +91 9243837546
                         </a>
@@ -289,46 +289,61 @@ const Navbar: React.FC = () => {
                       ></div>
 
                       {/* Social Media Icons */}
-                      <div className="flex items-center">
+                      <div className="flex items-center -space-x-4">
                         <a
                           href="https://www.instagram.com/thepayzonindia/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded-full transition-all duration-200"
+                          className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Instagram size={16} className="font-bold" />
+                          <Instagram
+                            size={20}
+                            strokeWidth={2.2}
+                          />
                         </a>
                         <a
                           href="https://x.com/payzonindia"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded-full transition-all duration-200"
+                          className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Twitter size={16} />
+                          <Twitter
+                            size={20}
+                            strokeWidth={2.2}
+                          />
                         </a>
                         <a
                           href="https://www.youtube.com/channel/UCSjsk1O7zYurXPDl2o3RuIA"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded-full transition-all duration-200"
+                          className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Youtube size={16} />
+                          <Youtube
+                            size={20}
+                            strokeWidth={2.2}
+                          />
                         </a>
                         <a
                           href="https://www.linkedin.com/company/payzonindiabhopal/posts/?feedView=all"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded-full transition-all duration-200"
+                          className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Linkedin size={16} />
+                          <Linkedin
+                            size={20}
+                            strokeWidth={2.2}
+                          />
                         </a>
                         <a
                           href="https://www.facebook.com/PAYZONINDIA/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded-full transition-all duration-200"
+                          className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Facebook size={16} />
+                          <Facebook
+                            size={20}
+                            strokeWidth={2.2}
+                          />
                         </a>
                       </div>
                     </div>
@@ -341,12 +356,12 @@ const Navbar: React.FC = () => {
                 className={`transition-all duration-300 px-4 sm:px-6 md:px-8 rounded-full bg-blue-600 py-6 sm:py-8  shadow-xl `}
               >
                 <ul
-                  className={`flex items-center justify-center flex-nowrap gap-2 sm:gap-4  whitespace-nowrap text-white`}
+                  className={`flex items-center justify-center flex-nowrap gap-2 sm:gap-2  whitespace-nowrap text-white`}
                 >
                   {navigationItems.map((item, index) => (
                     <li
                       key={item.name}
-                      className="relative group whitespace-nowrap"
+                      className="relative group  whitespace-nowrap"
                       onMouseEnter={() => handleMouseEnter(item.name)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -364,11 +379,11 @@ const Navbar: React.FC = () => {
                       >
                         {/* Animated background glow */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
-                        
+
                         <span className="relative z-10 transition-all duration-300 group-hover:text-blue-100">
                           {item.name}
                         </span>
-                        
+
                         {item.hasDropdown && (
                           <Plus
                             size={12}
@@ -389,16 +404,16 @@ const Navbar: React.FC = () => {
                           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
                             <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white/95 drop-shadow-lg"></div>
                           </div>
-                          
+
                           {/* Main dropdown container */}
                           <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden animate-dropdown-enter">
                             {/* Gradient background overlay */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/80 to-purple-50/50"></div>
-                            
+
                             {/* Header section */}
-                            <div className="relative z-10 px-6 py-4 border-b border-gray-100/80 bg-gradient-to-r from-blue-600/5 to-purple-600/5">
+                            <div className="relative z-10 px-6 py-4 border-b border-gray-100/80 bg-gradient-to-r from-blue-700/5 to-blue-800/5">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                <div className="w-8 h-8   flex items-center justify-center text-white font-bold text-sm ">
                                   {item.icon}
                                 </div>
                                 <h3 className="text-lg font-bold text-gray-800 tracking-wide">
@@ -426,15 +441,15 @@ const Navbar: React.FC = () => {
                                 >
                                   {/* Hover background effect */}
                                   {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-600/0 group-hover:from-blue-500/20 group-hover:to-purple-600/20 transition-all duration-300 opacity-0 group-hover:opacity-100"></div> */}
-                                  
+
                                   {/* Icon */}
                                   <div className="relative z-10 w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mr-4 group-hover:scale-150 group-hover:from-white group-hover:to-blue-100 transition-all duration-300 shadow-sm"></div>
-                                  
+
                                   {/* Text */}
                                   <span className="relative z-10 group-hover:font-semibold transition-all duration-200">
                                     {drop}
                                   </span>
-                                  
+
                                   {/* Arrow indicator */}
                                   <ChevronDown
                                     size={14}
