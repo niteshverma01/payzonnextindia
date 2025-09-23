@@ -165,20 +165,19 @@ const marqueeContent = [
 
 const Navbar: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const marqueeText = marqueeContent.join(" | ") + " | ";
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 100);
+      setIsScrolled(window.scrollY > 50); // adjust scroll threshold
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
@@ -202,38 +201,35 @@ const Navbar: React.FC = () => {
     setOpenDropdown(null);
   };
 
+  const handleMouseEnter = (itemName: string) => {
+    setOpenDropdown(itemName);
+    setHoveredItem(itemName);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenDropdown(null);
+    setHoveredItem(null);
+  };
+
   return (
     <>
       <div
-        className={`w-full mx-auto fixed top-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-        }`}
+        className={`w-full mx-auto fixed top-0 z-50 transition-all duration-500 bg-transparent`}
       >
         <div className="py-2 sm:py-0 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 md:gap-8">
             {/* Logo */}
-            <div
-              className={`relative flex-shrink-0 ${
-                isScrolled ? "mt-0" : "-mt-4 sm:-mt-6 md:-mt-8"
-              }`}
-            >
-              <ItfirmLogo isScrolled={isScrolled} />
+            <div className={`relative flex-shrink-0 -mt-4 sm:-mt-6 md:-mt-8`}>
+              <ItfirmLogo isScrolled={false} />
             </div>
 
             {/* Mobile Menu Button - Enhanced for mobile only */}
             <button
-              className={`lg:hidden focus:outline-none transition-all duration-300 p-3 rounded-2xl border-2 backdrop-blur-md ${
-                isScrolled
-                  ? "text-black hover:text-blue-500 bg-white hover:bg-blue-50 border-gray-200 shadow-lg hover:shadow-xl"
-                  : "text-white hover:text-blue-200 bg-white/10 hover:bg-white/20 border-white/30 shadow-lg hover:shadow-2xl"
-              } transform hover:scale-110 active:scale-95`}
+              className={`lg:hidden focus:outline-none transition-all duration-300 p-3 rounded-2xl border-2 border-white backdrop-blur-md text-white text-bold hover:text-blue-200 bg-white/10 hover:bg-white/20  shadow-lg hover:shadow-2xl transform hover:scale-110 active:scale-95`}
               onClick={toggleMobileMenu}
             >
               <div className="relative">
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                {!isMobileMenuOpen && (
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-pulse"></div>
-                )}
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={28} />}
               </div>
             </button>
 
@@ -243,15 +239,23 @@ const Navbar: React.FC = () => {
             >
               {/* Top Header - Only visible when not scrolled */}
               <div
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300 opacity-100  ${
                   isScrolled
-                    ? "opacity-0 max-h-0 overflow-hidden"
-                    : "opacity-100 max-h-20"
+                    ? "bg-white text-black shadow-lg mx-12 rounded-3xl  max-h-14 mb-1"
+                    : "bg-transparent max-h-20 mb-0"
                 }`}
               >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-                  <div className="flex justify-center items-center text-white text-sm">
-                    <div className="flex items-center space-x-4 border-b border-white pb-2">
+                  <div
+                    className={`flex justify-center items-center  text-sm ${
+                      isScrolled ? "text-black" : "text-white"
+                    }`}
+                  >
+                    <div
+                      className={`flex items-center space-x-4  pb-2 ${
+                        isScrolled ? "border-none" : "border-b border-white"
+                      }`}
+                    >
                       {/* Company Name */}
                       <div className="flex items-center space-x-2 whitespace-nowrap">
                         <span className="text-sm md:text-base lg:text-lg font-black uppercase">
@@ -259,11 +263,15 @@ const Navbar: React.FC = () => {
                         </span>
                       </div>
 
-                      <div className="h-5 w-[2px] bg-white"></div>
+                      <div
+                        className={`h-5 w-0.5 border-r-2 ${
+                          isScrolled ? "border-blue-500" : "bg-white"
+                        }`}
+                      ></div>
 
                       {/* WhatsApp Contact */}
-                      <div className="flex items-center gap-2 whitespace-nowrap text-white px-3 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                        <FaWhatsapp className="text-xl text-green-400" />
+                      <div className="flex items-center gap-2 whitespace-nowrap  px-3 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
+                        <FaWhatsapp className="text-3xl text-green-400" />
                         <a
                           href="https://wa.me/919243837546"
                           target="_blank"
@@ -274,7 +282,11 @@ const Navbar: React.FC = () => {
                         </a>
                       </div>
 
-                      <div className="h-5 w-[2px] bg-white"></div>
+                      <div
+                        className={`h-5 w-0.5 border-r-2 ${
+                          isScrolled ? "border-blue-500" : "bg-white"
+                        }`}
+                      ></div>
 
                       {/* Social Media Icons */}
                       <div className="flex items-center">
@@ -326,122 +338,122 @@ const Navbar: React.FC = () => {
 
               {/* Main Navigation */}
               <div
-                className={`transition-all duration-300 px-4 sm:px-6 md:px-8 rounded-full ${
-                  isScrolled
-                    ? "bg-white py-3 my-2"
-                    : "bg-blue-600 py-6 sm:py-8 mt-0 shadow-xl"
-                }`}
+                className={`transition-all duration-300 px-4 sm:px-6 md:px-8 rounded-full bg-blue-600 py-6 sm:py-8  shadow-xl `}
               >
                 <ul
-                  className={`flex items-center justify-center flex-nowrap gap-2 sm:gap-4  whitespace-nowrap ${
-                    isScrolled ? "text-black" : "text-white"
-                  }`}
+                  className={`flex items-center justify-center flex-nowrap gap-2 sm:gap-4  whitespace-nowrap text-white`}
                 >
                   {navigationItems.map((item, index) => (
-                    <>
-                      <li
-                        key={item.name}
-                        className="relative group whitespace-nowrap"
-                        onMouseEnter={() => setOpenDropdown(item.name)}
-                        onMouseLeave={() => setOpenDropdown(null)}
+                    <li
+                      key={item.name}
+                      className="relative group whitespace-nowrap"
+                      onMouseEnter={() => handleMouseEnter(item.name)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <button
+                        onClick={() =>
+                          item.hasDropdown
+                            ? handleToggle(item.name)
+                            : handleSmoothScroll(item.href)
+                        }
+                        className={`flex items-center font-bold transition-all duration-500 px-4 py-3 rounded-xl text-xs sm:text-base text-white relative overflow-hidden group ${
+                          hoveredItem === item.name
+                            ? "bg-gradient-to-r from-white/20 via-white/15 to-white/10 shadow-lg scale-105 transform"
+                            : "hover:bg-white/10"
+                        }`}
                       >
-                        <button
-                          onClick={() =>
-                            item.hasDropdown
-                              ? handleToggle(item.name)
-                              : handleSmoothScroll(item.href)
-                          }
-                          className={`flex items-center font-bold  transition-all duration-300 px-2 py-2 rounded-lg ${
-                            isScrolled
-                              ? "text-[0.75rem] sm:text-[0.875rem] hover:bg-gray-100 hover:text-black"
-                              : "text-xs sm:text-base text-white hover:bg-white/10"
-                          }`}
-                        >
-                          <span>{item.name}</span>
-                          {item.hasDropdown && (
-                            <Plus
-                              size={12}
-                              strokeWidth={3}
-                              className={`ml-1 transition-transform duration-300 ${
-                                openDropdown === item.name ? "rotate-45" : ""
-                              } group-hover:rotate-45`}
-                            />
-                          )}
-                        </button>
-
-                        {item.hasDropdown && openDropdown === item.name && (
-                          <ul className="absolute left-0 mt-2 w-56 bg-white text-gray-900 rounded-xl shadow-2xl overflow-hidden animate-fadeIn z-50 border border-gray-100">
-                            {item.dropdownItems.map((drop, idx) => (
-                              <li
-                                key={idx}
-                                className="px-4 py-3 hover:bg-blue-50 cursor-pointer transition-all duration-200 text-sm font-medium hover:text-blue-600 border-b border-gray-50 last:border-b-0"
-                                onClick={() =>
-                                  handleSmoothScroll(
-                                    `#${drop
-                                      .toLowerCase()
-                                      .replace(/\s+/g, "-")}`
-                                  )
-                                }
-                              >
-                                {drop}
-                              </li>
-                            ))}
-                          </ul>
+                        {/* Animated background glow */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
+                        
+                        <span className="relative z-10 transition-all duration-300 group-hover:text-blue-100">
+                          {item.name}
+                        </span>
+                        
+                        {item.hasDropdown && (
+                          <Plus
+                            size={12}
+                            strokeWidth={3}
+                            className={`ml-2 transition-all duration-500 z-10 relative ${
+                              openDropdown === item.name
+                                ? "rotate-45 text-blue-200 scale-110"
+                                : "group-hover:rotate-45 group-hover:scale-110"
+                            }`}
+                          />
                         )}
-                      </li>
-                      {isScrolled && index < navigationItems.length - 1 && (
-                        <div className="h-6 border-r-2 border-blue-500 mx-1 sm:mx-2" /> // Border is often more consistent
+                      </button>
+
+                      {/* Enhanced Dropdown */}
+                      {item.hasDropdown && openDropdown === item.name && (
+                        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-72 z-50">
+                          {/* Dropdown arrow */}
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
+                            <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white/95 drop-shadow-lg"></div>
+                          </div>
+                          
+                          {/* Main dropdown container */}
+                          <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden animate-dropdown-enter">
+                            {/* Gradient background overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/80 to-purple-50/50"></div>
+                            
+                            {/* Header section */}
+                            <div className="relative z-10 px-6 py-4 border-b border-gray-100/80 bg-gradient-to-r from-blue-600/5 to-purple-600/5">
+                              <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                  {item.icon}
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-800 tracking-wide">
+                                  {item.name}
+                                </h3>
+                              </div>
+                            </div>
+
+                            {/* Dropdown items */}
+                            <div className="relative z-10 py-2">
+                              {item.dropdownItems.map((drop, idx) => (
+                                <button
+                                  key={idx}
+                                  className="group flex items-center w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 relative overflow-hidden border-l-4 border-transparent hover:border-blue-400 hover:shadow-lg transform hover:translate-x-2"
+                                  onClick={() =>
+                                    handleSmoothScroll(
+                                      `#${drop
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-")}`
+                                    )
+                                  }
+                                  style={{
+                                    animationDelay: `${idx * 50}ms`,
+                                  }}
+                                >
+                                  {/* Hover background effect */}
+                                  {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-600/0 group-hover:from-blue-500/20 group-hover:to-purple-600/20 transition-all duration-300 opacity-0 group-hover:opacity-100"></div> */}
+                                  
+                                  {/* Icon */}
+                                  <div className="relative z-10 w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mr-4 group-hover:scale-150 group-hover:from-white group-hover:to-blue-100 transition-all duration-300 shadow-sm"></div>
+                                  
+                                  {/* Text */}
+                                  <span className="relative z-10 group-hover:font-semibold transition-all duration-200">
+                                    {drop}
+                                  </span>
+                                  
+                                  {/* Arrow indicator */}
+                                  <ChevronDown
+                                    size={14}
+                                    className="relative z-10 ml-auto transform -rotate-90 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-black"
+                                  />
+                                </button>
+                              ))}
+                            </div>
+
+                            {/* Footer gradient */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+                          </div>
+                        </div>
                       )}
-                    </>
+                    </li>
                   ))}
                 </ul>
               </div>
             </nav>
-
-            {isScrolled && (
-              <div className="hidden lg:flex items-center space-x-0 text-black">
-                <a
-                  href="https://www.instagram.com/thepayzonindia/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:bg-blue-100 rounded-full transition-all duration-200"
-                >
-                  <Instagram size={16} />
-                </a>
-                <a
-                  href="https://x.com/payzonindia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:bg-blue-100 rounded-full transition-all duration-200"
-                >
-                  <Twitter size={16} />
-                </a>
-                <a
-                  href="https://www.youtube.com/channel/UCSjsk1O7zYurXPDl2o3RuIA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:bg-blue-100 rounded-full transition-all duration-200"
-                >
-                  <Youtube size={16} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/payzonindiabhopal/posts/?feedView=all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:bg-blue-100 rounded-full transition-all duration-200"
-                >
-                  <Linkedin size={16} />
-                </a>
-                <a
-                  href="https://www.facebook.com/PAYZONINDIA/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:bg-blue-100 rounded-full transition-all duration-200"
-                >
-                  <Facebook size={16} />
-                </a>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -463,7 +475,7 @@ const Navbar: React.FC = () => {
         }`}
       >
         {/* Mobile Menu Header - Enhanced */}
-        <div className="relative flex items-center justify-between px-6 py-4   bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
+        <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-indigo-700/90"></div>
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
@@ -476,7 +488,6 @@ const Navbar: React.FC = () => {
                 alt="Logo"
                 className="h-16 w-auto object-contain"
               />
-              {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce"></div> */}
             </div>
             <div>
               <span className="text-xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
@@ -498,14 +509,6 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Content - Enhanced */}
         <div className="h-full overflow-y-auto pb-20">
-          {/* Welcome Message */}
-          {/* <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-b border-purple-100">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-purple-600" />
-              <span className="text-sm font-semibold text-gray-700">Explore Our Services</span>
-            </div>
-          </div> */}
-
           <div className="px-6 py-6">
             <ul className="space-y-4">
               {navigationItems.map((item, index) => (
@@ -540,15 +543,15 @@ const Navbar: React.FC = () => {
                               : "text-gray-400"
                           }`}
                         />
-                        {openDropdown === item.name && (
+                        {/* {openDropdown === item.name && (
                           <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-ping"></div>
-                        )}
+                        )} */}
                       </div>
                     )}
                   </button>
 
                   {item.hasDropdown && openDropdown === item.name && (
-                    <div className="mt-4 ml-8 space-y-3">
+                    <div className="mt-4 ml-8 space-y-3 animate-mobile-dropdown">
                       {item.dropdownItems.map((drop, idx) => (
                         <button
                           key={idx}
@@ -557,7 +560,7 @@ const Navbar: React.FC = () => {
                               `#${drop.toLowerCase().replace(/\s+/g, "-")}`
                             )
                           }
-                          className="flex items-center w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-white bg-gradient-to-r from-gray-50 to-blue-50 hover:from-blue-400 hover:to-purple-500 rounded-xl border border-gray-200 hover:border-transparent transform hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-lg group"
+                          className="flex items-center w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-white bg-gradient-to-r from-gray-50 to-blue-50 hover:from-blue-400 hover:to-purple-500 rounded-xl border border-gray-200 hover:border-transparent transform hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-lg group relative overflow-hidden"
                           style={{
                             animationDelay: `${idx * 50}ms`,
                             animation:
@@ -566,8 +569,9 @@ const Navbar: React.FC = () => {
                                 : "",
                           }}
                         >
-                          <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 group-hover:bg-white group-hover:scale-150 transition-all duration-200"></div>
-                          <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 group-hover:bg-white group-hover:scale-150 transition-all duration-200 relative z-10"></div>
+                          <span className="group-hover:translate-x-1 transition-transform duration-200 relative z-10">
                             {drop}
                           </span>
                         </button>
@@ -650,7 +654,7 @@ const Navbar: React.FC = () => {
                     +91 9243837546
                   </p>
                 </div>
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                {/* <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div> */}
               </a>
             </div>
           </div>
@@ -704,12 +708,97 @@ const Navbar: React.FC = () => {
           }
         }
 
+        @keyframes dropdown-enter {
+          from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+            filter: blur(4px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
+
+        @keyframes mobile-dropdown {
+          from {
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            max-height: 500px;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 0.2s ease-out;
         }
 
         .animate-slideDown {
           animation: slideDown 0.3s ease-out;
+        }
+
+        .animate-dropdown-enter {
+          animation: dropdown-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-mobile-dropdown {
+          animation: mobile-dropdown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Smooth scrolling for the entire page */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Enhanced hover effects */
+        .group:hover .animate-shimmer {
+          animation: shimmer 1.5s infinite;
+        }
+
+        /* Custom backdrop blur for better browser support */
+        .backdrop-blur-xl {
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+        }
+
+        .backdrop-blur-md {
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Smooth transitions for all interactive elements */
+        * {
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Enhanced focus states for accessibility */
+        button:focus,
+        a:focus {
+          outline: 2px solid rgba(59, 130, 246, 0.5);
+          outline-offset: 2px;
+        }
+
+        /* Improved mobile touch targets */
+        @media (max-width: 1024px) {
+          button,
+          a {
+            min-height: 44px;
+            min-width: 44px;
+          }
         }
       `}</style>
     </>

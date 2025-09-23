@@ -29,7 +29,7 @@ const slides: Slide[] = [
       "Our diverse portfolio of companies delivers cutting-edge technology and services to fuel your success worldwide.",
     buttonText: "Explore Our Ventures",
     accent: "from-blue-700 via-blue-700 to-blue-900",
-    position: "right",
+    position: "center",
   },
   {
     title: "Building a ",
@@ -38,7 +38,7 @@ const slides: Slide[] = [
       "With a commitment to excellence, our group shapes industries through innovation, reliability, and global reach.",
     buttonText: "Join Our Vision",
     accent: "from-blue-700 via-blue-700 to-blue-900",
-    position: "left",
+    position: "center",
   },
 ];
 
