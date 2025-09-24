@@ -4,18 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
   ArrowRight,
-  Play,
-  Shield,
   Zap,
   Database,
-  Target,
   Sparkles,
   ChevronRight,
-  Briefcase,
-  Users,
-  Star,
   Rocket,
 } from "lucide-react";
+import MarqueeDemo from "./marquee";
 
 interface Slide {
   image: string;
@@ -35,13 +30,6 @@ interface Service {
   gradient: string;
 }
 
-interface Achievement {
-  number: string;
-  label: string;
-  icon: JSX.Element;
-  color: string;
-}
-
 interface MousePosition {
   x: number;
   y: number;
@@ -50,15 +38,11 @@ interface MousePosition {
 export default function PayzonIndiaHero() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true);
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [activeService, setActiveService] = useState<number>(0);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // SEO-Friendly, Venture-specific Slides
   const slides: Slide[] = [
     {
       image: "/images/it.jpg",
@@ -66,7 +50,7 @@ export default function PayzonIndiaHero() {
       title: "Innovative IT Solutions by Payzon India",
       description:
         "Payzon India delivers scalable IT infrastructure, custom software, and secure cloud solutions that help businesses streamline operations, reduce costs, and drive digital growth.",
-      bgColor: "from-blue-900/100 via-indigo-900/70",
+      bgColor: "from-black/90 via-black/20",
       accentColor: "blue",
       stats: { number: "600+", label: "Projects Delivered" },
     },
@@ -76,35 +60,32 @@ export default function PayzonIndiaHero() {
       title: "Digital Marketing Strategies",
       description:
         "Boost your brand visibility with Payzon India's SEO, social media campaigns, and digital marketing solutions designed to maximize ROI and online presence.",
-      bgColor: "from-blue-900/90 via-indigo-900/70",
+      bgColor: "from-black/90 via-black/20",
       accentColor: "blue",
       stats: { number: "200+", label: "Campaigns Launched" },
     },
-
     {
       image: "/images/e-commerce.webp",
       category: "E-Commerce",
       title: "Nationwide Dropshipping Solutions",
       description:
         "Payzon India delivers scalable e-commerce platforms designed to boost sales, improve customer journeys, and enable hassle-free nationwide dropshipping.",
-      bgColor: "from-blue-900/90 via-indigo-900/70",
+      bgColor: "from-black/90 via-black/20",
       accentColor: "blue",
       stats: { number: "99.8%", label: "Uptime Guaranteed" },
     },
-
     {
       image: "/images/fin.jpg",
       category: "Fintech Solutions",
       title: "Secure Fintech Innovations",
       description:
         "Providing advanced fintech solutions with secure payment systems, compliance-driven platforms, and analytics to empower financial institutions.",
-      bgColor: "from-blue-900/90 via-indigo-900/70",
+      bgColor: "from-black/90 via-black/20",
       accentColor: "blue",
       stats: { number: "50+", label: "Financial Institutions Served" },
     },
   ];
 
-  // SEO-Friendly Services
   const services: Service[] = [
     {
       title: "IT Services",
@@ -122,42 +103,22 @@ export default function PayzonIndiaHero() {
       color: "from-purple-500 to-violet-500",
       gradient: "from-purple-50 to-violet-50",
     },
-    {
-      title: "E-Commerce",
-      description:
-        "Building seamless and secure e-commerce platforms to improve user experience and boost online revenue effectively.",
-      icon: <Target className="w-6 h-6 md:w-7 md:h-7" />,
-      color: "from-emerald-500 to-teal-500",
-      gradient: "from-emerald-50 to-teal-50",
-    },
-    {
-      title: "Fintech Solutions",
-      description:
-        "Delivering compliant, secure, and advanced fintech platforms with integrated payment systems for financial growth.",
-      icon: <Shield className="w-6 h-6 md:w-7 md:h-7" />,
-      color: "from-orange-500 to-red-500",
-      gradient: "from-orange-50 to-red-50",
-    },
   ];
 
-  // Function to render title with line break after 3 words
   const renderTitle = (title: string) => {
     const words = title.split(" ");
     if (words.length > 3) {
-      const firstPart = words.slice(0, 3).join(" ");
-      const secondPart = words.slice(3).join(" ");
       return (
         <>
-          {firstPart}
+          {words.slice(0, 3).join(" ")}
           <br />
-          {secondPart}
+          {words.slice(3).join(" ")}
         </>
       );
     }
     return title;
   };
 
-  // Preload images to prevent loading delays
   useEffect(() => {
     if (typeof window !== "undefined") {
       slides.forEach((slide) => {
@@ -167,7 +128,6 @@ export default function PayzonIndiaHero() {
     }
   }, []);
 
-  // Mouse movement handling (disabled on touch devices)
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isTouchDevice =
@@ -192,7 +152,6 @@ export default function PayzonIndiaHero() {
     }
   }, []);
 
-  // IntersectionObserver for visibility
   useEffect(() => {
     if (typeof window !== "undefined") {
       const observer = new IntersectionObserver(
@@ -208,17 +167,15 @@ export default function PayzonIndiaHero() {
     }
   }, []);
 
-  // Auto-slide functionality
   useEffect(() => {
     if (isAutoPlay) {
       const interval = setInterval(() => {
         setActiveSlide((prevSlide) => (prevSlide + 1) % slides.length);
-      }, 4000);
+      }, 3000); // Auto-slide every 3 seconds
       return () => clearInterval(interval);
     }
   }, [isAutoPlay, slides.length]);
 
-  // Auto-rotate services
   useEffect(() => {
     const serviceInterval = setInterval(() => {
       setActiveService((prev) => (prev + 1) % services.length);
@@ -226,7 +183,6 @@ export default function PayzonIndiaHero() {
     return () => clearInterval(serviceInterval);
   }, [services.length]);
 
-  // Swipe support for carousel
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
@@ -240,8 +196,7 @@ export default function PayzonIndiaHero() {
       if (Math.abs(distance) > 50) {
         setIsAutoPlay(false);
         if (distance > 0) setActiveSlide((prev) => (prev + 1) % slides.length);
-        else
-          setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
+        else setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
         setTimeout(() => setIsAutoPlay(true), 10000);
       }
     }
@@ -260,17 +215,14 @@ export default function PayzonIndiaHero() {
       ref={sectionRef}
       className="min-h-screen py-8 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden bg-white"
     >
+      {/* Mouse background effect */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-40 transition-all duration-500 hidden md:block"
           style={{
             background: `
-              radial-gradient(circle at ${mousePosition.x}% ${
-              mousePosition.y
-            }%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at ${100 - mousePosition.x}% ${
-              100 - mousePosition.y
-            }%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at ${100 - mousePosition.x}% ${100 - mousePosition.y}%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
               conic-gradient(from 0deg at 50% 50%, 
                 rgba(59, 130, 246, 0.1) 0deg,
                 rgba(139, 92, 246, 0.1) 90deg,
@@ -283,9 +235,88 @@ export default function PayzonIndiaHero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="space-y-8 md:space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 pb-8 md:pb-12">
+      <div className="relative z-10">
+       
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
+          {/* Carousel */}
+          <div
+            className={`lg:col-span-7 transform transition-all duration-1000 ease-out ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="relative group">
+              <div className="relative overflow-hidden border-2 border-gradient-to-r from-blue-500/50 to-blue-700/50">
+                <Image
+                  src={slides[activeSlide].image}
+                  alt={slides[activeSlide].title}
+                  width={1200}
+                  height={600}
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105 will-change-transform"
+                  style={{ imageRendering: "auto" }}
+                  priority={activeSlide === 0}
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t ${slides[activeSlide].bgColor} to-transparent opacity-70 transition-opacity duration-500`}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white z-20 bg-gradient-to-t from-black/60 to-transparent">
+                  <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-md rounded-full px-3 sm:px-4 py-1 sm:py-2 border border-blue-400/30 mb-3 sm:mb-4">
+                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse text-blue-400" />
+                    <span className="text-xs sm:text-sm font-bold text-white">
+                      {slides[activeSlide].category}
+                    </span>
+                    <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent leading-tight">
+                    {renderTitle(slides[activeSlide].title)}
+                  </h3>
+                  <p className="text-sm sm:text-base md:text-lg text-white mb-4 sm:mb-6 max-w-md leading-relaxed">
+                    {slides[activeSlide].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Dot navigation */}
+              <div className="absolute bottom-0 right-0 bg-blue-600 p-4 sm:p-6 shadow-2xl border border-blue-400/30 backdrop-blur-xl z-30">
+                <div className="flex flex-row sm:flex-col items-center space-x-4 sm:space-x-0 sm:space-y-4">
+                  <div className="relative">
+                    {isAutoPlay && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl sm:rounded-2xl animate-ping opacity-20" />
+                    )}
+                  </div>
+                  <div className="flex space-x-2 sm:space-x-0 sm:flex-col sm:space-y-4">
+                    {slides.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleDotClick(index)}
+                        className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-black transition-all duration-300 ease-out ${
+                          activeSlide === index
+                            ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-2xl scale-110 shadow-blue-500/50"
+                            : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105"
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      >
+                        <span className="relative z-10">{index + 1}</span>
+                        {activeSlide === index && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg sm:rounded-xl animate-pulse opacity-40" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div
+            className={`lg:col-span-5 space-y-6 transform transition-all duration-1000 ease-out delay-300 px-4 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+          >
             <div>
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="w-8 sm:w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full" />
@@ -295,219 +326,56 @@ export default function PayzonIndiaHero() {
                 </div>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-black leading-tight mt-4">
-                <span className="text-black">
-                  Innovative Solutions Empowering Business Growth
-                </span>
+                Innovative Solutions Empowering Business Growth
               </h2>
-              <p className="mt-4 text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
-                Payzon India is a versatile company delivering cutting-edge IT
-                services, secure fintech solutions, scalable e-commerce
-                platforms, robust cybersecurity, and reliable news platforms —
-                empowering businesses across India with innovative, secure, and
-                future-ready digital solutions.
-              </p>
-            </div>
-
-            <div>
-              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed">
-                <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed ">
-                  {/* <span className="font-semibold">
-                    Payzon India empowers businesses with cutting-edge solutions
-                    across multiple sectors. Our core services include:
-                  </span> */}
-                  <ul className="list-disc pl-5 sm:pl-6 mt-2 space-y-1 sm:space-y-6">
-                    <li className="text-sm sm:text-base text-black">
-                      <strong>IT Services:</strong> Cutting-edge IT solutions
-                      including scalable infrastructure, cloud services, and
-                      custom software for streamlined operations.
-                    </li>
-                    <li className="text-sm sm:text-base text-black">
-                      <strong>Digital Marketing:</strong> Data-driven SEO,
-                      social media campaigns, and analytics strategies to
-                      maximize brand visibility and ROI.
-                    </li>
-                    <li className="text-sm sm:text-base text-black">
-                      <strong>E-Commerce/Dropshipping:</strong> Scalable
-                      e-commerce platforms with seamless nationwide dropshipping
-                      and improved customer experiences to boost online sales.
-                    </li>
-
-                    <li className="text-sm sm:text-base text-black">
-                      <strong>Fintech Solutions:</strong> Secure payment
-                      systems, compliance-driven platforms, and analytics tools
-                      to empower financial institutions.
-                    </li>
-                  </ul>
-                </p>
-              </p>
               <button className="px-4 sm:px-6 mt-8 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full font-bold text-sm sm:text-base hover:scale-105 transition-transform duration-300 ease-out">
                 Get Started with Payzon India
               </button>
             </div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
-            {/* Image Carousel */}
-            <div
-              className={`lg:col-span-7 transform transition-all duration-1000 ease-out ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0"
-              }`}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div className="relative group">
-                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-gradient-to-r from-blue-500/50 to-blue-700/50">
-                  <Image
-                    src={slides[activeSlide].image}
-                    alt={slides[activeSlide].title}
-                    width={1200}
-                    height={600}
-                    className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105 will-change-transform"
-                    style={{ imageRendering: "auto" }}
-                    priority={activeSlide === 0}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
-                    quality={85}
-                    onLoadingComplete={() =>
-                      console.log(`Loaded image: ${slides[activeSlide].image}`)
-                    }
-                    onError={(e) => {
-                      console.error(
-                        `Failed to load image: ${slides[activeSlide].image}`
-                      );
-                      e.currentTarget.src = "/images/fallback.jpg";
-                    }}
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${slides[activeSlide].bgColor} to-transparent opacity-70 transition-opacity duration-500`}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white z-20 bg-gradient-to-t from-black/60 to-transparent">
-                    <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-md rounded-full px-3 sm:px-4 py-1 sm:py-2 border border-blue-400/30 mb-3 sm:mb-4">
-                      <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse text-blue-400" />
-                      <span className="text-xs sm:text-sm font-bold text-white">
-                        {slides[activeSlide].category}
-                      </span>
-                      <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent leading-tight">
-                      {renderTitle(slides[activeSlide].title)}
-                    </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-white mb-4 sm:mb-6 max-w-md leading-relaxed">
-                      {slides[activeSlide].description}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute -bottom-6 right-4 sm:-bottom-8 sm:-right-8 bg-gradient-to-br from-white/80 via-gray-100 to-white/80 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl border border-blue-400/30 backdrop-blur-xl z-30">
-                  <div className="flex flex-row sm:flex-col items-center space-x-4 sm:space-x-0 sm:space-y-4">
-                    <div className="relative">
-                      <button
-                        onClick={() => setIsAutoPlay(!isAutoPlay)}
-                        className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl sm:rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300 ease-out hover:shadow-2xl hover:shadow-blue-500/50"
-                        aria-label={
-                          isAutoPlay ? "Pause carousel" : "Play carousel"
-                        }
-                      >
-                        <Play
-                          className={`w-5 h-5 sm:w-6 sm:h-6 text-white ml-1 transition-opacity duration-300 ${
-                            !isAutoPlay ? "opacity-50" : ""
-                          }`}
-                          fill="currentColor"
-                        />
-                      </button>
-                      {isAutoPlay && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl sm:rounded-2xl animate-ping opacity-20" />
-                      )}
-                    </div>
-                    <div className="flex space-x-2 sm:space-x-0 sm:flex-col sm:space-y-4">
-                      {slides.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleDotClick(index)}
-                          className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-black transition-all duration-300 ease-out ${
-                            activeSlide === index
-                              ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-2xl scale-110 shadow-blue-500/50"
-                              : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105"
-                          }`}
-                          aria-label={`Go to slide ${index + 1}`}
-                        >
-                          <span className="relative z-10">{index + 1}</span>
-                          {activeSlide === index && (
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg sm:rounded-xl animate-pulse opacity-40" />
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Services Grid */}
-            <div
-              className={`lg:col-span-5 space-y-6 transform transition-all duration-1000 ease-out delay-300 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0"
-              }`}
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-                {services.map((service, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className={`group relative overflow-hidden rounded-2xl p-4 transition-all duration-300 cursor-pointer border flex flex-col justify-between
+                    ${
+                      activeService === index
+                        ? "bg-gradient-to-r from-gray-50 to-white border-blue-400 shadow-xl scale-[1.02]"
+                        : "bg-white border-gray-200 hover:border-blue-400/40"
+                    }`}
+                  onMouseEnter={() => setActiveService(index)}
+                  onClick={() => setActiveService(index)}
+                >
                   <div
-                    key={index}
-                    className={`group relative overflow-hidden rounded-2xl p-4 transition-all duration-300 cursor-pointer border flex flex-col justify-between
-                      ${
-                        activeService === index
-                          ? "bg-gradient-to-r from-gray-50 to-white border-blue-400 shadow-xl scale-[1.02]"
-                          : "bg-white border-gray-200 hover:border-blue-400/40"
-                      }`}
-                    onMouseEnter={() => setActiveService(index)}
-                    onClick={() => setActiveService(index)}
-                  >
-                    {/* Gradient hover overlay */}
+                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                  />
+                  <div className="relative z-10 flex items-start gap-4">
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                    />
-
-                    {/* Card Content */}
-                    <div className="relative z-10 flex items-start gap-4">
-                      {/* Icon */}
-                      <div
-                        className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300`}
-                      >
-                        <span className="text-white text-xl">
-                          {service.icon}
-                        </span>
-                      </div>
-
-                      {/* Text */}
-                      <div className="flex-1">
-                        <h4 className="font-bold text-lg sm:text-xl text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                          {service.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 group-hover:text-gray-800 transition-colors">
-                          {service.description}
-                        </p>
-                      </div>
-
-                      {/* Arrow */}
-                      <ArrowRight
-                        className={`w-5 h-5 text-gray-400 group-hover:text-blue-600 transform transition-all duration-300 ${
-                          activeService === index
-                            ? "translate-x-2 text-blue-600"
-                            : ""
-                        }`}
-                      />
+                      className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300`}
+                    >
+                      <span className="text-white text-xl">{service.icon}</span>
                     </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg sm:text-xl text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                        {service.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 group-hover:text-gray-800 transition-colors">
+                        {service.description}
+                      </p>
+                    </div>
+                    <ArrowRight
+                      className={`w-5 h-5 text-gray-400 group-hover:text-blue-600 transform transition-all duration-300 ${
+                        activeService === index ? "translate-x-2 text-blue-600" : ""
+                      }`}
+                    />
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Custom CSS for Smooth Animations */}
       <style jsx>{`
         @keyframes float {
           0%,
@@ -523,7 +391,7 @@ export default function PayzonIndiaHero() {
         }
         img {
           will-change: transform;
-          image-rendering: auto; /* Optimize rendering for high quality */
+          image-rendering: auto;
         }
         .group:hover img {
           transform: scale(1.05);

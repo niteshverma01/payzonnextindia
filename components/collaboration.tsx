@@ -1,235 +1,189 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Define types for awards data
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 interface Award {
-  id: number
-  image: string
-  title: string
-  link: string
+  id: number;
+  image: string;
+  title: string;
 }
 
 export default function AwardsAchievements() {
-  const [currentSlide, setCurrentSlide] = useState<number>(0)
-  const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true)
-  const [dragStartX, setDragStartX] = useState<number>(0)
-  const [dragEndX, setDragEndX] = useState<number>(0)
+  const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true);
 
-  // Awards data
   const awards: Award[] = [
     {
       id: 1,
-      image: "/images/payzonit.png",
-      title: "Web Development & Solutions",
-      link: "www.payzonitservices.com",
+      image: "https://sevenit.in/assets/images/Picture1.jpg", // IT company logo from Freepik
+      title: "IT Services",
     },
     {
       id: 2,
-      image: "/images/PAYZONINDIA-pngLogo.png",
-      title: "Digital Marketing Services",
-      link: "www.payzonmarketing.com",
+      image: "https://eu-images.contentstack.com/v3/assets/blt69509c9116440be8/blt8ffb90a2f64bacfa/6776f4544b281ca5e2bc465a/cybersecurity_NicoElNino-AlamyStockPhoto.jpg", // Cyber security logo from Freepik
+      title: "Cyber Security",
     },
     {
       id: 3,
-      image: "/images/logo.png",
-      title: "Fintech & API Solutions",
-      link: "www.payzonapi.com",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuY0jAR_6dAVhCvoQ8zGPqTnL8z8bJ1EuLFQ&s", // Skills development icon from Flaticon
+      title: "Skills Development",
     },
     {
       id: 4,
-      image: "/images/shoppy-logo.png",
-      title: "E-commerce & Online Stores",
-      link: "www.payzonshoppy.com",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhY-ikHeC_3NCeXFQ3Za5AniBqnH4BELmbA&s", // Organic farm logo from Canva
+      title: "Organic Farming",
     },
     {
       id: 5,
-      image: "/images/Sadaiv MEDIA 1.png",
-      title: "News & Media Services",
-      link: "www.sadaivsatya.com",
+      image: "https://media.licdn.com/dms/image/v2/D5612AQHbZW8weluemA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1720977515429?e=2147483647&v=beta&t=Q_kqteZmoYIvgIXjz5DKX5xydE_0kgLkmu7xz5vZwrw", // Toys R Us logo from 1000logos
+      title: "Toys Industries",
     },
     {
       id: 6,
-      image: "/images/Sadaiv_logo.png",
-      title: "Non-Profit & Charity Foundation",
-      link: "www.sadaivyuvafoundation.com",
+      image: "https://5.imimg.com/data5/TG/DN/MY-37294786/designer-artificial-jewellery.jpg", // Jewelry logo from Freepik
+      title: "Artificial Jewellery",
     },
-  ]
-
-  // Responsive slides per view
-  const getSlidesPerView = () => {
-    if (typeof window === "undefined") return 3 // Default for SSR
-    if (window.innerWidth < 640) return 1 // Mobile
-    if (window.innerWidth < 1024) return 2 // Tablet
-    return 3 // Desktop
-  }
-
-  const [slidesPerView, setSlidesPerView] = useState<number>(getSlidesPerView())
-
-  // Update slidesPerView on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesPerView(getSlidesPerView())
-    }
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  const maxSlide = Math.max(0, awards.length - slidesPerView)
-
-  // Auto-play
-  useEffect(() => {
-    if (isAutoPlay) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev >= maxSlide ? 0 : prev + 1))
-      }, 4000)
-
-      return () => clearInterval(interval)
-    }
-  }, [isAutoPlay, maxSlide])
-
-  // Manual navigation
-  const handlePrevious = () => {
-    setIsAutoPlay(false)
-    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : maxSlide))
-    setTimeout(() => setIsAutoPlay(true), 6000)
-  }
-
-  const handleNext = () => {
-    setIsAutoPlay(false)
-    setCurrentSlide((prev) => (prev < maxSlide ? prev + 1 : 0))
-    setTimeout(() => setIsAutoPlay(true), 6000)
-  }
-
-  // Touch swipe
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setDragStartX(e.touches[0].clientX)
-    setIsAutoPlay(false)
-  }
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    setDragEndX(e.touches[0].clientX)
-  }
-
-  const handleTouchEnd = () => {
-    const dragDistance = dragStartX - dragEndX
-    const threshold = 50
-    if (Math.abs(dragDistance) > threshold) {
-      if (dragDistance > 0 && currentSlide < maxSlide) {
-        setCurrentSlide((prev) => prev + 1)
-      } else if (dragDistance < 0 && currentSlide > 0) {
-        setCurrentSlide((prev) => prev - 1)
-      }
-    }
-    setTimeout(() => setIsAutoPlay(true), 6000)
-  }
+    {
+      id: 7,
+      image: "https://c4.wallpaperflare.com/wallpaper/942/112/901/table-fruit-nuts-vegetables-wood-hd-wallpaper-preview.jpg", // Spices logo from Freepik
+      title: "Spices & Vegetables",
+    },
+    {
+      id: 8,
+      image: "Divine Industries", // Divine Industries logo
+      title: "Divine Industries",
+    },
+    {
+      id: 9,
+      image: "https://img.freepik.com/free-photo/shop-clothing-clothes-shop-hanger-modern-shop-boutique_1150-8886.jpg", // Clothing logo from CleanPNG
+      title: "Clothing",
+    },
+    {
+      id: 10,
+      image: "https://www.canva.com/api/designs/templates/electronics-logo.png", // Electronics logo from Canva
+      title: "Electronics",
+    },
+];
 
   return (
-    <section className="py-12 relative overflow-hidden">
-      <div className="relative py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src="/it-consultancy-professionals.jpg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-slate-800/90"></div>
-        </div>
+    <section className="relative overflow-hidden max-w-6xl mx-auto group">
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/it-consultancy-professionals.jpg"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-slate-800/90"></div>
+      </div>
 
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-            Our Online Ventures
+      <div className="relative py-16 sm:py-20 md:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="text-center mb-12 sm:mb-8">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="flex gap-1">
+              <div className="w-8 h-1 bg-cyan-400"></div>
+              <div className="w-4 h-1 bg-cyan-400"></div>
+              <div className="w-2 h-1 bg-cyan-400"></div>
+            </div>
+            <span className="text-blue-600 text-sm sm:text-base font-semibold tracking-wider uppercase">
+              Ongoing Ventures
+            </span>
+            <div className="flex gap-1">
+              <div className="w-2 h-1 bg-blue-600"></div>
+              <div className="w-4 h-1 bg-blue-600"></div>
+              <div className="w-8 h-1 bg-blue-600"></div>
+            </div>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            Building the Future with <br />
+            <span className="text-blue-600">Our Ongoing Ventures</span>
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg">
-            Innovating across multiple domains
-          </p>
         </div>
 
-        {/* Slider */}
         <div className="relative">
-          {/* Buttons */}
-          <button
-            onClick={handlePrevious}
-            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white transition hover:scale-110"
-            aria-label="Previous slide"
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={12}
+            slidesPerView={1}
+            navigation={{
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+              bulletClass: "swiper-pagination-bullet bg-white/30 w-3 h-3 rounded-full inline-block mx-1.5 cursor-pointer",
+              bulletActiveClass: "swiper-pagination-bullet-active bg-cyan-400 w-8 h-3 rounded-full",
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: true,
+            }}
+            onAutoplayStop={() => setIsAutoPlay(false)}
+            onAutoplayStart={() => setIsAutoPlay(true)}
+            onTouchEnd={() => {
+              setIsAutoPlay(false);
+              setTimeout(() => setIsAutoPlay(true), 6000);
+            }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+              1280: { slidesPerView: 5 },
+            }}
+            className="mySwiper mx-0 sm:mx-8"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
-
-          <button
-            onClick={handleNext}
-            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white transition hover:scale-110"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
-
-          {/* Cards */}
-          <div
-            className="overflow-x-hidden mx-4 sm:mx-8 md:mx-12"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)` }}
-            >
-              {awards.map((award) => (
-                <div
-                  key={award.id}
-                  className="flex-shrink-0 px-2 sm:px-3 md:px-4"
-                  style={{ width: `${100 / slidesPerView}%` }}
-                >
-                  <div className="relative bg-gradient-to-br from-slate-800/80 to-blue-900/80 backdrop-blur-lg border border-white/20 rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl group hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 blur-2xl transition"></div>
-
-                    <div className="relative flex flex-col items-center text-center">
-                      <img
-                        src={award.image}
-                        alt={award.title}
-                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain mb-3 sm:mb-4 drop-shadow-lg"
-                      />
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2">
-                        {award.title}
-                      </h3>
-                      <a
-                        href={`https://${award.link}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 text-sm sm:text-base hover:underline"
-                      >
-                        {award.link}
-                      </a>
+            {awards.map((award) => (
+              <SwiperSlide key={award.id}>
+                <div className="px-3 sm:px-1 flex justify-center">
+                  <div className="relative group cursor-pointer">
+                    <div className="relative bg-white rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 w-[180px] h-[180px] sm:w-[180px] sm:h-[170px] flex items-center justify-center overflow-hidden">
+                      <div className="relative bg-white rounded-2xl p-4 flex flex-col items-center text-center w-full h-full justify-center">
+                        <div className="mb-3">
+                          <Image
+                            src={award.image}
+                            alt={award.title}
+                            width={96}
+                            height={96}
+                            className="w-14 h-14 sm:w-auto sm:h-24 object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                        <h3 className="text-slate-800 text-xs sm:text-sm font-bold mb-1 group-hover:text-blue-600 transition-colors">
+                          {award.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dots */}
-          <div className="flex justify-center space-x-2 mt-6 sm:mt-8">
-            {[...Array(maxSlide + 1)].map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentSlide(index)
-                  setIsAutoPlay(false)
-                  setTimeout(() => setIsAutoPlay(true), 6000)
-                }}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                    ? "bg-blue-500 scale-125"
-                    : "bg-white/30 hover:bg-white/50"
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+              </SwiperSlide>
             ))}
-          </div>
-        </div></div>
+            {awards.length > 1 && (
+              <>
+                <button
+                  className="swiper-button-prev absolute left-0 sm:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white transition-all hover:scale-110 border border-white/20 opacity-0 group-hover:opacity-100"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  className="swiper-button-next absolute right-0 sm:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white transition-all hover:scale-110 border border-white/20 opacity-0 group-hover:opacity-100"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+                <div className="swiper-pagination flex justify-center space-x-3 mt-8 sm:mt-10"></div>
+              </>
+            )}
+          </Swiper>
+        </div>
+      </div>
     </section>
-  )
+  );
 }

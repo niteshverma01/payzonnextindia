@@ -24,22 +24,26 @@ export default function Home() {
       <Hero />
       <ServicesSection />
       <About />
+            <AwardsAchievements />
+
       <ProfessionalStaff />
 
-      <BusinessShowcase />
+     
+      
+      
+      {/* <MarqueeDemo /> */}
+      <Services />
+      
+      <Stats />
+      <Portfolio />
+      <Team />
+            <MarketingSection />
+
+       <BusinessShowcase />
 
       <NewComponent />
-      
-      <MarketingSection />
-      
-      <AwardsAchievements />
-      <MarqueeDemo />
-      {/* <Services /> */}
+      <Testimonials />
       <PayZoneFAQ />
-      {/* <Stats /> */}
-      {/* <Portfolio /> */}
-      {/* <Team /> */}
-      {/* <Testimonials /> */}
       <ScrollToTop />
     </main>
   )

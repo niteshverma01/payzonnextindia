@@ -7,15 +7,7 @@ import {
   Users,
   Shield,
   Lightbulb,
-  ArrowRight,
   Sparkles,
-  Smartphone,
-  CreditCard,
-  Verified,
-  Tag,
-  Globe,
-  Heart,
-  Lock,
 } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -23,7 +15,6 @@ import { useState, useEffect } from "react";
 // Define types for tab content
 interface TabContent {
   text: string;
-  // image: string
   icon: JSX.Element;
   color: string;
   bgColor: string;
@@ -63,21 +54,18 @@ export default function About() {
   const tabContent: TabContentMap = {
     mission: {
       text: '"Our mission is to empower businesses with innovative IT, fintech, and e-commerce solutions, ensuring growth, digital safety, and sustainable development across industries"',
-      // image: "https://bairesdev.mo.cloudinary.net/blog/2023/08/ServiceNow-Revolutionizing-Digital-Workflows.jpg?tx=w_1920,q_auto",
       icon: <Shield className="w-4 h-4 sm:w-5 sm:h-5" />,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
     },
     vision: {
       text: '"We envision a secure, prosperous digital world through cutting-edge API solutions, e-commerce platforms, and social initiatives, driving innovation and global impact."',
-      // image: "/payzon-team.png",
       icon: <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5" />,
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-indigo-50",
     },
     value: {
       text: "As a dynamic group from Central India, we deliver tailored solutions in IT, fintech, e-commerce, cyber security, and social welfare, promoting resilience, trust, and global competitiveness.",
-      // image: "/payzon-team.png",
       icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-50",
@@ -117,16 +105,7 @@ export default function About() {
   return (
     <section className="min-h-screen py-6 sm:py-8 md:py-12 lg:py-16 relative overflow-hidden bg-white max-w-7xl mx-auto">
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Interactive mouse glow (disabled on mobile) */}
-        {/* <div
-          className="hidden md:block absolute w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-gradient-to-r from-blue-300/10 to-purple-400/10 rounded-full blur-3xl transition-all duration-300 pointer-events-none"
-          style={{
-            left: mousePosition.x - 128,
-            top: mousePosition.y - 128,
-          }}
-        /> */}
-      </div>
+      <div className="absolute inset-0 overflow-hidden"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-start">
@@ -197,7 +176,7 @@ export default function About() {
 
             {/* Tab Content */}
             <div
-              className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-300  transition-all duration-300 `}
+              className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-300 transition-all duration-300`}
             >
               <div className="flex items-start space-x-2 sm:space-x-3">
                 <div
@@ -215,14 +194,14 @@ export default function About() {
 
             {/* Enhanced Button */}
             <div className="flex items-center">
-              <div className="relative group cursor-pointer">
+              <div className="relative group cursor-pointer w-full sm:w-auto">
                 <Link href="https://www.youtube.com/channel/UCSjsk1O7zYurXPDl2o3RuIA">
                   <div className="bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white pl-4 sm:pl-6 pr-10 sm:pr-12 py-2 sm:py-5 hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-1 sm:space-x-2 relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                     <span className="font-semibold text-xs sm:text-sm md:text-base tracking-wide relative z-10">
                       Explore Payzon India Group
                     </span>
-                    <div className="absolute -right-1 sm:-right-5 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-17 sm:w-17 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                    <div className="absolute -right-1 sm:-right-5 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-12 sm:w-12 bg-white rounded-full flex items-center justify-center shadow-2xl">
                       <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-full flex items-center justify-center">
                         <Play
                           className="w-3 h-3 sm:w-6 sm:h-6 text-black ml-0.5"
@@ -237,41 +216,43 @@ export default function About() {
           </div>
 
           {/* Right Content - Enhanced Visual */}
-          <div className="relative order-1 md:order-2 flex justify-center mt-36">
-            {/* Blue Circle Background with smooth bounce */}
+          <div className="relative order-1 md:order-2 flex justify-center mt-20 sm:mt-28 md:mt-36">
+            {/* Blue Circle Background */}
             <div className="relative w-full flex justify-center items-center">
-              <div className="absolute w-[600px] h-[600px] rounded-full border-[50px] border-blue-600 animate-bounce"></div>
+              <div className="absolute w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] rounded-full border-[20px] sm:border-[35px] md:border-[50px] border-blue-600 animate-bounce"></div>
 
               {/* Image */}
-              <div className="relative z-10 ">
+              <div className="relative z-10">
                 <img
                   src="/images/1111.png"
                   alt="Payzon India Team"
-                  className="w-[400px] md:w-[600px] lg:w-[900px] h-auto object-cover  -mt-12 "
+                  className="w-[220px] sm:w-[350px] md:w-[500px] lg:w-[700px] xl:w-[900px] h-auto object-cover -mt-8 sm:-mt-12"
                 />
 
-                {/* Top Left Badge - Updated with Payzon Data */}
-                <div className="absolute -top-28 -left-6 bg-blue-600 text-white px-6 py-6 rounded-sm shadow-lg flex flex-col items-center">
-                  <div className="text-3xl font-black uppercase tracking-widest">
+                {/* Top Left Badge */}
+                <div className="absolute -top-16 sm:-top-20 md:-top-28 -left-2 sm:-left-6 bg-blue-600 text-white px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6 rounded-sm shadow-lg flex flex-col items-center text-center">
+                  <div className="text-lg sm:text-xl md:text-3xl font-black uppercase tracking-widest">
                     From
                   </div>
-                  <div className="text-6xl font-bold leading-none">2009</div>
-                  <div className="text-sm font-semibold uppercase tracking-wide">
+                  <div className="text-3xl sm:text-4xl md:text-6xl font-bold leading-none">
+                    2009
+                  </div>
+                  <div className="text-xs sm:text-sm font-semibold uppercase tracking-wide">
                     Serving Globally
                   </div>
                 </div>
 
-                {/* Bottom Right Card - Updated with Payzon Data */}
-                <div className="absolute ml-2 -bottom-24 bg-white px-6 py-4 rounded-tr-lg rounded-tl-lg shadow-2xl w-[480px]">
-                  <div className="flex items-start space-x-3">
+                {/* Bottom Right Card */}
+                <div className="absolute -bottom-16 sm:-bottom-20 md:-bottom-24 left-1/2 -translate-x-1/2 bg-white px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-tr-lg rounded-tl-lg shadow-2xl w-[90%] sm:w-[400px] md:w-[480px]">
+                  <div className="flex items-start space-x-2 sm:space-x-3">
                     <div className="p-2 bg-gray-100 rounded-full">
-                      <Award className="w-5 h-5 text-black" />
+                      <Award className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">
+                      <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">
                         Empowering Businesses Across Sectors
                       </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         Delivering secure IT services, innovative fintech
                         solutions, scalable e-commerce platforms, and robust
                         cybersecurity — all supported 24/7 for your growth.
