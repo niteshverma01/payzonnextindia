@@ -8,51 +8,59 @@ import {
   ChevronRight,
   Monitor,
   Megaphone,
+  ShoppingCart,
+  FileText,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Shield,
-    title: "Security & Compliance",
+    icon: Shield, // PR Services → Shield for protection/reputation
+    title: "PR Services",
     description:
-      "Our goal is to propel you to business forward with world-class IT cybersecurity and technology. We provide the expert solutions.",
-    image: "/backup-and-recovery-technology.jpg",
+      "At Payzon India, we craft powerful PR campaigns that build trust, manage reputation, and connect your brand with the right media networks for long-term visibility.",
+    image:
+      "https://evolutionpr.co.za/wp-content/uploads/2020/07/pr-word-cloud-2.jpg",
   },
   {
-    icon: Monitor,
-    title: "Web Development",
+    icon: Monitor, // Brand Promotion → Monitor for digital campaigns/online presence
+    title: "Brand Promotion",
     description:
-      "Our goal is to propel your to business forward with world-class IT cybersecurity and technology. We provide the expert solutions.",
-    image: "/voip-communication-technology.jpg",
+      "Payzon India helps your brand grow with targeted digital promotions, creative strategies, and engaging content that amplify your presence across multiple platforms.",
+    image:
+      "https://img.freepik.com/free-photo/social-media-marketing-concept-marketing-with-applications_23-2150063170.jpg?semt=ais_hybrid&w=740",
   },
   {
-    icon: Megaphone,
-    title: "Digital Marketing",
+    icon: Megaphone, // Lead Generation → Megaphone for announcing/calling leads
+    title: "Lead Generation",
     description:
-      "Our goal is to propel you to business forward with world-class IT cybersecurity and technology. We provide the expert solutions.",
-    image: "/business-consulting-meeting.png",
+      "Our team at Payzon India drives qualified leads to your business using SEO, paid ads, and personalized campaigns that strengthen your sales pipeline.",
+    image:
+      "https://stylevanity.com/wp-content/uploads/2022/07/ecommerce-lead-generation-8.jpg",
   },
   {
-    icon: BarChart3,
-    title: "Backup & Recovery",
+    icon: ShoppingCart, // Dropshipping → ShoppingCart for e-commerce fulfillment
+    title: "Dropshipping",
     description:
-      "Our goal is to propel you to business forward with world-class IT cybersecurity and technology. We provide the expert solutions.",
-    image: "/it-consultancy-professionals.jpg",
+      "Payzon India simplifies your e-commerce journey with dropshipping solutions, ensuring smooth order fulfillment, supplier coordination, and growth-driven strategies.",
+    image:
+      "https://www.hostinger.com/in/tutorials/wp-content/uploads/sites/52/2021/11/how-to-start-dropshipping-business.png",
   },
   {
-    icon: Phone,
-    title: "VoIP Solutions",
+    icon: FileText, // D-U-N-S® Registration → FileText for official/business documents
+    title: "D-U-N-S® Registration",
     description:
-      "Advanced voice over IP communication systems for modern businesses with cutting-edge technology.",
-    image: "/backup-and-recovery-technology.jpg",
+      "We assist businesses in securing their D-U-N-S® registration through Payzon India, boosting global credibility and unlocking new business partnerships worldwide.",
+    image: "/images/Gemini_Generated_Image_1dbfna1dbfna1dbf.png",
   },
   {
-    icon: Users,
-    title: "IT Consulting",
+    icon: CheckCircle, // Meta Verification → CheckCircle for verified/authentic
+    title: "Meta Verification",
     description:
-      "Strategic IT consulting and planning services for business growth and digital transformation.",
-    image: "/voip-communication-technology.jpg",
+      "With Payzon India, get your social profiles Meta verified to build authenticity, increase trust, and stand out on Facebook and Instagram with a verified badge.",
+    image:
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&fit=crop",
   },
 ];
 
@@ -142,16 +150,17 @@ export default function Services() {
                 <div className="w-6 h-0.5 bg-blue-600"></div>
                 <div className="w-3 h-0.5 bg-blue-600"></div>
               </div>
-              <span className="mx-4 tracking-wider uppercase">Our Services</span>
+              <span className="mx-4 tracking-wider uppercase">
+                Digital Marketing Services
+              </span>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-0.5 bg-blue-600"></div>
                 <div className="w-6 h-0.5 bg-blue-600"></div>
               </div>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-              We provide the necessary
-              <br />
-              services to you
+              Grow Your Brand Online <br />
+              With Targeted Digital Marketing
             </h2>
           </div>
 
@@ -186,7 +195,9 @@ export default function Services() {
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{
-                  transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)`,
+                  transform: `translateX(-${
+                    currentSlide * (100 / slidesPerView)
+                  }%)`,
                 }}
               >
                 {services.map((service, index) => (
@@ -196,7 +207,7 @@ export default function Services() {
                     style={{ width: `${100 / slidesPerView}%` }}
                   >
                     {/* Card with extra top padding for icon */}
-                    <div className="relative rounded-2xl shadow-lg group/card cursor-pointer bg-white mt-8">
+                    <div className="relative rounded-2xl  group/card cursor-pointer bg-white mt-8">
                       {/* Service Image */}
                       <div className="relative h-80 overflow-hidden ">
                         <img
@@ -288,11 +299,6 @@ export default function Services() {
             )}
           </div>
 
-          <div className="text-center mt-12">
-            <span className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base font-semibold transition-all duration-300 transform hover:scale-105 ">
-              More Services
-            </span>
-          </div>
         </div>
       </section>
     </section>

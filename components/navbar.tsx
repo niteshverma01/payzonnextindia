@@ -11,9 +11,11 @@ import {
   Facebook,
   Sparkles,
   Star,
+  ArrowRight,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Instagram, Youtube, Linkedin, Twitter } from "lucide-react";
+import { de } from "date-fns/locale";
 
 interface NavigationItem {
   name: string;
@@ -91,6 +93,7 @@ const ItfirmLogo: React.FC<ItfirmLogoProps> = ({ isScrolled }) => {
     </div>
   );
 };
+
 const navigationItems: NavigationItem[] = [
   {
     name: "Ventures",
@@ -163,7 +166,7 @@ const marqueeContent = [
   "Contact Us Today",
 ];
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -296,10 +299,7 @@ const Navbar: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Instagram
-                            size={20}
-                            strokeWidth={2.2}
-                          />
+                          <Instagram size={20} strokeWidth={2.2} />
                         </a>
                         <a
                           href="https://x.com/payzonindia"
@@ -307,10 +307,7 @@ const Navbar: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Twitter
-                            size={20}
-                            strokeWidth={2.2}
-                          />
+                          <Twitter size={20} strokeWidth={2.2} />
                         </a>
                         <a
                           href="https://www.youtube.com/channel/UCSjsk1O7zYurXPDl2o3RuIA"
@@ -318,10 +315,7 @@ const Navbar: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Youtube
-                            size={20}
-                            strokeWidth={2.2}
-                          />
+                          <Youtube size={20} strokeWidth={2.2} />
                         </a>
                         <a
                           href="https://www.linkedin.com/company/payzonindiabhopal/posts/?feedView=all"
@@ -329,10 +323,7 @@ const Navbar: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Linkedin
-                            size={20}
-                            strokeWidth={2.2}
-                          />
+                          <Linkedin size={20} strokeWidth={2.2} />
                         </a>
                         <a
                           href="https://www.facebook.com/PAYZONINDIA/"
@@ -340,10 +331,7 @@ const Navbar: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
                         >
-                          <Facebook
-                            size={20}
-                            strokeWidth={2.2}
-                          />
+                          <Facebook size={20} strokeWidth={2.2} />
                         </a>
                       </div>
                     </div>
@@ -397,37 +385,31 @@ const Navbar: React.FC = () => {
                         )}
                       </button>
 
-                      {/* Enhanced Dropdown */}
+                      {/* ENHANCED PROFESSIONAL DROPDOWN */}
                       {item.hasDropdown && openDropdown === item.name && (
-                        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-72 z-50">
-                          {/* Dropdown arrow */}
+                        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-64 z-50">
+                          {/* Clean Arrow */}
                           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
-                            <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white/95 drop-shadow-lg"></div>
+                            <div className="w-4 h-4 bg-white rotate-45 shadow-lg border border-gray-100"></div>
                           </div>
 
-                          {/* Main dropdown container */}
-                          <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden animate-dropdown-enter">
-                            {/* Gradient background overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/80 to-purple-50/50"></div>
-
-                            {/* Header section */}
-                            <div className="relative z-10 px-6 py-4 border-b border-gray-100/80 bg-gradient-to-r from-blue-700/5 to-blue-800/5">
+                          {/* Professional Dropdown Container */}
+                          <div className="relative bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-dropdown-fade-in">
+                            {/* Clean Header */}
+                            <div className="px-6 py-4 bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-100 flex text-center items-center justify-center">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8   flex items-center justify-center text-white font-bold text-sm ">
-                                  {item.icon}
-                                </div>
-                                <h3 className="text-lg font-bold text-gray-800 tracking-wide">
+                                <h3 className="text-lg font-semibold text-gray-800">
                                   {item.name}
                                 </h3>
                               </div>
                             </div>
 
-                            {/* Dropdown items */}
-                            <div className="relative z-10 py-2">
+                            {/* Clean Menu Items */}
+                            <div className="py-2">
                               {item.dropdownItems.map((drop, idx) => (
                                 <button
                                   key={idx}
-                                  className="group flex items-center w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 relative overflow-hidden border-l-4 border-transparent hover:border-blue-400 hover:shadow-lg transform hover:translate-x-2"
+                                  className="group flex items-center w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-600 hover:text-white rounded-3xl transition-all duration-200 relative "
                                   onClick={() =>
                                     handleSmoothScroll(
                                       `#${drop
@@ -435,32 +417,26 @@ const Navbar: React.FC = () => {
                                         .replace(/\s+/g, "-")}`
                                     )
                                   }
-                                  style={{
-                                    animationDelay: `${idx * 50}ms`,
-                                  }}
                                 >
-                                  {/* Hover background effect */}
-                                  {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-600/0 group-hover:from-blue-500/20 group-hover:to-purple-600/20 transition-all duration-300 opacity-0 group-hover:opacity-100"></div> */}
+                                  {/* Simple Dot Indicator */}
+                                  <div className="w-2 h-2 rounded-full bg-black mr-4 group-hover:bg-white transition-colors duration-200"></div>
 
-                                  {/* Icon */}
-                                  <div className="relative z-10 w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mr-4 group-hover:scale-150 group-hover:from-white group-hover:to-blue-100 transition-all duration-300 shadow-sm"></div>
-
-                                  {/* Text */}
-                                  <span className="relative z-10 group-hover:font-semibold transition-all duration-200">
+                                  {/* Menu Text */}
+                                  <span className="flex-1 group-hover:translate-x-1 transition-transform duration-200">
                                     {drop}
                                   </span>
 
-                                  {/* Arrow indicator */}
-                                  <ChevronDown
+                                  {/* Arrow on Hover */}
+                                  <ArrowRight
                                     size={14}
-                                    className="relative z-10 ml-auto transform -rotate-90 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-black"
+                                    className="opacity-0 group-hover:opacity-100 transition-all duration-200 text-black transform group-hover:text-white group-hover:translate-x-1"
                                   />
                                 </button>
                               ))}
                             </div>
 
-                            {/* Footer gradient */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+                            {/* Subtle Bottom Border */}
+                            {/* <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div> */}
                           </div>
                         </div>
                       )}
@@ -481,7 +457,7 @@ const Navbar: React.FC = () => {
         />
       )}
 
-      {/* Mobile Menu Sidebar - COMPLETELY ENHANCED */}
+      {/* Mobile Menu Sidebar */}
       <div
         className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-[100vw] bg-gradient-to-br from-slate-50 via-white to-purple-50 shadow-2xl transform transition-all duration-500 z-50 ${
           isMobileMenuOpen
@@ -489,9 +465,8 @@ const Navbar: React.FC = () => {
             : "translate-x-full opacity-0"
         }`}
       >
-        {/* Mobile Menu Header - Enhanced */}
+        {/* Mobile Menu Header */}
         <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
-          {/* Animated background elements */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-indigo-700/90"></div>
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-full translate-x-12 translate-y-12"></div>
@@ -522,7 +497,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Content - Enhanced */}
+        {/* Mobile Menu Content */}
         <div className="h-full overflow-y-auto pb-20">
           <div className="px-6 py-6">
             <ul className="space-y-4">
@@ -558,15 +533,13 @@ const Navbar: React.FC = () => {
                               : "text-gray-400"
                           }`}
                         />
-                        {/* {openDropdown === item.name && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-ping"></div>
-                        )} */}
                       </div>
                     )}
                   </button>
 
+                  {/* ENHANCED MOBILE DROPDOWN */}
                   {item.hasDropdown && openDropdown === item.name && (
-                    <div className="mt-4 ml-8 space-y-3 animate-mobile-dropdown">
+                    <div className="mt-4 ml-8 space-y-2 animate-mobile-dropdown">
                       {item.dropdownItems.map((drop, idx) => (
                         <button
                           key={idx}
@@ -575,20 +548,19 @@ const Navbar: React.FC = () => {
                               `#${drop.toLowerCase().replace(/\s+/g, "-")}`
                             )
                           }
-                          className="flex items-center w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-white bg-gradient-to-r from-gray-50 to-blue-50 hover:from-blue-400 hover:to-purple-500 rounded-xl border border-gray-200 hover:border-transparent transform hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-lg group relative overflow-hidden"
+                          className="flex items-center w-full text-left px-4 py-3 text-sm font-medium text-gray-700 hover:text-blue-700 bg-white hover:bg-blue-50 rounded-lg border border-gray-100 hover:border-blue-200 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md group"
                           style={{
                             animationDelay: `${idx * 50}ms`,
-                            animation:
-                              openDropdown === item.name
-                                ? "slideInFromRight 0.4s ease-out forwards"
-                                : "",
                           }}
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"></div>
-                          <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 group-hover:bg-white group-hover:scale-150 transition-all duration-200 relative z-10"></div>
-                          <span className="group-hover:translate-x-1 transition-transform duration-200 relative z-10">
+                          <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3 group-hover:bg-blue-500 transition-colors duration-200"></div>
+                          <span className="flex-1 group-hover:translate-x-1 transition-transform duration-200">
                             {drop}
                           </span>
+                          <ArrowRight
+                            size={12}
+                            className="opacity-0 group-hover:opacity-100 transition-all duration-200 text-blue-500"
+                          />
                         </button>
                       ))}
                     </div>
@@ -598,7 +570,7 @@ const Navbar: React.FC = () => {
             </ul>
           </div>
 
-          {/* Enhanced Social Section */}
+          {/* Social Section */}
           <div className="mx-6 mb-6 p-6 bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-3xl shadow-lg border border-purple-100">
             <div className="flex items-center gap-2 mb-4">
               <Star className="w-5 h-5 text-purple-600" />
@@ -650,7 +622,7 @@ const Navbar: React.FC = () => {
               ))}
             </div>
 
-            {/* Enhanced WhatsApp Section */}
+            {/* WhatsApp Section */}
             <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 hover:border-green-300 transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md">
               <a
                 href="https://wa.me/919243837546"
@@ -669,7 +641,6 @@ const Navbar: React.FC = () => {
                     +91 9243837546
                   </p>
                 </div>
-                {/* <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div> */}
               </a>
             </div>
           </div>
@@ -681,30 +652,6 @@ const Navbar: React.FC = () => {
           from {
             opacity: 0;
             transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            max-height: 0;
-            transform: translateY(-5px);
-          }
-          to {
-            opacity: 1;
-            max-height: 500px;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInFromLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
           }
           to {
             opacity: 1;
@@ -723,16 +670,14 @@ const Navbar: React.FC = () => {
           }
         }
 
-        @keyframes dropdown-enter {
+        @keyframes dropdown-fade-in {
           from {
             opacity: 0;
-            transform: translateY(-20px) scale(0.95);
-            filter: blur(4px);
+            transform: translateY(-10px) scale(0.98);
           }
           to {
             opacity: 1;
             transform: translateY(0) scale(1);
-            filter: blur(0);
           }
         }
 
@@ -766,12 +711,12 @@ const Navbar: React.FC = () => {
           animation: slideDown 0.3s ease-out;
         }
 
-        .animate-dropdown-enter {
-          animation: dropdown-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .animate-dropdown-fade-in {
+          animation: dropdown-fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .animate-mobile-dropdown {
-          animation: mobile-dropdown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          animation: mobile-dropdown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Smooth scrolling for the entire page */
@@ -818,6 +763,4 @@ const Navbar: React.FC = () => {
       `}</style>
     </>
   );
-};
-
-export default Navbar;
+}

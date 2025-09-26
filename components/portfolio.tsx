@@ -9,97 +9,119 @@ import {
   Lock,
   BarChart3,
   Search,
-  Users,
-  Building,
+  ArrowRight,
   Plus,
 } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+
+// Define the type for portfolio items
+interface PortfolioItem {
+  id: number; // Added unique identifier
+  title: string;
+  category: string;
+  image: string;
+  img: string;
+  description: string;
+  url: string;
+}
 
 const categories = [
   "All",
-  "Cloud Services",
-  "Cyber Security",
-  "IT Security",
-  "Networking",
-];
+  "IT Services",
+  "Digital Marketing",
+  "E-Commerce",
+  "Fintech",
+  "Media",
+  "NGO & Trust",
+] as const;
 
-// Map portfolio items to icons for visual consistency
-const portfolioItems = [
+// Portfolio items with updated categories and URLs
+const portfolioItems: PortfolioItem[] = [
   {
-    title: "Product Engineering",
-    category: "Cloud Services",
+    id: 1,
+    title: "PayzonIt Services",
+    category: "IT Services",
     image: "/product-engineering-team.jpg",
-    icon: Cloud,
+    img: "/images/payzonit.png",
     description:
-      "Innovative product engineering solutions to drive your business forward with cutting-edge cloud technology.",
+      "Payzon IT Services delivers innovative software development, cloud solutions, and IT consulting to empower businesses with scalable and secure digital infrastructure.",
+    url: "https://www.payzonitservices.com/",
   },
   {
-    title: "Firewall Advance",
-    category: "IT Security",
+    id: 2,
+    title: "Payzon Marketing",
+    category: "Digital Marketing",
     image: "/firewall-security-technology.jpg",
-    icon: Shield,
+    img: "/images/logo.png",
     description:
-      "Advanced firewall solutions to protect your IT infrastructure from threats and vulnerabilities.",
+      "Payzon Marketing provides end-to-end digital marketing solutions including SEO, social media management, and online branding to help businesses grow their digital presence.",
+    url: "https://www.payzonmarketing.com/",
   },
   {
-    title: "Data Management",
-    category: "IT Security",
+    id: 3,
+    title: "Payzon Shoppy",
+    category: "E-Commerce",
     image: "/data-management-professionals.jpg",
-    icon: Lock,
+    img: "/images/shoppy-logo.png",
     description:
-      "Secure and efficient data management systems to ensure compliance and accessibility.",
+      "Payzon Shoppy is a modern e-commerce platform offering a wide range of products with secure payments, fast delivery, and a seamless shopping experience.",
+    url: "https://payzonshoppy.com/",
   },
   {
-    title: "Big Data & Analytics",
-    category: "Cloud Services",
+    id: 4,
+    title: "Payzon API",
+    category: "Fintech",
     image: "/big-data-analytics.png",
-    icon: BarChart3,
+    img: "/images/logo.png",
     description:
-      "Harness the power of big data with advanced analytics to drive business insights.",
+      "Payzon API offers advanced fintech and payment gateway solutions, enabling businesses to integrate secure and scalable transaction systems with ease.",
+    url: "https://www.payzonapi.com/",
   },
   {
-    title: "Research & Energy",
-    category: "Networking",
+    id: 5,
+    title: "Sadaiv Satya",
+    category: "Media",
     image: "/research-and-energy-technology.jpg",
-    icon: Search,
+    img: "/images/Sadaiv MEDIA 1.png",
     description:
-      "Cutting-edge research and energy solutions powered by robust networking infrastructure.",
+      "Sadaiv Satya is a trusted digital media and news platform committed to delivering authentic, reliable, and unbiased news updates across multiple domains.",
+    url: "https://www.sadaivsatya.com/",
   },
   {
-    title: "Security Management",
-    category: "Cyber Security",
+    id: 6,
+    title: "Sadaiv Yuva Foundation",
+    category: "NGO & Trust",
     image: "/security-management-team.jpg",
-    icon: Shield,
+    img: "/images/Sadaiv_logo.png",
     description:
-      "Comprehensive security management to safeguard your digital assets from cyber threats.",
-  },
-  {
-    title: "Internal Networking",
-    category: "Networking",
-    image: "/internal-networking-infrastructure.jpg",
-    icon: Network,
-    description:
-      "Seamless internal networking solutions to enhance connectivity and collaboration.",
-  },
-  {
-    title: "Property Simplified",
-    category: "Networking",
-    image: "/property-management-technology.jpg",
-    icon: Building,
-    description:
-      "Streamlined property management solutions powered by advanced networking technology.",
+      "Sadaiv Yuva Foundation is a non-profit organization dedicated to youth empowerment, education, healthcare, and social welfare initiatives across communities.",
+    url: "https://www.sadaivyuvafoundation.com/",
   },
 ];
 
-export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredItems =
+// Map categories to a single portfolio item
+const categoryToItemMap: Record<string, PortfolioItem> = {
+  "IT Services": portfolioItems[0], // PayzonIt Services
+  "Digital Marketing": portfolioItems[1], // Payzon Marketing
+  "E-Commerce": portfolioItems[2], // Payzon Shoppy
+  Fintech: portfolioItems[3], // Payzon API
+  Media: portfolioItems[4], // Sadaiv Satya
+  "NGO & Trust": portfolioItems[5], // Sadaiv Yuva Foundation
+};
+export default function Portfolio() {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  // Determine items to display
+  const filteredItems: PortfolioItem[] =
     activeCategory === "All"
       ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+      : categoryToItemMap[activeCategory]
+      ? [categoryToItemMap[activeCategory]]
+      : [];
 
   return (
-    <section className=" py-12 sm:py-16 lg:py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto pt-12 text-start mb-12 grid grid-cols-1 sm:grid-cols-2">
           <div>
@@ -114,8 +136,8 @@ export default function Portfolio() {
               by <span className="text-blue-600">millions of users!</span>
             </h2>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto  text-xl font-medium">
-            We shows only the best websites and portfolios built completely with
+          <p className="text-gray-600 max-w-2xl mx-auto text-xl font-medium">
+            We show only the best websites and portfolios built completely with
             passion, simplicity & creativity.
           </p>
         </div>
@@ -136,80 +158,126 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {filteredItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative rounded-2xl shadow-lg group/card cursor-pointer bg-white mt-8"
-            >
-              {/* Card Image */}
-              <div className="relative h-80 overflow-hidden">
-                <img
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
-                />
-
-                {/* Default Blue Strip at bottom - diagonal cut */}
-                <div className="absolute bottom-0 left-0 right-0 transition-all duration-500 group-hover/card:-translate-y-full">
-                  {/* Blue background wrapper */}
-                  <div className="relative h-32">
-                    {/* Before pseudo - top diagonal */}
-                    <div
-                      className="absolute inset-0 bg-black/80"
-                      style={{
-                        clipPath: "polygon(0 30%, 100% 0%, 100% 100%, 0% 100%)",
-                        zIndex: 1,
-                      }}
-                    />
-                    {/* After pseudo - for shadow/overlay */}
-                    <div
-                      className="absolute inset-0 bg-black/10"
-                      style={{
-                        clipPath: "polygon(0 30%, 100% 0%, 100% 100%, 0% 100%)",
-                        zIndex: 2,
-                      }}
+        {activeCategory === "All" ? (
+          // Grid layout for "All" category
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {filteredItems.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="relative rounded-2xl shadow-lg group/card cursor-pointer bg-white mt-8"
+                >
+                  {/* Card Image */}
+                  <div className="relative h-80 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
                     />
 
-                    {/* Title and Category */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-6 z-10">
-                      <h3 className="text-lg font-bold text-white leading-tight px-2">
+                    {/* Default Blue Strip at bottom - diagonal cut */}
+                    <div className="absolute bottom-0 left-0 right-0 transition-all duration-500 group-hover/card:-translate-y-full">
+                      <div className="relative h-36">
+                        <div
+                          className="absolute inset-0 bg-black/80"
+                          style={{
+                            clipPath:
+                              "polygon(0 30%, 100% 0%, 100% 100%, 0% 100%)",
+                            zIndex: 1,
+                          }}
+                        />
+                        <div
+                          className="absolute inset-0 bg-black/10"
+                          style={{
+                            clipPath:
+                              "polygon(0 30%, 100% 0%, 100% 100%, 0% 100%)",
+                            zIndex: 2,
+                          }}
+                        />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-6 z-10">
+                          <h3 className="text-lg font-bold text-white leading-tight px-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-purple-400 mt-1">
+                            {item.category}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Hover Overlay - slides up from bottom */}
+                    <div className="absolute inset-0 bg-blue-600 text-white flex flex-col justify-center p-6 text-center transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-in-out">
+                      <h3 className="text-xl font-bold mb-4 text-white">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-purple-400 mt-1">
-                        {item.category}
+                      <p className="text-sm text-blue-50 mb-6 leading-relaxed">
+                        {item.description}
                       </p>
+                      <div className="flex justify-center">
+                        <Button
+                          asChild
+                          className="bg-white text-black hover:bg-blue-100 hover:text-blue-600 p-3 rounded-full transition-all duration-300"
+                        >
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Plus className="w-6 h-6" strokeWidth={3} />
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Hover Overlay - slides up from bottom */}
-                <div className="absolute inset-0 bg-blue-600 text-white flex flex-col justify-center p-6 text-center transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-in-out">
-                  <h3 className="text-xl font-bold mb-4 text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-blue-50 mb-6 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <div className="flex justify-center">
-                    <div className="bg-white p-3 rounded-full shadow-md transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
-                      <Plus
-                        className="text-black transition-colors duration-300 ease-in-out hover:text-blue-600"
-                        strokeWidth={3}
+              );
+            })}
+          </div>
+        ) : (
+          // Single item layout for specific categories
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 hover:shadow-3xl hover:-translate-y-2 border border-gray-100">
+            {filteredItems.length > 0 && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 p-4">
+                <div className="relative overflow-hidden group ">
+                  {(() => {
+                    return (
+                      <img
+                        src={filteredItems[0].img}
+                        alt={filteredItems[0].title}
+                        className="w-full h-64 lg:h-full object-cover transition-all "
                       />
-                    </div>
+                    );
+                  })()}
+                </div>
+
+                <div className="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight tracking-tight">
+                      {filteredItems[0].title}
+                    </h3>
+                    <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+                      {filteredItems[0].description}
+                    </p>
                   </div>
+
+                  <Button
+                    asChild
+                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg group w-fit"
+                  >
+                    <a
+                      href={filteredItems[0].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Visit Project</span>
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                  </Button>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <span className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base font-semibold transition-all duration-300 transform hover:scale-105">
-            Load more
-          </span>
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
