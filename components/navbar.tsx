@@ -22,7 +22,6 @@ interface NavigationItem {
   href: string;
   hasDropdown: boolean;
   dropdownItems: string[];
-  icon: string;
 }
 
 interface DotPatternProps {
@@ -105,14 +104,12 @@ const navigationItems: NavigationItem[] = [
       "E-Commerce",
       "Fintech Solutions",
     ],
-    icon: "🚀",
   },
   {
     name: "Associations",
     href: "#associations",
     hasDropdown: true,
     dropdownItems: ["Media", "Social Welfare", "Finance Audits"],
-    icon: "🤝",
   },
   {
     name: "Audit Report",
@@ -124,7 +121,6 @@ const navigationItems: NavigationItem[] = [
       "Annual Reviews",
       "Transparency Reports",
     ],
-    icon: "📋",
   },
   {
     name: "Investor Program",
@@ -136,7 +132,6 @@ const navigationItems: NavigationItem[] = [
       "Returns Analysis",
       "Join Program",
     ],
-    icon: "💎",
   },
   {
     name: "Working Sector",
@@ -154,7 +149,6 @@ const navigationItems: NavigationItem[] = [
       "Clothing",
       "Electronics",
     ],
-    icon: "🏢",
   },
 ];
 
@@ -385,31 +379,36 @@ export default function Navbar() {
                         )}
                       </button>
 
-                      {/* ENHANCED PROFESSIONAL DROPDOWN */}
                       {item.hasDropdown && openDropdown === item.name && (
-                        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-64 z-50">
-                          {/* Clean Arrow */}
-                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
-                            <div className="w-4 h-4 bg-white rotate-45 shadow-lg border border-gray-100"></div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-72 z-50 dropdown-animation">
+                          {/* Elegant Arrow */}
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3">
+                            <div className="w-6 h-6 rotate-45 bg-blue-900 shadow-lg border border-blue-100/50"></div>
                           </div>
 
-                          {/* Professional Dropdown Container */}
-                          <div className="relative bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-dropdown-fade-in">
-                            {/* Clean Header */}
-                            <div className="px-6 py-4 bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-100 flex text-center items-center justify-center">
-                              <div className="flex items-center gap-3">
-                                <h3 className="text-lg font-semibold text-gray-800">
-                                  {item.name}
-                                </h3>
+                          {/* Glassmorphism Dropdown Container */}
+                          <div className="relative bg-gradient-to-br from-white/95 via-blue-50/90 to-blue-50/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/60 overflow-hidden">
+                            {/* Animated gradient overlay */}
+                            
+                            {/* Elegant Header with Icon */}
+                            <div className="relative flex items-center justify-center px-8 py-3 bg-blue-900 border-b border-blue-100/30">
+                              <div className="flex items-center gap-4">
+                              
+                                <div>
+                                  <h3 className="text-xl font-bold  text-white">
+                                    {item.name}
+                                  </h3>
+                                 
+                                </div>
                               </div>
                             </div>
 
-                            {/* Clean Menu Items */}
-                            <div className="py-2">
+                            {/* Beautiful Menu Items */}
+                            <div className="relative py-4 px-2 bg-gradient-to-r from-blue-900 to-purple-900">
                               {item.dropdownItems.map((drop, idx) => (
                                 <button
                                   key={idx}
-                                  className="group flex items-center w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-600 hover:text-white rounded-3xl transition-all duration-200 relative "
+                                  className="group relative flex items-center w-full text-left mx-1 mb-1 px-4 py-1 text-base font-semibold text-white hover:text-white bg-blue-600  hover:bg-blue-800 rounded-3xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl border border-blue-100/30 hover:border-transparent backdrop-blur-sm"
                                   onClick={() =>
                                     handleSmoothScroll(
                                       `#${drop
@@ -417,26 +416,40 @@ export default function Navbar() {
                                         .replace(/\s+/g, "-")}`
                                     )
                                   }
+                                  style={{
+                                    animationDelay: `${idx * 50}ms`,
+                                    animation: 'fadeInUp 0.6s ease-out forwards'
+                                  }}
                                 >
-                                  {/* Simple Dot Indicator */}
-                                  <div className="w-2 h-2 rounded-full bg-black mr-4 group-hover:bg-white transition-colors duration-200"></div>
+                                  {/* Animated background glow */}
+                                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-blue-400/0 group-hover:from-blue-400/20 group-hover:via-purple-400/20 group-hover:to-blue-400/20 rounded-2xl transition-all duration-500"></div>
+                                  
+                                  {/* Icon with gradient background */}
+                                  {/* <div className="relative w-10 h-10 mr-4 rounded-xl bg-gradient-to-br from-blue-100 to-blue-100 group-hover:from-white/20 group-hover:to-white/10 flex items-center justify-center shadow-inner transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
+                                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 group-hover:from-white group-hover:to-blue-100 transition-all duration-300 shadow-sm"></div>
+                                  </div> */}
 
-                                  {/* Menu Text */}
-                                  <span className="flex-1 group-hover:translate-x-1 transition-transform duration-200">
+                                  {/* Menu Text with enhanced typography */}
+                                  <span className="flex-1 relative z-10 group-hover:translate-x-1 transition-all duration-300">
                                     {drop}
                                   </span>
 
-                                  {/* Arrow on Hover */}
-                                  <ArrowRight
-                                    size={14}
-                                    className="opacity-0 group-hover:opacity-100 transition-all duration-200 text-black transform group-hover:text-white group-hover:translate-x-1"
-                                  />
+                                  {/* Animated Arrow with glow effect */}
+                                  <div className="relative w-8 h-8 flex items-center justify-center">
+                                    <ArrowRight
+                                      size={18}
+                                      className="opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:scale-110 text-gray-600 group-hover:text-white drop-shadow-lg"
+                                    />
+                                    <div className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/20 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                                  </div>
+
+                                  {/* Subtle shine effect */}
+                                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
                                 </button>
                               ))}
                             </div>
 
-                            {/* Subtle Bottom Border */}
-                            {/* <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div> */}
+                            {/* Elegant bottom accent */}
                           </div>
                         </div>
                       )}
@@ -466,8 +479,8 @@ export default function Navbar() {
         }`}
       >
         {/* Mobile Menu Header */}
-        <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-indigo-700/90"></div>
+        <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-blue-700/90"></div>
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-full translate-x-12 translate-y-12"></div>
 
@@ -537,32 +550,39 @@ export default function Navbar() {
                     )}
                   </button>
 
-                  {/* ENHANCED MOBILE DROPDOWN */}
+                  {/* ENHANCED MOBILE DROPDOWN WITH GLASSMORPHISM */}
                   {item.hasDropdown && openDropdown === item.name && (
-                    <div className="mt-4 ml-8 space-y-2 animate-mobile-dropdown">
-                      {item.dropdownItems.map((drop, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() =>
-                            handleSmoothScroll(
-                              `#${drop.toLowerCase().replace(/\s+/g, "-")}`
-                            )
-                          }
-                          className="flex items-center w-full text-left px-4 py-3 text-sm font-medium text-gray-700 hover:text-blue-700 bg-white hover:bg-blue-50 rounded-lg border border-gray-100 hover:border-blue-200 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md group"
-                          style={{
-                            animationDelay: `${idx * 50}ms`,
-                          }}
-                        >
-                          <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3 group-hover:bg-blue-500 transition-colors duration-200"></div>
-                          <span className="flex-1 group-hover:translate-x-1 transition-transform duration-200">
-                            {drop}
-                          </span>
-                          <ArrowRight
-                            size={12}
-                            className="opacity-0 group-hover:opacity-100 transition-all duration-200 text-blue-500"
-                          />
-                        </button>
-                      ))}
+                    <div className="mt-4 ml-4 space-y-3 mobile-dropdown-animation">
+                      <div className="bg-gradient-to-br from-white/80 to-blue-50/60 backdrop-blur-lg rounded-2xl p-4 border border-blue-100/50 shadow-lg">
+                        {item.dropdownItems.map((drop, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() =>
+                              handleSmoothScroll(
+                                `#${drop.toLowerCase().replace(/\s+/g, "-")}`
+                              )
+                            }
+                            className="group flex items-center w-full text-left px-4 py-3 mb-2 text-sm font-semibold text-gray-700 hover:text-white bg-white/60 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-xl border border-blue-100/30 hover:border-transparent transform hover:scale-[1.02] transition-all duration-300 shadow-sm hover:shadow-lg backdrop-blur-sm"
+                            style={{
+                              animationDelay: `${idx * 50}ms`,
+                            }}
+                          >
+                            {/* Icon with gradient */}
+                            <div className="w-8 h-8 mr-3 rounded-lg bg-gradient-to-br from-blue-100 to-blue-100 group-hover:from-white/20 group-hover:to-white/10 flex items-center justify-center shadow-inner transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3">
+                              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 group-hover:from-white group-hover:to-blue-100 rounded-full transition-all duration-300"></div>
+                            </div>
+                            
+                            <span className="flex-1 group-hover:translate-x-1 transition-transform duration-300">
+                              {drop}
+                            </span>
+                            
+                            <ArrowRight
+                              size={14}
+                              className="opacity-40 group-hover:opacity-100 transition-all duration-300 text-gray-600 group-hover:text-white transform group-hover:translate-x-1"
+                            />
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </li>
@@ -659,6 +679,17 @@ export default function Navbar() {
           }
         }
 
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
         @keyframes slideInFromRight {
           from {
             opacity: 0;
@@ -673,7 +704,7 @@ export default function Navbar() {
         @keyframes dropdown-fade-in {
           from {
             opacity: 0;
-            transform: translateY(-10px) scale(0.98);
+            transform: translateY(-20px) scale(0.95);
           }
           to {
             opacity: 1;
@@ -685,12 +716,12 @@ export default function Navbar() {
           from {
             opacity: 0;
             max-height: 0;
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(0.98);
           }
           to {
             opacity: 1;
-            max-height: 500px;
-            transform: translateY(0);
+            max-height: 600px;
+            transform: translateY(0) scale(1);
           }
         }
 
@@ -701,6 +732,23 @@ export default function Navbar() {
           100% {
             transform: translateX(100%);
           }
+        }
+
+        @keyframes pulse-glow {
+          0%, 100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+          }
+        }
+
+        .dropdown-animation {
+          animation: dropdown-fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-dropdown-animation {
+          animation: mobile-dropdown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .animate-fadeIn {
@@ -740,6 +788,21 @@ export default function Navbar() {
           -webkit-backdrop-filter: blur(12px);
         }
 
+        /* Glassmorphism effect */
+        .backdrop-blur-lg {
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Enhanced glow effects */
+        .shadow-glow {
+          box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .shadow-glow-hover:hover {
+          box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
         /* Smooth transitions for all interactive elements */
         * {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -759,6 +822,87 @@ export default function Navbar() {
             min-height: 44px;
             min-width: 44px;
           }
+        }
+
+        /* Custom scrollbar for dropdown */
+        .dropdown-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .dropdown-scrollbar::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+
+        .dropdown-scrollbar::-webkit-scrollbar-thumb {
+          background: linear-gradient(to bottom, #3b82f6, #6366f1);
+          border-radius: 10px;
+        }
+
+        .dropdown-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(to bottom, #2563eb, #4f46e5);
+        }
+
+        /* Enhanced gradient animations */
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient-shift 3s ease infinite;
+        }
+
+        /* Floating animation for icons */
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        /* Ripple effect */
+        @keyframes ripple {
+          0% {
+            transform: scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+
+        .ripple-effect::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 5px;
+          height: 5px;
+          background: rgba(255, 255, 255, 0.5);
+          opacity: 0;
+          border-radius: 100%;
+          transform: scale(1, 1) translate(-50%);
+          transform-origin: 50% 50%;
+        }
+
+        .ripple-effect:hover::after {
+          animation: ripple 0.6s ease-out;
         }
       `}</style>
     </>
