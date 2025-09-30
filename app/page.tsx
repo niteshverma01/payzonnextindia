@@ -19,7 +19,7 @@ import BusinessShowcase from "@/components/orbite";
 import PayZoneFAQ from "@/components/faq";
 import ITSolutionsSection from "@/components/blogs";
 import DigitalMarketingUI from "@/components/marketingpage";
-import CybersecuritySliderUI from "@/components/cyber";
+import CybersecuritySliderUI from "@/components/cyber1";
 import HowItWorks from "@/components/onemore";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       <AwardsAchievements />
       <ProfessionalStaff />
       <Portfolio />
-      {/* <MarqueeDemo /> */}
+     
       {/* <Services /> */}
       <DigitalMarketingUI />
       {/* <Stats /> */}
@@ -42,6 +42,7 @@ export default function Home() {
       {/* <MarketingSection /> */}
       {/* <BusinessShowcase /> */}
       {/* <NewComponent /> */}
+       <MarqueeDemo />
       <Testimonials />
       <PayZoneFAQ />
       <ScrollToTop />

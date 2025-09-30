@@ -379,36 +379,41 @@ export default function Navbar() {
                         )}
                       </button>
 
+                      {/* ENHANCED DESKTOP DROPDOWN */}
                       {item.hasDropdown && openDropdown === item.name && (
                         <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-72 z-50 dropdown-animation">
-                          {/* Elegant Arrow */}
+                          {/* Elegant Arrow with Glow */}
                           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3">
-                            <div className="w-6 h-6 rotate-45 bg-blue-900 shadow-lg border border-blue-100/50"></div>
+                            <div className="w-6 h-6 rotate-45 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-900 shadow-2xl border border-cyan-400/30"></div>
                           </div>
 
-                          {/* Glassmorphism Dropdown Container */}
-                          <div className="relative bg-gradient-to-br from-white/95 via-blue-50/90 to-blue-50/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/60 overflow-hidden">
-                            {/* Animated gradient overlay */}
+                          {/* Enhanced Glassmorphism Container */}
+                          <div className="relative bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-blue-900/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-cyan-400/20 overflow-hidden">
+                            {/* Animated Background Effects */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-blue-500/5 animate-pulse"></div>
                             
-                            {/* Elegant Header with Icon */}
-                            <div className="relative flex items-center justify-center px-8 py-3 bg-blue-900 border-b border-blue-100/30">
-                              <div className="flex items-center gap-4">
-                              
-                                <div>
-                                  <h3 className="text-xl font-bold  text-white">
-                                    {item.name}
-                                  </h3>
-                                 
-                                </div>
+                          
+
+                            {/* Glowing Header */}
+                            <div className="relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 border-b border-cyan-400/30">
+                              <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></div>
+                                <h3 className="text-xl font-black text-white uppercase tracking-wide">
+                                  {item.name}
+                                </h3>
+                                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full animate-pulse delay-500"></div>
                               </div>
+                              
+                              {/* Animated glow line */}
+                              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
                             </div>
 
-                            {/* Beautiful Menu Items */}
-                            <div className="relative py-4 px-2 bg-gradient-to-r from-blue-900 to-purple-900">
+                            {/* Enhanced Menu Items */}
+                            <div className="relative py-3 px-3">
                               {item.dropdownItems.map((drop, idx) => (
                                 <button
                                   key={idx}
-                                  className="group relative flex items-center w-full text-left mx-1 mb-1 px-4 py-1 text-base font-semibold text-white hover:text-white bg-blue-600  hover:bg-blue-800 rounded-3xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl border border-blue-100/30 hover:border-transparent backdrop-blur-sm"
+                                  className="group relative flex items-center w-full text-left mx-1 mb-1 px-5 py-0 text-base font-bold text-white hover:text-cyan-100 bg-gradient-to-r from-slate-800/60 to-blue-800/60 hover:from-green-600 hover:to-blue-600/40 rounded-3xl transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl border border-slate-700/50 hover:border-cyan-400/50 backdrop-blur-lg overflow-hidden"
                                   onClick={() =>
                                     handleSmoothScroll(
                                       `#${drop
@@ -417,39 +422,40 @@ export default function Navbar() {
                                     )
                                   }
                                   style={{
-                                    animationDelay: `${idx * 50}ms`,
-                                    animation: 'fadeInUp 0.6s ease-out forwards'
+                                    animationDelay: `${idx * 80}ms`,
+                                    animation: 'fadeInUp 0.7s ease-out forwards'
                                   }}
                                 >
-                                  {/* Animated background glow */}
-                                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-blue-400/0 group-hover:from-blue-400/20 group-hover:via-purple-400/20 group-hover:to-blue-400/20 rounded-2xl transition-all duration-500"></div>
+                                  {/* Animated glow background */}
+                                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-cyan-400/20 group-hover:via-blue-400/20 group-hover:to-blue-400/20 rounded-2xl transition-all duration-700"></div>
                                   
-                                  {/* Icon with gradient background */}
-                                  {/* <div className="relative w-10 h-10 mr-4 rounded-xl bg-gradient-to-br from-blue-100 to-blue-100 group-hover:from-white/20 group-hover:to-white/10 flex items-center justify-center shadow-inner transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
-                                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 group-hover:from-white group-hover:to-blue-100 transition-all duration-300 shadow-sm"></div>
-                                  </div> */}
+                                  {/* Shimmer effect */}
+                                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-1000 group-hover:translate-x-full"></div>
+                                  
+                                 
 
-                                  {/* Menu Text with enhanced typography */}
-                                  <span className="flex-1 relative z-10 group-hover:translate-x-1 transition-all duration-300">
+                                  {/* Enhanced Text */}
+                                  <span className="flex-1 relative z-10 group-hover:translate-x-2 transition-all duration-500 text-slate-200 group-hover:text-white drop-shadow-lg">
                                     {drop}
                                   </span>
 
-                                  {/* Animated Arrow with glow effect */}
-                                  <div className="relative w-8 h-8 flex items-center justify-center">
+                                  {/* Enhanced Arrow with Glow */}
+                                  <div className="relative w-10 h-10 flex items-center justify-center">
                                     <ArrowRight
                                       size={18}
-                                      className="opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:scale-110 text-gray-600 group-hover:text-white drop-shadow-lg"
+                                      className="opacity-50 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-2 group-hover:scale-125 text-slate-400 group-hover:text-cyan-300 drop-shadow-lg"
                                     />
-                                    <div className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/20 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                                    <div className="absolute inset-0 rounded-full bg-cyan-400/0 group-hover:bg-cyan-400/30 transition-all duration-500 transform scale-0 group-hover:scale-100 blur-sm"></div>
                                   </div>
 
-                                  {/* Subtle shine effect */}
-                                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
+                                  {/* Corner accent */}
+                                  <div className="absolute top-2 right-2 w-2 h-2 bg-gradient-to-r from-cyan-400/60 to-blue-500/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-150"></div>
                                 </button>
                               ))}
                             </div>
 
-                            {/* Elegant bottom accent */}
+                            {/* Enhanced Bottom Gradient */}
+                            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400/50 via-blue-500/50 to-blue-500/50 rounded-b-3xl"></div>
                           </div>
                         </div>
                       )}
@@ -465,22 +471,22 @@ export default function Navbar() {
       {/* Mobile Menu Overlay - Enhanced */}
       {isMobileMenuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-gradient-to-br from-black/60 via-purple-900/20 to-blue-900/40 backdrop-blur-sm z-40 transition-all duration-500"
+          className="lg:hidden fixed inset-0 bg-gradient-to-br from-black/60 via-blue-900/20 to-blue-900/40 backdrop-blur-sm z-40 transition-all duration-500"
           onClick={toggleMobileMenu}
         />
       )}
 
       {/* Mobile Menu Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-[100vw] bg-gradient-to-br from-slate-50 via-white to-purple-50 shadow-2xl transform transition-all duration-500 z-50 ${
+        className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-[100vw] bg-gradient-to-br from-slate-50 via-white to-blue-50 shadow-2xl transform transition-all duration-500 z-50 ${
           isMobileMenuOpen
             ? "translate-x-0 opacity-100"
             : "translate-x-full opacity-0"
         }`}
       >
         {/* Mobile Menu Header */}
-        <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-purple-600/90 to-blue-700/90"></div>
+        <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-blue-600 to-blue-700 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-blue-600/90 to-blue-700/90"></div>
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-full translate-x-12 translate-y-12"></div>
 
@@ -522,7 +528,7 @@ export default function Navbar() {
                         ? handleToggle(item.name)
                         : handleSmoothScroll(item.href)
                     }
-                    className="group flex items-center justify-between w-full text-left p-4 text-base font-semibold text-gray-800 hover:text-white bg-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 hover:border-transparent"
+                    className="group flex items-center justify-between w-full text-left p-4 text-base font-semibold text-gray-800 hover:text-white bg-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 hover:border-transparent"
                     style={{
                       animationDelay: `${index * 100}ms`,
                       animation: isMobileMenuOpen
@@ -531,7 +537,7 @@ export default function Navbar() {
                     }}
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full group-hover:scale-150 group-hover:rotate-180 transition-all duration-300"></div>
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full group-hover:scale-150 group-hover:rotate-180 transition-all duration-300"></div>
                       <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">
                         {item.name}
                       </span>
@@ -542,7 +548,7 @@ export default function Navbar() {
                           size={20}
                           className={`transform transition-all duration-300 group-hover:text-white ${
                             openDropdown === item.name
-                              ? "rotate-180 text-purple-600"
+                              ? "rotate-180 text-blue-600"
                               : "text-gray-400"
                           }`}
                         />
@@ -591,9 +597,9 @@ export default function Navbar() {
           </div>
 
           {/* Social Section */}
-          <div className="mx-6 mb-6 p-6 bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-3xl shadow-lg border border-purple-100">
+          <div className="mx-6 mb-6 p-6 bg-gradient-to-br from-white via-blue-50 to-blue-50 rounded-3xl shadow-lg border border-blue-100">
             <div className="flex items-center gap-2 mb-4">
-              <Star className="w-5 h-5 text-purple-600" />
+              <Star className="w-5 h-5 text-blue-600" />
               <h3 className="text-lg font-bold text-gray-800">
                 Connect With Us
               </h3>
