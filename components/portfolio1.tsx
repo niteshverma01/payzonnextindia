@@ -36,7 +36,6 @@ const portfolioItems: PortfolioItem[] = [
     description:
       "Comprehensive security management to safeguard your critical digital assets from evolving cyber threats effectively.",
     url: "/images/Sadaiv_logo.png",
-
   },
   {
     id: 4,
@@ -47,8 +46,6 @@ const portfolioItems: PortfolioItem[] = [
     description:
       "Cutting-edge research and energy solutions powered by robust networking infrastructure.",
     url: "https://www.sadaivsatya.com/",
-
-
   },
   {
     id: 5,
@@ -59,7 +56,6 @@ const portfolioItems: PortfolioItem[] = [
     description:
       "Harness the power of big data with advanced analytics to drive business insights, optimize decision-making, enhance efficiency, and foster sustainable growth.",
     url: "https://www.payzonapi.com/",
-
   },
   {
     id: 6,
@@ -74,7 +70,6 @@ const portfolioItems: PortfolioItem[] = [
     // Added fields
   },
 ];
-
 
 const categoryToItemMap: Record<string, PortfolioItem> = {
   "IT Services": portfolioItems[0],
@@ -106,22 +101,25 @@ export default function Portfolio() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="max-w-5xl mx-auto pt-8 text-start mb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="max-w-6xl mx-auto pt-8 text-start mb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <div className="text-blue-600 font-semibold mb-2 flex items-center text-xl">
               <span className="w-6 h-0.5 bg-blue-600 mr-3"></span>
-              Work Index!
+              Online Versatility
               <span className="w-6 h-0.5 bg-blue-600 ml-3"></span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-              Few of Our Apps Adored <br />
-              by <span className="text-blue-600">millions of users!</span>
+              Showcasing <span className="text-blue-600">Innovation</span>{" "}
+              <br />
+              Across Industries & Communities
             </h2>
           </div>
+
           <p className="text-gray-600 text-base sm:text-lg md:text-xl font-medium max-w-2xl mx-auto">
-            We show only the best websites and portfolios built completely with
-            passion, simplicity & creativity.
-          </p>
+  From digital platforms to real-world solutions, our work highlights online versatility and showcases 
+  innovation that inspires industries and empowers communities.
+</p>
+
         </div>
 
         {/* Categories (optional) */}

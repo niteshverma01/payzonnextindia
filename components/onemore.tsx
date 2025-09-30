@@ -70,7 +70,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Step 2 - Sadaiv Yuva Foundation */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
+          {/* <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="flex-shrink-0 relative rounded-3xl shadow-2xl px-16">
               <div className="w-full h-72 rounded-3xl flex items-center justify-center relative">
                 <Image
@@ -108,7 +108,7 @@ const HowItWorks = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

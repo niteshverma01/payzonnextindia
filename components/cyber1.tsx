@@ -18,10 +18,10 @@ export default function CyberSecurityUI() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-20 ">
         <div className="flex flex-col lg:flex-row items-start w-full max-w-6xl">
           {/* Left white card */}
-          <div className="bg-white py-8 sm:py-12 lg:py-16 pl-6 sm:pl-8 lg:pl-12 pr-8 sm:pr-12 lg:pr-24 w-full lg:w-[550px] shadow-2xl relative z-20 mb-6 lg:mb-0">
+          <div className="bg-white py-8 sm:py-12 lg:py-16 pl-6 sm:pl-8 lg:pl-12 pr-8 sm:pr-12 lg:pr-24 rounded-xl w-full lg:w-[550px] shadow-2xl relative z-20 mb-6 lg:mb-0">
             <div className="mb-4">
               <span className="text-blue-700 text-sm sm:text-base font-semibold uppercase tracking-wider">
                 CYBER SHIELD FOR CORPORATES
@@ -59,14 +59,15 @@ export default function CyberSecurityUI() {
           </div>
 
           {/* Right side - Single Image */}
-          <div className="relative w-full lg:w-[550px] ml-4 z-20 mt-6 lg:mt-24 ">
-            <div className="relative w-full h-64 sm:h-80 lg:h-96  overflow-hidden shadow-lg">
+          {/* Right side - Single Image */}
+          <div className="relative w-full lg:w-[550px] ml-4 z-20  flex justify-center">
+            <div className=" p-6 flex items-center justify-center w-full h-72 sm:h-96 lg:h-[600px]">
               <Image
-                src="https://uidcfinancecompany.com.ng/media/thumbnail/cybersecurity_jtqUr2X.jpg"
+                src="/images/Sadaiv_logo.png"
                 alt="Cybersecurity"
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-xl"
+                width={400}
+                height={400}
+                className="object-contain max-h-full max-w-full"
                 priority
               />
             </div>

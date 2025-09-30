@@ -14,14 +14,14 @@ interface Review {
 }
 
 const reviews: Review[] = [
-  { id: "1", img: "/images/1.png", name: "Partner 1", description: "Leading IT solutions provider" },
-  { id: "2", img: "/images/2.png", name: "Partner 2", description: "Innovative fintech solutions" },
-  { id: "4", img: "/images/4.png", name: "Partner 4", description: "Trusted cybersecurity experts" },
-  { id: "5", img: "/images/5.png", name: "Partner 5", description: "Global digital marketing agency" },
-  { id: "6", img: "/images/6.png", name: "Partner 6", description: "Creative design studio" },
-  { id: "9", img: "/images/9.png", name: "Partner 9", description: "Enterprise software specialists" },
+  { id: "1", img: "/images/1.png", name: "Shabd Today", description: "Leading IT solutions provider" },
+  { id: "2", img: "/images/2.png", name: "Cascab", description: "Innovative fintech solutions" },
+  { id: "4", img: "/images/4.png", name: "Nainital Testie Basket", description: "Trusted cybersecurity experts" },
+  { id: "5", img: "/images/5.png", name: "S.V.N Group Of College", description: "Global digital marketing agency" },
+  { id: "6", img: "/images/6.png", name: "I Way Tours&Travels", description: "Creative design studio" },
+  { id: "9", img: "/images/9.png", name: "I Way Shoppy", description: "Enterprise software specialists" },
   { id: "smart-tax", img: "/images/SMART TAX !DEA.png", name: "Smart Tax Idea", description: "Tax optimization platform" },
-  { id: "jkk", img: "/images/jkk.png", name: "JKK Solutions", description: "Comprehensive HR services" },
+  { id: "jkk", img: "/images/jkk.png", name: "Dun & Bradstreet", description: "Comprehensive HR services" },
 ];
 
 interface ReviewCardProps {
@@ -61,10 +61,10 @@ const ReviewCard = ({ img, name, description, onClick }: ReviewCardProps) => {
         </div>
 
         {/* Name and description overlay */}
-        <div className="absolute inset-x-0 bottom-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+        {/* <div className="absolute inset-x-0 bottom-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
           <p className="text-blue-600 text-sm font-semibold">{name}</p>
           {description && <p className="text-gray-600 text-xs mt-1">{description}</p>}
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
@@ -155,22 +155,22 @@ export default function EnhancedMarqueeDemo() {
           <Sparkles className="w-6 h-6 text-blue-400 animate-spin" style={{ animationDuration: "4s" }} />
           <div className="flex gap-1.5">
             <div className="w-8 h-1.5 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse" />
-            <div className="w-4 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse delay-100" />
-            <div className="w-2 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse delay-200" />
+            <div className="w-4 h-1.5 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full animate-pulse delay-100" />
+            <div className="w-2 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full animate-pulse delay-200" />
           </div>
           <span className="text-blue-400 text-sm sm:text-base md:text-lg font-bold tracking-widest uppercase bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm border border-blue-400/30">
             Our Partners
           </span>
           <div className="flex gap-1.5">
-            <div className="w-2 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-pulse delay-200" />
-            <div className="w-4 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-pulse delay-100" />
+            <div className="w-2 h-1.5 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full animate-pulse delay-200" />
+            <div className="w-4 h-1.5 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full animate-pulse delay-100" />
             <div className="w-8 h-1.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full animate-pulse" />
           </div>
-          <Sparkles className="w-6 h-6 text-purple-400 animate-spin" style={{ animationDuration: "4s", animationDirection: "reverse" }} />
+          <Sparkles className="w-6 h-6 text-blue-400 animate-spin" style={{ animationDuration: "4s", animationDirection: "reverse" }} />
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-600 mb-4 leading-tight">
           Trusted by{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 animate-pulse">
+          <span className="text-blue-600 ">
             Industry Leaders
           </span>
         </h2>
@@ -192,7 +192,7 @@ export default function EnhancedMarqueeDemo() {
         <div className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20">
           <button
             onClick={goLeft}
-            className="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-blue-500/50 hover:from-blue-500/50 hover:to-blue-500/70 backdrop-blur-xl rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20 hover:border-blue-400/60 shadow-lg hover:shadow-blue-500/30 group"
+            className="w-12 h-12 bg-blue-600 hover:from-blue-500/50 hover:to-blue-500/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20 hover:border-blue-400/60 shadow-lg hover:shadow-blue-500/30 group"
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
@@ -201,7 +201,7 @@ export default function EnhancedMarqueeDemo() {
         <div className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20">
           <button
             onClick={goRight}
-            className="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-purple-500/50 hover:from-blue-500/50 hover:to-purple-500/70 backdrop-blur-xl rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20 hover:border-purple-400/60 shadow-lg hover:shadow-purple-500/30 group"
+            className="w-12 h-12 bg-blue-600 hover:from-blue-500/50 hover:to-blue-500/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20 hover:border-blue-400/60 shadow-lg hover:shadow-blue-500/30 group"
             aria-label="Scroll right"
           >
             <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
@@ -212,7 +212,7 @@ export default function EnhancedMarqueeDemo() {
         {/* <div className="absolute top-4 right-4 z-20">
           <button
             onClick={toggleSpeed}
-            className="px-4 py-2 bg-gradient-to-r from-blue-500/30 to-purple-500/30 hover:from-blue-500/50 hover:to-purple-500/50 rounded-full text-white text-sm font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500/30 to-blue-500/30 hover:from-blue-500/50 hover:to-blue-500/50 rounded-full text-white text-sm font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105"
             aria-label={speed === 35 ? "Speed up" : "Slow down"}
           >
             {speed === 35 ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
@@ -242,7 +242,7 @@ export default function EnhancedMarqueeDemo() {
         {/* Progress Bar */}
         {/* <div className="relative mt-6 w-full max-w-4xl mx-auto h-1 bg-gray-700/50 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+            className="h-full bg-gradient-to-r from-blue-500 to-blue-500"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
@@ -286,7 +286,7 @@ export default function EnhancedMarqueeDemo() {
               </p>
               <button
                 onClick={closeModal}
-                className="mt-6 w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:scale-105 transition-all"
+                className="mt-6 w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-lg hover:scale-105 transition-all"
               >
                 Close
               </button>

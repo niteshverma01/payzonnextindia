@@ -235,15 +235,15 @@ export default function PayzonIndiaHero() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen py-8 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden "
+      className="min-h-screen  relative overflow-hidden "
     >
       {/* Mouse background effect */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-40 transition-all duration-500 hidden md:block" />
       </div>
 
-      <div className="relative z-10 bg-[#EDF1F7]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
+      <div className="relative z-10 bg-[#EDF1F7] ">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start py-8 sm:py-12 md:py-16 lg:py-20  ">
           {/* Carousel */}
           <div
             className={`lg:col-span-6 transform transition-all duration-1000 ease-out ${
