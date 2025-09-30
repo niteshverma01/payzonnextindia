@@ -30,7 +30,7 @@ export default function Footer() {
               <img
                 src="/images/logo.png"
                 alt="Payzon Logo"
-                className="h-12 w-12 sm:h-20 sm:w-20 mb-3"
+                className="h-12 w-12 sm:h-32 sm:w-32 mb-3"
               />
               {/* Company Name centered below logo */}
               <h3 className="font-bold text-lg sm:text-xl text-center">
@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
             <div className="flex space-x-6 justify-center mt-6">
               <a
-                href="#"
+                href="/about"
                 className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
               >
                 Profile
@@ -94,7 +94,7 @@ export default function Footer() {
                 Portfolio
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
               >
                 Contact
@@ -135,6 +135,10 @@ export default function Footer() {
                 src="/images/Sadaiv MEDIA 1.png"
                 alt="Satya"
                 className="w-full h-20 object-contain bg-white rounded-lg p-2"
+              /><img
+                src="/images/sadaivsatyalogo.jpeg"
+                alt="Yuva"
+                className="w-full h-20 object-contain bg-white rounded-lg p-2"
               />
               <img
                 src="/images/inffablesparklogo (1).png"
@@ -142,23 +146,13 @@ export default function Footer() {
                 className="w-full h-20 object-contain bg-white rounded-lg p-2"
               />
               <img
-                src="/images/jkk.png"
-                alt="Dun Bradstreet"
-                className="w-full h-20 object-contain bg-white rounded-lg p-2"
-              />
-              <img
-                src="/images/sadaivsatyalogo.jpeg"
-                alt="Yuva"
-                className="w-full h-20 object-contain bg-white rounded-lg p-2"
-              />
-            </div>
-            <div className="mt-6 w-28 bg-white rounded-lg p-2">
-              <img
                 src="/images/SMART TAX !DEA.png"
-                alt="SSI"
-                className="w-full h-24 object-contain"
+                alt="Dollar"
+                className="w-full h-20 object-contain bg-white rounded-lg"
               />
+              
             </div>
+          
           </div>
 
           {/* Our Contacts */}

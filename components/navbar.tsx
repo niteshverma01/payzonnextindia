@@ -15,19 +15,14 @@ import {
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Instagram, Youtube, Linkedin, Twitter } from "lucide-react";
-import { de } from "date-fns/locale";
+import Link from "next/link"; // Added for client-side routing
+import { useRouter } from "next/navigation"; // Added for programmatic routing
 
 interface NavigationItem {
   name: string;
   href: string;
   hasDropdown: boolean;
-  dropdownItems: string[];
-}
-
-interface DotPatternProps {
-  className?: string;
-  dotSize?: string;
-  isScrolled?: boolean;
+  dropdownItems: Array<{ name: string; href: string }>;
 }
 
 interface ItfirmLogoProps {
@@ -35,10 +30,9 @@ interface ItfirmLogoProps {
 }
 
 const ItfirmLogo: React.FC<ItfirmLogoProps> = ({ isScrolled }) => {
-  // Tailwind-friendly dynamic sizes, made responsive for non-scrolled version
   const containerSize = isScrolled
-    ? "w-[10rem] h-[6.875rem]" // 160px x 110px
-    : "w-[12rem] sm:w-[15rem] md:w-[18.75rem] h-[8rem] sm:h-[10rem] md:h-[12.5rem]"; // Scaled down for mobile: ~192px x 128px base
+    ? "w-[10rem] h-[6.875rem]"
+    : "w-[12rem] sm:w-[15rem] md:w-[18.75rem] h-[8rem] sm:h-[10rem] md:h-[12.5rem]";
 
   const blueCircleSize = isScrolled
     ? "w-[10rem] h-[6.875rem] rounded-[70%_70%_65%_70%]"
@@ -52,27 +46,25 @@ const ItfirmLogo: React.FC<ItfirmLogoProps> = ({ isScrolled }) => {
     ? "space-x-1"
     : "space-x-1 sm:space-x-2 md:space-x-3";
 
-  // Scrolled (small) version
   if (isScrolled) {
     return (
       <div className="relative w-auto h-14 sm:h-16 md:h-20">
-        <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-          <img
-            src="/images/logo.png"
-            alt="Logo"
-            className="h-14 sm:h-16 md:h-20 w-auto object-contain"
-          />
-          <span className="text-black text-[1.625rem] sm:text-[1.75rem] md:text-[2rem] font-bold">
-            PAYZONINDIA
-          </span>
-        </div>
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 md:gap-4">
+        <img
+          src="/images/logo.png"
+          alt="Payzon India Logo"
+          className="h-14 sm:h-16 md:h-20 w-auto object-contain"
+        />
+        <span className="text-black text-[1.625rem] sm:text-[1.75rem] md:text-[2rem] font-bold">
+          PAYZONINDIA
+        </span>
+      </Link>
       </div>
     );
   }
 
-  // Default (large) version
   return (
-    <div className={`relative ${containerSize}`}>
+   <Link href="/" className={`relative ${containerSize}`}>
       <div
         className={`bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 shadow-lg ${blueCircleSize}`}
       />
@@ -83,13 +75,13 @@ const ItfirmLogo: React.FC<ItfirmLogoProps> = ({ isScrolled }) => {
           <div className="w-full max-w-[70%]">
             <img
               src="/images/logo3.png"
-              alt="Logo inside oval"
+              alt="Payzon India Logo"
               className="w-full h-auto"
             />
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -99,27 +91,31 @@ const navigationItems: NavigationItem[] = [
     href: "#ventures",
     hasDropdown: true,
     dropdownItems: [
-      "IT Services",
-      "Digital Marketing",
-      "E-Commerce",
-      "Fintech Solutions",
+      { name: "IT Services", href: "/ventures/it-services" },
+      { name: "Digital Marketing", href: "/ventures/digital-marketing" },
+      { name: "E-Commerce", href: "/ventures/e-commerce" },
+      { name: "Fintech Solutions", href: "/ventures/fintech-solutions" },
     ],
   },
   {
     name: "Associations",
     href: "#associations",
     hasDropdown: true,
-    dropdownItems: ["Media", "Social Welfare", "Finance Audits"],
+    dropdownItems: [
+      { name: "Media", href: "/associations/media" },
+      { name: "Social Welfare", href: "/associations/social-welfare" },
+      { name: "Finance Audits", href: "/associations/finance-audits" },
+    ],
   },
   {
     name: "Audit Report",
     href: "#audit",
     hasDropdown: true,
     dropdownItems: [
-      "Financial Reports",
-      "Compliance Documents",
-      "Annual Reviews",
-      "Transparency Reports",
+      // { name: "Financial Reports", href: "#financial-reports" },
+      // { name: "Compliance Documents", href: "#compliance-documents" },
+      // { name: "Annual Reviews", href: "#annual-reviews" },
+      // { name: "Transparency Reports", href: "#transparency-reports" },
     ],
   },
   {
@@ -127,27 +123,27 @@ const navigationItems: NavigationItem[] = [
     href: "#investor",
     hasDropdown: true,
     dropdownItems: [
-      "Investment Opportunities",
-      "Funding Rounds",
-      "Returns Analysis",
-      "Join Program",
+      // { name: "Investment Opportunities", href: "#investment-opportunities" },
+      // { name: "Funding Rounds", href: "#funding-rounds" },
+      // { name: "Returns Analysis", href: "#returns-analysis" },
+      // { name: "Join Program", href: "#join-program" },
     ],
   },
   {
     name: "Working Sector",
-    href: "#sector",
+    href: "/sector",
     hasDropdown: true,
     dropdownItems: [
-      "IT Services",
-      "Cyber Security",
-      "Skills Development",
-      "Organic Farming",
-      "Toys Industries",
-      "Artificial Jewellery",
-      "Spices & Vegetables",
-      "Divine Industries",
-      "Clothing",
-      "Electronics",
+      { name: "IT Services", href: "/sector" },
+      { name: "Cyber Security", href: "/sector" },
+      { name: "Skills Development", href: "/sector" },
+      { name: "Organic Farming", href: "/sector" },
+      { name: "Toys Industries", href: "/sector" },
+      { name: "Artificial Jewellery", href: "/sector" },
+      { name: "Spices & Vegetables", href: "/sector" },
+      { name: "Divine Industries", href: "/sector" },
+      { name: "Clothing", href: "/sector" },
+      { name: "Electronics", href: "/sector" },
     ],
   },
 ];
@@ -166,10 +162,11 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const marqueeText = marqueeContent.join(" | ") + " | ";
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter(); // Added for programmatic routing
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // adjust scroll threshold
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -184,8 +181,12 @@ export default function Navbar() {
     setOpenDropdown(null);
   };
 
-  const handleSmoothScroll = (href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
     if (href.startsWith("#")) {
+      e.preventDefault(); // Only prevent default for hash links
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({
@@ -193,9 +194,15 @@ export default function Navbar() {
           block: "start",
         });
       }
+      setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
+    } else {
+      // For path-based links, use Next.js router
+      e.preventDefault(); // Still prevent default to avoid full reload
+      router.push(href); // Navigate to the path
+      setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
     }
-    setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
   };
 
   const handleMouseEnter = (itemName: string) => {
@@ -215,14 +222,12 @@ export default function Navbar() {
       >
         <div className="py-2 sm:py-0 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 md:gap-8">
-            {/* Logo */}
             <div className={`relative flex-shrink-0 -mt-4 sm:-mt-6 md:-mt-8`}>
               <ItfirmLogo isScrolled={false} />
             </div>
 
-            {/* Mobile Menu Button - Enhanced for mobile only */}
             <button
-              className={`lg:hidden focus:outline-none transition-all duration-300 p-3 rounded-2xl border-2 border-white backdrop-blur-md text-white text-bold hover:text-blue-200 bg-white/10 hover:bg-white/20  shadow-lg hover:shadow-2xl transform hover:scale-110 active:scale-95`}
+              className={`lg:hidden focus:outline-none transition-all duration-300 p-3 rounded-2xl border-2 border-white backdrop-blur-md backdrop-blur-md text-white text-bold hover:text-blue-200 bg-white/10 hover:bg-white/20  shadow-lg hover:shadow-2xl transform hover:scale-110 active:scale-95`}
               onClick={toggleMobileMenu}
             >
               <div className="relative">
@@ -230,11 +235,9 @@ export default function Navbar() {
               </div>
             </button>
 
-            {/* Desktop Navigation - COMPLETELY UNCHANGED */}
             <nav
               className={`flex-1 transition-all duration-500 hidden lg:block`}
             >
-              {/* Top Header - Only visible when not scrolled */}
               <div
                 className={`transition-all duration-300 opacity-100  ${
                   isScrolled
@@ -253,7 +256,6 @@ export default function Navbar() {
                         isScrolled ? "border-none" : "border-b border-white"
                       }`}
                     >
-                      {/* Company Name */}
                       <div className="flex items-center space-x-2 whitespace-nowrap">
                         <span className="text-sm md:text-base lg:text-lg font-black uppercase">
                           Payzon India private limited
@@ -266,7 +268,6 @@ export default function Navbar() {
                         }`}
                       ></div>
 
-                      {/* WhatsApp Contact */}
                       <div className="flex items-center gap-2 whitespace-nowrap  px-3 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
                         <FaWhatsapp className="text-4xl text-green-400" />
                         <a
@@ -285,7 +286,6 @@ export default function Navbar() {
                         }`}
                       ></div>
 
-                      {/* Social Media Icons */}
                       <div className="flex items-center -space-x-4">
                         <a
                           href="https://www.instagram.com/thepayzonindia/"
@@ -333,7 +333,6 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Main Navigation */}
               <div
                 className={`transition-all duration-300 px-4 sm:px-6 md:px-8 rounded-full bg-blue-600 py-6 sm:py-8  shadow-xl `}
               >
@@ -347,19 +346,22 @@ export default function Navbar() {
                       onMouseEnter={() => handleMouseEnter(item.name)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <button
-                        onClick={() =>
-                          item.hasDropdown
-                            ? handleToggle(item.name)
-                            : handleSmoothScroll(item.href)
-                        }
+                      <a
+                        href={item.href}
+                        onClick={(e) => {
+                          if (item.hasDropdown) {
+                            e.preventDefault();
+                            handleToggle(item.name);
+                          } else {
+                            handleSmoothScroll(e, item.href);
+                          }
+                        }}
                         className={`flex items-center font-bold transition-all duration-500 px-4 py-3 rounded-xl text-xs sm:text-base text-white relative overflow-hidden group ${
                           hoveredItem === item.name
                             ? "bg-gradient-to-r from-white/20 via-white/15 to-white/10 shadow-lg scale-105 transform"
                             : "hover:bg-white/10"
                         }`}
                       >
-                        {/* Animated background glow */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
 
                         <span className="relative z-10 transition-all duration-300 group-hover:text-blue-100">
@@ -377,24 +379,17 @@ export default function Navbar() {
                             }`}
                           />
                         )}
-                      </button>
+                      </a>
 
-                      {/* ENHANCED DESKTOP DROPDOWN */}
                       {item.hasDropdown && openDropdown === item.name && (
                         <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-72 z-50 dropdown-animation">
-                          {/* Elegant Arrow with Glow */}
                           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3">
                             <div className="w-6 h-6 rotate-45 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-900 shadow-2xl border border-cyan-400/30"></div>
                           </div>
 
-                          {/* Enhanced Glassmorphism Container */}
                           <div className="relative bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-blue-900/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-cyan-400/20 overflow-hidden">
-                            {/* Animated Background Effects */}
                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-blue-500/5 animate-pulse"></div>
-                            
-                          
 
-                            {/* Glowing Header */}
                             <div className="relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 border-b border-cyan-400/30">
                               <div className="flex items-center gap-3">
                                 <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></div>
@@ -404,57 +399,47 @@ export default function Navbar() {
                                 <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full animate-pulse delay-500"></div>
                               </div>
                               
-                              {/* Animated glow line */}
                               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
                             </div>
 
-                            {/* Enhanced Menu Items */}
                             <div className="relative py-3 px-3">
                               {item.dropdownItems.map((drop, idx) => (
-                                <button
+                                <Link
                                   key={idx}
-                                  className="group relative flex items-center w-full text-left mx-1 mb-1 px-5 py-0 text-base font-bold text-white hover:text-cyan-100 bg-gradient-to-r from-slate-800/60 to-blue-800/60 hover:from-green-600 hover:to-blue-600/40 rounded-3xl transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl border border-slate-700/50 hover:border-cyan-400/50 backdrop-blur-lg overflow-hidden"
-                                  onClick={() =>
+                                  href={drop.href}
+                                  onClick={(e) =>
                                     handleSmoothScroll(
-                                      `#${drop
-                                        .toLowerCase()
-                                        .replace(/\s+/g, "-")}`
+                                      e as any,
+                                      drop.href
                                     )
                                   }
+                                  className="group relative flex items-center w-full text-left mx-1 mb-1 px-5 py-0 text-base font-bold text-white hover:text-cyan-100 bg-gradient-to-r from-slate-800/60 to-blue-800/60 hover:from-green-600 hover:to-blue-600/40 rounded-3xl transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl border border-slate-700/50 hover:border-cyan-400/50 backdrop-blur-lg overflow-hidden"
                                   style={{
                                     animationDelay: `${idx * 80}ms`,
                                     animation: 'fadeInUp 0.7s ease-out forwards'
                                   }}
                                 >
-                                  {/* Animated glow background */}
                                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-cyan-400/20 group-hover:via-blue-400/20 group-hover:to-blue-400/20 rounded-2xl transition-all duration-700"></div>
                                   
-                                  {/* Shimmer effect */}
                                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 transition-all duration-1000 group-hover:translate-x-full"></div>
-                                  
-                                 
 
-                                  {/* Enhanced Text */}
                                   <span className="flex-1 relative z-10 group-hover:translate-x-2 transition-all duration-500 text-slate-200 group-hover:text-white drop-shadow-lg">
-                                    {drop}
+                                    {drop.name}
                                   </span>
 
-                                  {/* Enhanced Arrow with Glow */}
                                   <div className="relative w-10 h-10 flex items-center justify-center">
                                     <ArrowRight
                                       size={18}
-                                      className="opacity-50 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-2 group-hover:scale-125 text-slate-400 group-hover:text-cyan-300 drop-shadow-lg"
+                                      className="opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-2 group-hover:scale-125 text-slate-400 group-hover:text-cyan-300 drop-shadow-lg"
                                     />
                                     <div className="absolute inset-0 rounded-full bg-cyan-400/0 group-hover:bg-cyan-400/30 transition-all duration-500 transform scale-0 group-hover:scale-100 blur-sm"></div>
                                   </div>
 
-                                  {/* Corner accent */}
                                   <div className="absolute top-2 right-2 w-2 h-2 bg-gradient-to-r from-cyan-400/60 to-blue-500/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-150"></div>
-                                </button>
+                                </Link>
                               ))}
                             </div>
 
-                            {/* Enhanced Bottom Gradient */}
                             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400/50 via-blue-500/50 to-blue-500/50 rounded-b-3xl"></div>
                           </div>
                         </div>
@@ -468,7 +453,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Enhanced */}
       {isMobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-gradient-to-br from-black/60 via-blue-900/20 to-blue-900/40 backdrop-blur-sm z-40 transition-all duration-500"
@@ -476,7 +460,6 @@ export default function Navbar() {
         />
       )}
 
-      {/* Mobile Menu Sidebar */}
       <div
         className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-[100vw] bg-gradient-to-br from-slate-50 via-white to-blue-50 shadow-2xl transform transition-all duration-500 z-50 ${
           isMobileMenuOpen
@@ -484,7 +467,6 @@ export default function Navbar() {
             : "translate-x-full opacity-0"
         }`}
       >
-        {/* Mobile Menu Header */}
         <div className="relative flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 via-blue-600 to-blue-700 text-white overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-blue-600/90 to-blue-700/90"></div>
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
@@ -516,23 +498,26 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Content */}
         <div className="h-full overflow-y-auto pb-20">
           <div className="px-6 py-6">
             <ul className="space-y-4">
               {navigationItems.map((item, index) => (
                 <li key={item.name} className="w-full">
-                  <button
-                    onClick={() =>
-                      item.hasDropdown
-                        ? handleToggle(item.name)
-                        : handleSmoothScroll(item.href)
-                    }
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.hasDropdown) {
+                        e.preventDefault();
+                        handleToggle(item.name);
+                      } else {
+                        handleSmoothScroll(e, item.href);
+                      }
+                    }}
                     className="group flex items-center justify-between w-full text-left p-4 text-base font-semibold text-gray-800 hover:text-white bg-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 hover:border-transparent"
                     style={{
                       animationDelay: `${index * 100}ms`,
                       animation: isMobileMenuOpen
-                        ? "slideInFromLeft 0.6s ease-out forwards"
+                        ? "slideInFromFromLeft 0.6s ease-out forwards"
                         : "",
                     }}
                   >
@@ -554,18 +539,19 @@ export default function Navbar() {
                         />
                       </div>
                     )}
-                  </button>
+                  </a>
 
-                  {/* ENHANCED MOBILE DROPDOWN WITH GLASSMORPHISM */}
                   {item.hasDropdown && openDropdown === item.name && (
                     <div className="mt-4 ml-4 space-y-3 mobile-dropdown-animation">
                       <div className="bg-gradient-to-br from-white/80 to-blue-50/60 backdrop-blur-lg rounded-2xl p-4 border border-blue-100/50 shadow-lg">
                         {item.dropdownItems.map((drop, idx) => (
-                          <button
+                          <Link
                             key={idx}
-                            onClick={() =>
+                            href={drop.href}
+                            onClick={(e) =>
                               handleSmoothScroll(
-                                `#${drop.toLowerCase().replace(/\s+/g, "-")}`
+                                e as any,
+                                drop.href
                               )
                             }
                             className="group flex items-center w-full text-left px-4 py-3 mb-2 text-sm font-semibold text-gray-700 hover:text-white bg-white/60 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-xl border border-blue-100/30 hover:border-transparent transform hover:scale-[1.02] transition-all duration-300 shadow-sm hover:shadow-lg backdrop-blur-sm"
@@ -573,20 +559,19 @@ export default function Navbar() {
                               animationDelay: `${idx * 50}ms`,
                             }}
                           >
-                            {/* Icon with gradient */}
                             <div className="w-8 h-8 mr-3 rounded-lg bg-gradient-to-br from-blue-100 to-blue-100 group-hover:from-white/20 group-hover:to-white/10 flex items-center justify-center shadow-inner transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 group-hover:from-white group-hover:to-blue-100 rounded-full transition-all duration-300"></div>
+                              <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-600 group-hover:from-white group-hover:to-blue-100 rounded-full transition-all duration-300"></div>
                             </div>
                             
                             <span className="flex-1 group-hover:translate-x-1 transition-transform duration-300">
-                              {drop}
+                              {drop.name}
                             </span>
                             
                             <ArrowRight
                               size={14}
                               className="opacity-40 group-hover:opacity-100 transition-all duration-300 text-gray-600 group-hover:text-white transform group-hover:translate-x-1"
                             />
-                          </button>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -595,7 +580,6 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-
           {/* Social Section */}
           <div className="mx-6 mb-6 p-6 bg-gradient-to-br from-white via-blue-50 to-blue-50 rounded-3xl shadow-lg border border-blue-100">
             <div className="flex items-center gap-2 mb-4">
