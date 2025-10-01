@@ -1,97 +1,24 @@
 "use client";
 
 import React from "react";
-import { Phone, CheckCircle, ArrowRight, Shield, Users, Zap, Lock, Globe, Calendar , CreditCard, AlertCircle } from "lucide-react";
+import {
+  Phone,
+  CheckCircle,
+  ArrowRight,
+  Shield,
+  Users,
+  Zap,
+  Lock,
+  Globe,
+  Calendar,
+  CreditCard,
+  AlertCircle,
+} from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const PyazonLandingPage: React.FC = () => {
-  const services = [
-    "Media",
-    "Social Walfare",
-    "Finance Audits",
-  ];
-
-  const features = [
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-        </svg>
-      ),
-      title: "Financial Frauds Protection",
-      description: "Educate on spotting phishing scams, fake investments, OTP frauds, and UPI misuse to protect finances.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-        </svg>
-      ),
-      title: "Citizen Cyber Fraud Prevention",
-      description: "Promote digital safety for women, children, and elders against online abuse and fake job scams.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-        </svg>
-      ),
-      title: "Crypto & Gaming Scam Awareness",
-      description: "Detect fake rewards, phishing links, and fraudulent investments in crypto and gaming.",
-    },
-  ];
-
-  const foundationContent = [
-    {
-      title: "Ransomware Attack",
-      subtitle: "Malware Threat",
-      description: "Malicious software encrypts victims’ files, demanding ransom payments to unlock data, causing financial and operational disruptions.",
-      icon: <AlertCircle className="w-12 h-12 text-blue-500" />,
-      author: "Cyber Security Expert",
-      date: "2 hours ago",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Business Email Compromise (BEC)",
-      subtitle: "Phishing Scam",
-      description: "Hackers spoof business emails to deceive employees into transferring funds or sharing sensitive data, leading to major losses.",
-      icon: <Shield className="w-12 h-12 text-blue-500" />,
-      author: "Security Analyst",
-      date: "1 day ago",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Wire Transfer Fraud",
-      subtitle: "Financial Scam",
-      description: "Scammers impersonate trusted contacts to request urgent wire transfers, resulting in large financial losses.",
-      icon: <CreditCard className="w-12 h-12 text-blue-500" />,
-      author: "Fraud Prevention Team",
-      date: "Just now",
-      image: "https://images.unsplash.com/photo-1558618047-3c8d6a4a91f5?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Rootkit Malware",
-      subtitle: "Hidden Threat",
-      description: "Malicious software hides to gain unauthorized access, stealing data or providing remote control to attackers.",
-      icon: <Lock className="w-12 h-12 text-blue-500" />,
-      author: "Malware Specialist",
-      date: "3 hours ago",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop"
-    }
-  ];
+  const services = ["Media", "Social Welfare", "Finance Audits"];
 
   return (
     <div className="min-h-screen">
@@ -106,10 +33,12 @@ const PyazonLandingPage: React.FC = () => {
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-            Welcome to <span className="text-blue-500">Sadaiv Yuva Foundation</span>
+            Welcome to{" "}
+            <span className="text-blue-500">Sadaiv Yuva Foundation</span>
           </h1>
           <p className="mt-4 text-lg md:text-2xl text-gray-200">
-            Securing Every Digital Life — Cyber Awareness, Protection & Empowerment
+            Securing Every Digital Life — Cyber Awareness, Protection &
+            Empowerment
           </p>
         </div>
       </div>
@@ -195,25 +124,28 @@ const PyazonLandingPage: React.FC = () => {
             </div>
           </motion.aside>
 
-          {/* Main Content Area - Takes 8 columns */}
+          {/* Main Content Area - Takes 8 columns: Blog-like Detailed Article on Sadaiv Yuva Foundation */}
           <motion.main
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-8 prose prose-lg max-w-none"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
+            {/* Hero Section - Integrated into Blog Introduction */}
             <section className="rounded-2xl shadow-xl overflow-hidden">
-              <div className="relative h-64 lg:h-96">
+              <div className="relative h-64 lg:h-96 flex items-center justify-center ">
                 <Image
-                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=400&fit=crop"
-                  alt="Cyber security"
-                  fill
-                  className="object-cover"
+                  src="/images/Sadaiv_logo.png"
+                  alt="Cyber security awareness"
+                  height={600}
+                  width={300}
+                  className="object-contain"
                   priority
                 />
-                <div className="absolute inset-0 bg-blue-900/30"></div>
+                {/* Overlay */}
+                {/* <div className="absolute inset-0 bg-blue-900/30"></div> */}
               </div>
+
               <div className="p-8">
                 <motion.h1
                   className="text-4xl font-bold text-black mb-4"
@@ -221,7 +153,8 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Sadaiv Yuva Foundation
+                  Unlocking the Mission of Sadaiv Yuva Foundation: Pioneering
+                  Cyber Safety in the Digital Age
                 </motion.h1>
                 <motion.p
                   className="text-gray-700 text-base leading-relaxed mb-8"
@@ -229,163 +162,327 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  (12A / 80G / CSR FUND approved foundation). Securing Every Digital Life. Building a Safer Tomorrow with comprehensive cyber awareness training, security solutions, and digital safety support to protect communities worldwide. As part of Payzon India, Sadaiv Yuva Foundation focuses on protecting citizens from digital threats like financial frauds, citizen cyber fraud, crypto scams, and more through education, workshops, and partnerships.
+                  Sadaiv Yuva Foundation, a 12A / 80G / CSR FUND approved
+                  non-profit organization, stands at the forefront of digital
+                  empowerment, dedicated to securing every digital life through
+                  comprehensive cyber awareness, protection strategies, and
+                  community education. As an integral part of the Payzon India
+                  ecosystem, the foundation leverages innovative digital
+                  solutions to combat evolving cyber threats, fostering a safer
+                  online environment for individuals, families, and businesses
+                  across the globe. Our core focus revolves around equipping
+                  vulnerable populations—such as women, children, elders, and
+                  youth—with the knowledge and tools to navigate the digital
+                  world securely, preventing financial frauds, online abuses,
+                  and scams that plague modern society.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Financial Frauds Protection
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Educate on spotting phishing scams, fake investments, OTP frauds, and UPI misuse.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <Users className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Citizen Cyber Fraud
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Promote digital safety for women, children, and elders against online abuse and scams.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
               </div>
             </section>
 
-            {/* Featured Cyber Threats Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {foundationContent.map((content, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+            {/* Blog-like Detailed Content: Continuous Article on Sadaiv Yuva Foundation */}
+            <article className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              {/* About Us Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={content.image}
-                      alt={content.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(content.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{content.subtitle}</h3>
-                    <h4 className="text-xl font-extrabold text-blue-600 mb-2">{content.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{content.description}</p>
-                    <div className="flex justify-between items-center text-sm text-gray-500">
-                      <span>{content.author}</span>
-                      <span><Calendar className="w-4 h-4 inline mr-1" /> {content.date}</span>
-                    </div>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700 mt-4"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Learn More <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
+                  About Sadaiv Yuva Foundation
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  Established under the visionary umbrella of Payzon India,
+                  Sadaiv Yuva Foundation embodies the ethos of "eternal youth"
+                  in safeguarding the future through proactive cyber defense.
+                  Registered as a non-profit with full tax-exempt status under
+                  sections 12A and 80G, and approved for CSR funding, the
+                  foundation channels corporate social responsibility
+                  initiatives into tangible digital safety programs. Our journey
+                  began with a recognition of the widening digital divide and
+                  the surge in cybercrimes, prompting us to launch awareness
+                  campaigns that have now reached thousands. We collaborate with
+                  government bodies, tech firms, and community leaders to
+                  deliver workshops, online resources, and real-time support
+                  helplines, ensuring that cyber literacy is accessible to all
+                  socio-economic strata.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop"
+                  alt="Foundation community workshop"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+                <motion.div
+                  className="bg-blue-50 p-6 rounded-lg"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <Shield className="w-6 h-6 text-blue-500 inline mr-2" />
+                  <span className="font-semibold text-blue-900">
+                    Milestone:
+                  </span>{" "}
+                  Empowered over 50,000 individuals through 200+ awareness
+                  sessions since inception.
                 </motion.div>
-              ))}
-            </section>
+              </section>
 
-            {/* We Empower Security Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-indigo-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+              {/* Mission and Vision Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  <Image
-                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop"
-                    alt="Foundation team"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    About Sadaiv Yuva Foundation
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        A part of Payzon India, Sadaiv Yuva Foundation works in cyber security, awareness training, and digital safety support across communities.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        We protect from threats like financial frauds, phishing, ransomware, and scams through education, workshops, and partnerships.
-                      </span>
-                    </li>
-                  </ul>
+                  Mission and Vision: Building a Cyber-Resilient Society
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  The mission of Sadaiv Yuva Foundation is to democratize cyber
+                  safety education, making it a fundamental right in the digital
+                  era. We envision a world where every user, regardless of age
+                  or background, can thrive online without fear of exploitation.
+                  By integrating advanced technologies from Payzon India—such as
+                  AI-driven threat detection tools and interactive e-learning
+                  platforms—we bridge the gap between awareness and action. Our
+                  vision extends to policy advocacy, pushing for stronger cyber
+                  laws and inclusive digital policies that protect the most
+                  vulnerable.
+                </motion.p>
+                <ul className="space-y-3 text-gray-700 text-base list-disc pl-6 mb-6">
+                  <li>
+                    <strong>Mission Pillars:</strong> Education through
+                    workshops, real-time fraud alerts via apps, and community
+                    partnerships for widespread impact.
+                  </li>
+                  <li>
+                    <strong>Vision Goals:</strong> Achieve zero-tolerance for
+                    preventable cybercrimes by 2030 through scalable,
+                    tech-enabled programs.
+                  </li>
+                </ul>
+              </section>
+
+              {/* Key Initiatives Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  Our Key Initiatives: Combating Digital Threats Head-On
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  Sadaiv Yuva Foundation's initiatives are laser-focused on the
+                  most pressing cyber threats, delivering targeted interventions
+                  that educate, protect, and empower.
+                </motion.p>
+
+                {/* Financial Frauds Protection */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Financial Frauds Protection: Safeguarding Assets in the
+                  Digital Economy
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  In an age where digital transactions are ubiquitous, financial
+                  frauds like phishing scams, fake investment schemes, OTP
+                  interception, and UPI misuse pose severe risks. Our initiative
+                  equips users with practical tools: from recognizing suspicious
+                  links to implementing multi-factor authentication. Through
+                  interactive webinars and mobile alerts, we've helped recover
+                  millions in potential losses, partnering with banks and
+                  fintechs to roll out fraud-detection simulations. This program
+                  emphasizes proactive education, turning potential victims into
+                  vigilant guardians of their finances.
+                </motion.p>
+
+                {/* Citizen Cyber Fraud Prevention */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  Citizen Cyber Fraud Prevention: Protecting the Vulnerable from
+                  Online Perils
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
+                  Tailored for women, children, and elders—who often face
+                  heightened risks— this initiative addresses online abuse,
+                  grooming, fake job offers, and identity theft. We conduct
+                  school programs, senior citizen forums, and women empowerment
+                  sessions, teaching safe browsing, privacy settings, and
+                  emergency reporting. Integrated with Payzon's secure
+                  platforms, our resources include anonymous helplines and AI
+                  chatbots for instant advice, fostering a culture of digital
+                  empathy and resilience.
+                </motion.p>
+
+                {/* Crypto & Gaming Scam Awareness */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  Crypto & Gaming Scam Awareness: Navigating the Wild West of
+                  Digital Assets
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
+                  With the rise of cryptocurrencies and online gaming, scams
+                  promising quick riches abound. Our awareness drives demystify
+                  blockchain basics, spot fake rewards, and avoid phishing in
+                  metaverses. Through gamified learning modules and expert-led
+                  podcasts, we guide enthusiasts toward legitimate investments,
+                  collaborating with regulators to expose Ponzi schemes and rug
+                  pulls.
+                </motion.p>
+
+                {/* Advanced Threats: Ransomware and More */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                >
+                  Tackling Advanced Threats: Ransomware, BEC, Wire Fraud, and
+                  Rootkits
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                >
+                  We delve into sophisticated attacks like Ransomware—malware
+                  that locks files for ransom—Business Email Compromise (BEC)
+                  for corporate espionage, Wire Transfer Frauds via
+                  impersonation, and Rootkit Malware for stealthy breaches. Our
+                  forensic workshops and threat intelligence reports empower
+                  organizations to fortify defenses, with case studies
+                  illustrating recovery strategies and legal recourse.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop"
+                  alt="Cyber threat simulation"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+              </section>
+
+              {/* Partnerships and Impact Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                >
+                  Partnerships, Team, and Measurable Impact
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 }}
+                >
+                  Sadaiv Yuva Foundation thrives on strategic alliances with
+                  Payzon India, cybersecurity firms, NGOs, and government
+                  agencies, amplifying our reach through CSR-funded projects.
+                  Our diverse team of ethical hackers, educators, and policy
+                  experts drives innovation in safety curricula. The impact is
+                  profound: reduced fraud reports in partnered communities by
+                  40%, thousands of lives protected, and a growing network of
+                  cyber ambassadors.
+                </motion.p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <Users className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                    <p className="text-center text-sm text-gray-600">
+                      Expert Team of Specialists
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <Globe className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                    <p className="text-center text-sm text-gray-600">
+                      Global Reach via  Partnerships
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+              </section>
+
+              {/* Conclusion and Call to Action */}
+              <section className="text-center py-8 border-t border-gray-200">
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.8 }}
+                >
+                  Join Us in Securing the Digital Future
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 mb-6 max-w-2xl mx-auto"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.9 }}
+                >
+                  At Sadaiv Yuva Foundation, we're more than an
+                  organization—we're a movement towards a fear-free digital
+                  world. Whether through donations, volunteering, or
+                  participating in our programs, your involvement fortifies our
+                  collective defense. As part of Payzon India, we invite you to
+                  connect, learn, and contribute to building tomorrow's
+                  cyber-resilient society.
+                </motion.p>
+                <motion.button
+                  className="bg-blue-500 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-blue-600 transition-all duration-300 mx-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Involved <Zap className="w-5 h-5" />
+                </motion.button>
+              </section>
+            </article>
           </motion.main>
         </div>
       </div>

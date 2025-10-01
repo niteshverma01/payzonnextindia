@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, CheckCircle, ArrowRight, DollarSign, Shield, Zap, Users, BarChart3, CreditCard, Lock, Globe } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -11,93 +11,6 @@ const PyazonLandingPage: React.FC = () => {
     "Digital Marketing",
     "E-commerce",
     "Fintech Solutions",
-  ];
-
-  const features = [
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-        </svg>
-      ),
-      title: "Highest TPS Capability",
-      description: "Process transactions at lightning speed with our high-performance APIs for seamless efficiency.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-        </svg>
-      ),
-      title: "Easy API Integration",
-      description: "Seamlessly integrate our recharge and payment APIs into your website or app with full support.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-        </svg>
-      ),
-      title: "User-Friendly Interface",
-      description: "Intuitive design with interactive features and chat support for effortless user experiences.",
-    },
-  ];
-
-  const fintechSolutions = [
-    {
-      title: "Fast API Solutions for Businesses",
-      subtitle: "MOBILE RECHARGE & DTH API",
-      description: "Budget-oriented APIs for mobile recharge, DTH, data card recharge, and utility bill payments including landline, postpaid, gas, insurance, electricity, and more.",
-      icon: <DollarSign className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Trust & Security First",
-      subtitle: "SECURE PAYMENT GATEWAYS",
-      description: "PAYZON means trust and security with protected data exchanges, military-grade encryption, and 24/7 availability for global transactions.",
-      icon: <Shield className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Streamline Compliance",
-      subtitle: "E-KYC VERIFICATION API",
-      description: "Essential KYC for anti-money laundering with Aadhaar, GSTN, and live face verification using biometrics and government APIs for fast identity confirmation.",
-      icon: <Users className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Reward-Driven Shopping",
-      subtitle: "SHOPPING PORTAL SOLUTIONS",
-      description: "Feature-rich e-commerce portals like PAYZON SHOPY with cashback, points, affiliate rewards, seller options, and discount coupons for seamless online purchases.",
-      icon: <CreditCard className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Global Reach, Local Impact",
-      subtitle: "UTILITY & BILL PAYMENTS",
-      description: "Comprehensive utility services APIs for telecom, electricity, gas, water, and more, serving businesses worldwide with 24/7 digital access.",
-      icon: <Globe className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1558618047-3c8d6a4a91f5?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Empower Your Brand",
-      subtitle: "BRANDING & MARKETING INTEGRATION",
-      description: "Enhance fintech with custom web development, digital marketing, paid ads, SEO/SEM, Google Ads, and business boosters for accelerated growth.",
-      icon: <BarChart3 className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
-    }
   ];
 
   return (
@@ -209,192 +122,231 @@ const PyazonLandingPage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
+            {/* Blog-like Section for APIs */}
             <section className="rounded-2xl shadow-xl overflow-hidden">
               <div className="relative h-64 lg:h-96">
                 <Image
-                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=400&fit=crop"
+                  src="https://media.geeksforgeeks.org/wp-content/uploads/20230216170349/What-is-an-API.png"
                   alt="Fintech API integration"
                   fill
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-blue-900/30"></div>
+                <div className="absolute inset-0 bg-blue-900/10"></div>
               </div>
-              <div className="p-8">
+              <div className="p-8 prose prose-lg max-w-none text-gray-800">
                 <motion.h1
-                  className="text-4xl font-bold text-black mb-4"
+                  className="text-4xl font-bold text-black mb-6"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Fintech Solutions
+                  Payzon APIs: Secure, Efficient, and Scalable Solutions for Fintech
                 </motion.h1>
                 <motion.p
-                  className="text-gray-700 text-base leading-relaxed mb-8"
+                  className="text-base leading-relaxed mb-8"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Empower Your Business with Secure, High-Speed APIs. Payzon delivers budget-oriented fintech APIs for mobile recharge, utility payments, e-KYC verification, and shopping portals—ensuring trust, security, and global scalability since 2029+.
+                  Payzon offers a comprehensive suite of APIs designed to empower businesses with fast, secure, and budget-oriented fintech solutions. Serving globally with a focus on trust and security, our APIs cover mobile recharges, utility bill payments, e-KYC verification, and e-commerce functionalities. With easy integration, high TPS capability, and robust security measures, Payzon APIs ensure seamless digital transactions available 24/7. Below, we detail each API category, including descriptions, features, benefits, integration, and security aspects.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Anti-Fraud KYC
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Real-time Aadhaar, GSTN, and face verification to combat money laundering.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <svg
-                        className="w-6 h-6 text-blue-400 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12,1C8.14,1 5,4.14 5,8A7,7 0 0,0 12,15A7,7 0 0,0 19,8C19,4.14 15.86,1 12,1M12,3A5,5 0 0,1 17,8A5,5 0 0,1 12,13A5,5 0 0,1 7,8A5,5 0 0,1 12,3M12,10A1,1 0 0,1 13,11A1,1 0 0,1 12,12A1,1 0 0,1 11,11A1,1 0 0,1 12,10M13,16.9C15.5,17.5 17.5,19.5 18,22H17C16.5,20 15,18.4 13,17.7V16.9M11,16.9V17.7C9,18.4 7.5,20 7,22H6C6.5,19.5 8.5,17.5 11,16.9Z" />
-                      </svg>
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          24/7 Global Access
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          UPI-based payments with MPIN verification for instant, secure transactions.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  Mobile Recharge, DTH & Data Card Recharge API
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  This API enables businesses to provide mobile recharge, DTH, and data card recharge services tailored to client needs and budgets. It supports various operators and ensures instant processing for enhanced user convenience.
+                </motion.p>
+                <motion.ul
+                  className="list-disc pl-6 space-y-2 mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  <li>Supports mobile, DTH, and data card recharges across multiple operators.</li>
+                  <li>User-friendly interface with interactive features and chat support.</li>
+                  <li>High TPS capability for efficient transaction processing.</li>
+                  <li>Full-time support for seamless integration.</li>
+                </motion.ul>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  Benefits include convenient digital access, improved user experience, and high system performance. Integration is straightforward into websites or apps, with dedicated team assistance. Security ensures protected data exchanges, preventing unauthorized access and attacks.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  Utilities Bill Payments API
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  The Utilities Bill Payments API facilitates payments for a wide range of services, including landline, postpaid mobile, gas, insurance, electricity, and more, provided by private companies.
+                </motion.p>
+                <motion.ul
+                  className="list-disc pl-6 space-y-2 mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <li>Covers telecommunications, electrical utilities, natural gas, transportation, water, and wastewater services.</li>
+                  <li>Instant processing and comprehensive reporting.</li>
+                  <li>Compatible with digital platforms for online access.</li>
+                </motion.ul>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  Benefits encompass versatility for various utility types and enhanced convenience for users. Integration details align with Payzon's Fast API solutions. Security is maintained through safe data exchanges, though specifics for this API emphasize general protection measures.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  Verification APIs (E-KYC, Aadhaar, GSTN, Live Face)
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Payzon's Verification APIs include E-KYC for customer identification, Aadhaar for identity verification, GSTN for business authentication, and Live Face for biometric checks, crucial for compliance and fraud prevention.
+                </motion.p>
+                <motion.ul
+                  className="list-disc pl-6 space-y-2 mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  <li>E-KYC: Significant for anti-financial crime measures using biometric/demographic info.</li>
+                  <li>Aadhaar Verification: Real-time confirmation via UIDAI portal with 99.9% accuracy.</li>
+                  <li>GSTN Verification: Authenticates GSTIN with business details and MCA integration.</li>
+                  <li>Live Face Verification: AI-powered with liveness detection, anti-spoofing, and fraud pattern recognition.</li>
+                  <li>Blockchain support for crypto user verification to prevent duplicates.</li>
+                </motion.ul>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Benefits include regulatory compliance, fraud detection, and secure onboarding. Integration is supported by technical teams for online platforms. Security features biometric checks, behavioral analysis, and government API integrations for high reliability.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  Shopping Portal API (E-commerce)
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  The Shopping Portal API enables e-commerce platforms like Payzon Shopy, allowing online purchases with rewards such as cashback, miles, or points via affiliate links.
+                </motion.p>
+                <motion.ul
+                  className="list-disc pl-6 space-y-2 mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  <li>Supports seller onboarding, discount coupons, and product sales from a single platform.</li>
+                  <li>Inventory management, payment gateway integration, and advanced analytics.</li>
+                  <li>Reward systems for enhanced user engagement.</li>
+                </motion.ul>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  Benefits include increased user retention through incentives and scalable online presence. Integration aligns with digital services for e-commerce growth. Security ensures safe transactions, aligned with general API protections.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
+                  How Payzon APIs Work
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  Payzon APIs operate as digital payment methods available 24/7, even on holidays. Unlike traditional wallets, they directly withdraw and deposit funds from bank accounts using Virtual Payment Addresses, IFSC codes, MMID, Aadhaar, or one-time Virtual IDs. Each transaction requires MPIN verification for security, applicable to recharge, bill payments, and other APIs.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
+                  Testimonials and Additional Insights
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                >
+                  Users praise Payzon for building strong online presence and maintaining it through integrated tools. For verification, emphasis is on accuracy and fraud prevention. Overall, Payzon APIs are highlighted for their role in fintech innovation, with a focus on security and efficiency.
+                </motion.p>
+
+                <motion.h2
+                  className="text-3xl font-bold text-black mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                >
+                  Why Choose Payzon APIs?
+                </motion.h2>
+                <motion.p
+                  className="text-base leading-relaxed mb-8"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                >
+                  With global reach, robust security, easy integration, and high performance, Payzon APIs provide trusted solutions for businesses. Our commitment to innovation ensures seamless, secure transactions, helping you focus on growth while we handle the technical backbone.
+                </motion.p>
               </div>
             </section>
-
-            {/* Solutions Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {fintechSolutions.map((solution, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={solution.image}
-                      alt={solution.subtitle}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(solution.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{solution.subtitle}</h3>
-                    <h4 className="text-2xl font-extrabold text-blue-600 mb-3">{solution.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Explore API <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </section>
-
-            {/* We Serve the Best Fintech Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-indigo-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop"
-                    alt="Fintech team"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    We Deliver Trusted Fintech Innovation
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Secure APIs for recharge, bills, and e-KYC with blockchain fraud detection and biometric verification.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Global serving with easy integration, user-friendly interfaces, and highest TPS for peak performance.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
           </motion.main>
         </div>
       </div>

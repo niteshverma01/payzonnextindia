@@ -8,92 +8,16 @@ import { motion } from "framer-motion";
 const PyazonLandingPage: React.FC = () => {
   const services = [
     "Company Registration",
+    "Income Tax Return Filing",
     "GST Registration & Return",
-    "Income Tax Filing",
     "Company Audit Services",
     "FPO Company Incorporation",
     "PWD Registration",
-  ];
-
-  const features = [
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-        </svg>
-      ),
-      title: "Expert CA Advisors",
-      description: "Years of experience providing tailored financial and taxation advice to meet your specific business needs.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-        </svg>
-      ),
-      title: "Comprehensive Solutions",
-      description: "From GST registration to income tax filing, we handle all financial and regulatory requirements seamlessly.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-        </svg>
-      ),
-      title: "Affordable & Transparent",
-      description: "Competitive pricing with complete transparency in all our financial and tax services.",
-    },
-  ];
-
-  const taxContent = [
-    {
-      title: "Company Registration in India",
-      subtitle: "Business Setup",
-      description: "Seamless company registration for private limited companies, LLPs, and other forms with full legal compliance and end-to-end support.",
-      icon: <Building className="w-12 h-12 text-blue-500" />,
-      author: "CA Expert Team",
-      date: "Updated Today",
-      image: "https://images.unsplash.com/photo-1558618047-3c8d6a4a91f5?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Income Tax Return Filing",
-      subtitle: "Tax Compliance",
-      description: "Accurate and timely income tax return filing for individuals and businesses, maximizing savings through expert deductions and exemptions.",
-      icon: <Calculator className="w-12 h-12 text-blue-500" />,
-      author: "Tax Consultant",
-      date: "1 day ago",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
-    },
-    {
-      title: "GST Registration & Return",
-      subtitle: "GST Services",
-      description: "Complete GST registration and return filing services to navigate evolving tax laws and avoid penalties.",
-      icon: <FileText className="w-12 h-12 text-blue-500" />,
-      author: "GST Specialist",
-      date: "Just now",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Company Audit Services",
-      subtitle: "Financial Audit",
-      description: "Detailed statutory, internal, and tax audits to ensure financial transparency and regulatory compliance.",
-      icon: <Scale className="w-12 h-12 text-blue-500" />,
-      author: "Audit Professional",
-      date: "2 hours ago",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
-    }
+    "ROC Representation",
+    "Regulatory Filings",
+    "Section 8 Company Registration",
+    "Tax Planning & Strategy",
+    "Financial Audit Services",
   ];
 
   return (
@@ -198,19 +122,19 @@ const PyazonLandingPage: React.FC = () => {
             </div>
           </motion.aside>
 
-          {/* Main Content Area - Takes 8 columns */}
+          {/* Main Content Area - Takes 8 columns: Blog-like Detailed Article on Smart Tax Idea */}
           <motion.main
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-8 prose prose-lg max-w-none"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
+            {/* Hero Section - Integrated into Blog Introduction */}
             <section className="rounded-2xl shadow-xl overflow-hidden">
               <div className="relative h-64 lg:h-96">
                 <Image
                   src="/images/SMART TAX !DEA.png"
-                  alt="Tax consultation"
+                  alt="Smart Tax Idea"
                   fill
                   className="object-cover"
                   priority
@@ -224,7 +148,7 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Smart Tax Idea
+                  Discover Smart Tax Idea: Your Comprehensive Guide to Expert C.A. Services in India
                 </motion.h1>
                 <motion.p
                   className="text-gray-700 text-base leading-relaxed mb-8"
@@ -232,163 +156,345 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Expert C.A Services in India - Your Trusted Partner for All Financial Needs. With over 18 years of corporate consultancy experience, Smart Tax Idea offers comprehensive solutions for company registration, GST services, income tax filing, audits, and more. As part of the Payzon India ecosystem, we ensure seamless compliance, tax optimization, and business growth for startups, individuals, and established companies across the nation.
+                  Welcome to Smart Tax Idea, your one-stop solution for expert Chartered Accountant (C.A.) services in India. Specializing in professional and reliable services for individuals, startups, and businesses nationwide, our team of experienced C.A.s is dedicated to providing comprehensive financial and tax solutions tailored to your unique needs. Whether you're an entrepreneur starting a new venture or an established company seeking expert guidance, Smart Tax Idea ensures your financials are in order, helping you avoid penalties and focus on growth. With over 18 years of corporate consultancy experience, we bring professional services including company registration, ROC representation, regulatory filings, Section 8 company registration, and tax planning & strategy.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Company Registration
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Seamless setup for private limited companies, LLPs, and FPOs with full legal compliance.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <FileText className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Income Tax & GST
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Accurate filing and registration services to maximize savings and ensure compliance.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
               </div>
             </section>
 
-            {/* Featured Services Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {taxContent.map((content, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl border overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+            {/* Blog-like Detailed Content: Continuous Article on Smart Tax Idea */}
+            <article className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              {/* About Us Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={content.image}
-                      alt={content.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(content.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{content.subtitle}</h3>
-                    <h4 className="text-xl font-extrabold text-blue-600 mb-2">{content.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{content.description}</p>
-                    <div className="flex justify-between items-center text-sm text-gray-500">
-                      <span>{content.author}</span>
-                      <span><Calendar className="w-4 h-4 inline mr-1" /> {content.date}</span>
-                    </div>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700 mt-4"
-                      whileHover={{ scale: 1.05 }}
+                  About Smart Tax Idea
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  Smart Tax Idea is a trusted provider of expert Chartered Accountant (C.A.) services in India, offering professional and reliable financial and tax solutions for individuals, startups, and businesses across the country. With over 18 years of corporate consultancy experience, the company is committed to delivering the best C.A. consultation in India. We aim to be more than just a C.A. service provider, acting as a long-term financial partner to help clients make smarter decisions, avoid penalties, and unlock growth opportunities. Smart Tax Idea is trusted by 10,000+ clients and boasts a 99.7% satisfaction rate, having resolved 12,000+ support requests with 97% customer satisfaction. At Smart Tax Idea, you get more than just a CA – you get a long-term financial partner. We help you make smarter decisions, avoid penalties, and unlock growth opportunities.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop"
+                  alt="Tax professionals at work"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+                <motion.div
+                  className="bg-blue-50 p-6 rounded-lg"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <Users className="w-6 h-6 text-blue-500 inline mr-2" />
+                  <span className="font-semibold text-blue-900">Key Stat:</span> Trusted by 10,000+ clients with a 99.7% satisfaction rate.
+                </motion.div>
+              </section>
+
+              {/* Services Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  Our Comprehensive Services
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  Smart Tax Idea offers a wide range of services to meet the financial and regulatory needs of businesses and individuals. From GST registration to income tax return filing, we provide comprehensive solutions to ensure compliance while maximizing your eligible benefits and deductions.
+                </motion.p>
+
+                {/* Company Registration */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  Company Registration in India
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  Starting a business is an exciting journey, and we make it seamless by handling all aspects of company registration in India. Whether you're setting up a private limited company, LLP, or any other form, our team provides end-to-end services to ensure compliance with legal requirements. Company registration is the legal process of incorporating a company under the Companies Act, establishing your business as a separate legal entity, allowing you to enjoy limited liability, tax benefits, and other advantages. It is crucial for businesses aiming to expand, raise capital, or operate legally in India. Key factors include a unique company name compliant with ROC regulations, a registered office address, and at least two directors for a PVT LTD company.
+                </motion.p>
+
+                {/* Income Tax Return Filing */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Income Tax Return Filing
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  Ensure your taxes are filed accurately and on time with the expertise of our Chartered Accountants. Our team specializes in income tax return filing, offering personalized services to individuals and businesses to maximize savings while staying compliant. An Income Tax Consultant provides expert advice on filing Income Tax Returns and ensures compliance with Indian tax laws. They help optimize tax savings, assist in tax planning, and guide through deductions and exemptions to minimize tax liabilities.
+                </motion.p>
+
+                {/* GST Registration & Return */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  GST Registration & GST Return
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
+                  With GST laws constantly evolving, it's essential to stay updated. We offer GST registration and GST return filing services to simplify your tax-related worries. Whether you need help with a new registration or handling GST notices, our team of experts has got you covered. GST (Goods and Services Tax) is a single tax levied on the supply of goods and services in India. A GST Consultant helps businesses understand GST regulations, assists with GST registration, filing returns, and ensures proper compliance with the law. They are crucial for businesses to avoid penalties and optimize GST-related processes.
+                </motion.p>
+
+                {/* Company Audit Services */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  Company Audit Services
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
+                  Our company audit services ensure that your financial records are accurate and compliant with Indian regulations. We provide detailed auditing to help businesses maintain transparency and trust with stakeholders. Ensure your business is audit-ready at all times. Our financial audit services provide detailed insights, help detect irregularities, and keep you aligned with Indian regulatory standards. We conduct statutory audits, internal audits, tax audits, and more.
+                </motion.p>
+
+                {/* FPO Company Incorporation */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                >
+                  FPO Company Incorporation
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                >
+                  Planning to form a Farmer Producer Organization (FPO)? We guide you through every step of FPO company incorporation in India, ensuring you meet all legal requirements and set your FPO up for success.
+                </motion.p>
+
+                {/* PWD Registration */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                >
+                  PWD Registration
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 }}
+                >
+                  Our experts assist with PWD registration, ensuring your business complies with the Persons with Disabilities (PWD) Act. This is crucial for businesses that wish to include disabled-friendly practices or receive government benefits related to this. PWD Registration (Persons with Disabilities Registration) is required if you are a business aiming to hire people with disabilities. It ensures that you meet legal requirements and qualify for government benefits. You can register with the PWD authority by submitting relevant documents and complying with the norms set by the government.
+                </motion.p>
+
+                {/* Other Services */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.8 }}
+                >
+                  Additional Services: ROC Representation, Regulatory Filings, Section 8 Company, and Tax Planning
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.9 }}
+                >
+                  We also offer ROC Representation for Registrar of Companies matters, handle necessary Regulatory Filings for businesses, provide services for Section 8 Company Registration, and deliver expert Tax Planning & Strategy to maximize tax savings—with potential savings of 30-50% through proper planning.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop"
+                  alt="Financial audit services"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+              </section>
+
+              {/* Why Choose Us Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.0 }}
+                >
+                  Why Choose Smart Tax Idea?
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.1 }}
+                >
+                  At Smart Tax Idea, we offer expert financial and taxation services tailored to your specific needs. Discover why thousands trust us for professional and reliable solutions. Our expert C.A. advisors bring years of experience and in-depth knowledge to the table, ensuring that you receive the best financial and taxation advice tailored to your specific needs. We provide comprehensive solutions from GST registration to income tax return filing, meeting the financial and regulatory needs of businesses and individuals across India. At Smart Tax Idea, we believe in offering top-notch services at competitive prices, focusing on providing value and ensuring transparency in all our dealings.
+                </motion.p>
+                <ul className="space-y-3 text-gray-700 text-base list-disc pl-6">
+                  <li>Expert CA Advisors: Years of experience providing tailored financial and taxation advice.</li>
+                  <li>Comprehensive Solutions: Wide range of services for all financial and regulatory requirements.</li>
+                  <li>Affordable & Transparent: Competitive pricing with complete transparency.</li>
+                </ul>
+              </section>
+
+              {/* FAQs Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.2 }}
+                >
+                  Frequently Asked Questions (FAQs)
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.3 }}
+                >
+                  Get quick answers to common queries about our C.A. services in India.
+                </motion.p>
+
+                <div className="space-y-6">
+                  <div>
+                    <motion.h3
+                      className="text-xl font-semibold text-gray-800 mb-2"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 2.4 }}
                     >
-                      Get Started <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                      What is Company Registration in India?
+                    </motion.h3>
+                    <p className="text-gray-700">Company Registration in India is the legal process of incorporating a company under the Companies Act. It establishes your business as a separate legal entity, allowing you to enjoy limited liability, tax benefits, and other advantages. It is crucial for businesses aiming to expand, raise capital, or operate legally in India. When opting for Company Registration in India, it's essential to consider several key factors. Firstly, ensure that you have a unique company name that complies with the Registrar of Companies (ROC) regulations. You will also need a registered office address and at least two directors for a PVT LTD Company.</p>
                   </div>
-                </motion.div>
-              ))}
-            </section>
 
-            {/* We Deliver Financial Excellence Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-emerald-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="/images/SMART TAX !DEA.png"
-                    alt="Tax team"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    About Smart Tax Idea
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        With 18+ years of corporate consultancy, Smart Tax Idea offers expert CA services as part of Payzon India, trusted by 10,000+ clients.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        We provide comprehensive solutions including company registration, tax planning, GST compliance, audits, and regulatory filings for business growth.
-                      </span>
-                    </li>
-                  </ul>
+                  <div>
+                    <motion.h3
+                      className="text-xl font-semibold text-gray-800 mb-2"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 2.5 }}
+                    >
+                      What does an Income Tax Consultant do?
+                    </motion.h3>
+                    <p className="text-gray-700">An Income Tax Consultant provides expert advice on filing Income Tax Returns and ensures that you comply with Indian tax laws. They help optimize tax savings, assist in tax planning, and guide you through deductions and exemptions to minimize your tax liabilities.</p>
+                  </div>
+
+                  <div>
+                    <motion.h3
+                      className="text-xl font-semibold text-gray-800 mb-2"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 2.6 }}
+                    >
+                      What is GST and the role of a GST Consultant?
+                    </motion.h3>
+                    <p className="text-gray-700">GST (Goods and Services Tax) is a single tax levied on the supply of goods and services in India. A GST Consultant helps businesses understand GST regulations, assists with GST registration, filing returns, and ensures proper compliance with the law. They are crucial for businesses to avoid penalties and optimize GST-related processes.</p>
+                  </div>
+
+                  <div>
+                    <motion.h3
+                      className="text-xl font-semibold text-gray-800 mb-2"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 2.7 }}
+                    >
+                      What is PWD Registration?
+                    </motion.h3>
+                    <p className="text-gray-700">PWD Registration (Persons with Disabilities Registration) is required if you are a business aiming to hire people with disabilities. It ensures that you meet legal requirements and qualify for government benefits. You can register with the PWD authority by submitting relevant documents and complying with the norms set by the government.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+              </section>
+
+              {/* Client Testimonials Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.8 }}
+                >
+                  What Our Clients Are Saying
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.9 }}
+                >
+                  We are proud to be one of the leading providers of expert C.A. services in India, trusted by thousands of businesses and individuals for professional, reliable, and prompt services. Our clients appreciate our commitment to excellence, as reflected in our high satisfaction rates.
+                </motion.p>
+                {/* Note: Specific testimonials not detailed on the site, so general statement used */}
+              </section>
+
+              {/* Conclusion and Call to Action */}
+              <section className="text-center py-8 border-t border-gray-200">
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 3.0 }}
+                >
+                  Ready to Partner with Smart Tax Idea?
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 mb-6 max-w-2xl mx-auto"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 3.1 }}
+                >
+                  Take your business to the next level with Smart Tax Idea – your trusted partner for online CA services across India. Whether you're a startup, a growing company, or an individual looking for expert tax and accounting support, we make it simple, reliable, and affordable. Contact us today to get started on your path to financial success.
+                </motion.p>
+                <motion.button
+                  className="bg-blue-500 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-blue-600 transition-all duration-300 mx-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Started <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </section>
+            </article>
           </motion.main>
         </div>
       </div>

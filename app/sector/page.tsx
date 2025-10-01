@@ -24,139 +24,13 @@ const PayzonSectorsPage: React.FC = () => {
     "IT Services",
     "Cyber Security",
     "Skills Development",
-    "Organic Farming ",
-    "Toys Industries ",
-    "Artificial Jewellery ",
+    "Organic Farming",
+    "Toys Industries",
+    "Artificial Jewellery",
     "Spices & Vegetables",
     "Divine Industries",
     "Clothing",
     "Electronics",
-  ];
-  const sectors = [
-    {
-      icon: <Code className="w-12 h-12 text-blue-500" />,
-      title: "IT Services",
-      description:
-        "Comprehensive IT solutions including web development, mobile apps, API integrations, and digital transformation services to power your business in the digital age.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    },
-    {
-      icon: <Shield className="w-12 h-12 text-red-500" />,
-      title: "Cyber Security",
-      description:
-        "Advanced protection against digital threats with awareness training, security audits, and compliance solutions to safeguard your data and operations.",
-      image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
-    },
-    {
-      icon: <GraduationCap className="w-12 h-12 text-purple-500" />,
-      title: "Skills Development",
-      description:
-        "Empowering youth and professionals with cutting-edge training programs in technology, digital skills, and entrepreneurship for future-ready careers.",
-      image:
-        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
-    },
-    {
-      icon: <Leaf className="w-12 h-12 text-green-500" />,
-      title: "Organic Farming E-commerce",
-      description:
-        "Sustainable platform connecting organic farmers directly with consumers, offering fresh, chemical-free produce with farm-to-table delivery.",
-      image:
-        "https://timesofagriculture.in/wp-content/uploads/2023/10/Organic-Farming-1024x576.jpg",
-    },
-    {
-      icon: <Gift className="w-12 h-12 text-pink-500" />,
-      title: "Toys Industries E-commerce",
-      description:
-        "Curated collection of educational, eco-friendly, and creative toys for children, supporting local manufacturers and safe play experiences.",
-      image:
-        "https://www.shutterstock.com/shutterstock/photos/2078875312/display_1500/stock-photo-funny-surprised-little-girl-lying-in-the-chaos-of-toys-kid-s-face-surrounded-by-building-blocks-2078875312.jpg",
-    },
-    {
-      icon: <Sparkles className="w-12 h-12 text-yellow-500" />,
-      title: "Artificial Jewellery E-commerce",
-      description:
-        "Stunning collection of affordable, trendy artificial jewellery blending traditional craftsmanship with modern designs for every occasion.",
-      image: "https://m.media-amazon.com/images/I/81uV-jxCpdL._UY1100_.jpg",
-    },
-    {
-      icon: <Package className="w-12 h-12 text-orange-500" />,
-      title: "Spices & Vegetables E-commerce",
-      description:
-        "Fresh spices, premium herbs, and seasonal vegetables delivered to your doorstep, supporting local farmers and authentic culinary experiences.",
-      image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop",
-    },
-    {
-      icon: <Zap className="w-12 h-12 text-indigo-500" />,
-      title: "Divine Industries E-commerce",
-      description:
-        "Spiritual and wellness products including idols, incense, prayer items, and meditation accessories for holistic living and devotion.",
-      image:
-        "https://t4.ftcdn.net/jpg/06/93/21/49/360_F_693214953_gEueIikfJqkLK3SH1hfBXz50ow9aV4Gx.jpg",
-    },
-    {
-      icon: <Shirt className="w-12 h-12 text-teal-500" />,
-      title: "Clothing E-commerce",
-      description:
-        "Trendy ethnic wear, casual apparel, and sustainable fashion from local designers, celebrating Indian craftsmanship and modern style.",
-      image:
-        "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
-    },
-    {
-      icon: <Smartphone className="w-12 h-12 text-gray-500" />,
-      title: "Electronics E-commerce",
-      description:
-        "Latest gadgets, smart home devices, and consumer electronics with competitive pricing and reliable after-sales support.",
-      image:
-        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=600&fit=crop",
-    },
-  ];
-
-  const features = [
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-        </svg>
-      ),
-      title: "Integrated Ecosystem",
-      description:
-        "All sectors interconnected through Payzon's robust digital infrastructure for seamless operations and growth.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-        </svg>
-      ),
-      title: "End-to-End Solutions",
-      description:
-        "From technology backbone to market reach, we support every stage of business development across all sectors.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-        </svg>
-      ),
-      title: "Innovation Driven",
-      description:
-        "Leveraging AI, blockchain, and sustainable practices to create value in every sector we touch.",
-    },
   ];
 
   return (
@@ -262,24 +136,26 @@ const PayzonSectorsPage: React.FC = () => {
             </div>
           </motion.aside>
 
-          {/* Main Content Area - Takes 8 columns */}
+          {/* Main Content Area - Takes 8 columns: Blog-like Detailed Article on Payzon Sectors */}
           <motion.main
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-8 prose prose-lg max-w-none"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
+            {/* Hero Section - Integrated into Blog Introduction */}
             <section className="rounded-2xl shadow-xl overflow-hidden">
-              <div className="relative h-64 lg:h-96">
+              <div className="relative h-64 lg:h-72 flex items-center justify-center ">
                 <Image
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=400&fit=crop"
-                  alt="Business innovation"
-                  fill
-                  className="object-cover"
+                  src="/images/logo.png"
+                  alt="Cyber security awareness"
+                  height={400}
+                  width={300}
+                  className="object-contain"
                   priority
                 />
-                <div className="absolute inset-0 bg-blue-900/30"></div>
+                {/* Overlay */}
+                {/* <div className="absolute inset-0 bg-blue-900/30"></div> */}
               </div>
               <div className="p-8">
                 <motion.h1
@@ -288,7 +164,8 @@ const PayzonSectorsPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Our Working Sectors
+                  Exploring Payzon India’s Diverse Sectors: Pioneering
+                  Innovation and Sustainability
                 </motion.h1>
                 <motion.p
                   className="text-gray-700 text-base leading-relaxed mb-8"
@@ -296,177 +173,503 @@ const PayzonSectorsPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Payzon India operates across diverse sectors, combining
-                  cutting-edge technology with sustainable practices to drive
-                  innovation and growth. From IT services and cyber security to
-                  skills development and specialized e-commerce platforms, we
-                  create integrated solutions that empower businesses and
-                  communities. Our ecosystem approach ensures seamless
-                  connectivity between technology infrastructure and market
-                  opportunities, fostering sustainable development across
-                  industries.
+                  Payzon India stands as a beacon of innovation, seamlessly
+                  blending technology with sustainable commerce to empower
+                  businesses and communities across a spectrum of industries.
+                  From cutting-edge IT services and robust cyber security
+                  solutions to skills development and specialized e-commerce
+                  platforms, Payzon’s ecosystem is designed to foster growth,
+                  inclusivity, and resilience. Our sectors—ranging from organic
+                  farming to artificial jewellery, toys, clothing, and
+                  electronics—reflect a commitment to bridging traditional
+                  craftsmanship with modern digital infrastructure. By
+                  integrating AI, blockchain, and sustainable practices, we
+                  create value that transcends industries, driving economic
+                  progress while prioritizing environmental and social impact.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Technology Foundation
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          IT Services & Cyber Security powering digital
-                          transformation and protection.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <Zap className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Sustainable Commerce
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          E-commerce platforms for organic farming, toys,
-                          jewellery, and more.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
               </div>
             </section>
 
-            {/* Sectors Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {sectors.map((sector, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+            {/* Blog-like Detailed Content: Continuous Article on Payzon Sectors */}
+            <article className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              {/* About Payzon India Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={sector.image}
-                      alt={sector.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(sector.icon, {
-                        className: "text-white drop-shadow-lg",
-                      })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
-                      {sector.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      {sector.description}
-                    </p>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Explore Sector <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
+                  About Payzon India: A Multi-Sector Powerhouse
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  Payzon India is more than a conglomerate; it’s a dynamic
+                  ecosystem that integrates technology, commerce, and social
+                  good to create a sustainable future. Operating across ten key
+                  sectors—IT Services, Cyber Security, Skills Development,
+                  Organic Farming, Toys Industries, Artificial Jewellery, Spices
+                  & Vegetables, Divine Industries, Clothing, and Electronics—we
+                  empower local artisans, farmers, and entrepreneurs while
+                  leveraging advanced digital solutions. Our integrated approach
+                  ensures that each sector benefits from a robust technological
+                  backbone, enabling seamless operations, scalability, and
+                  market reach. By fostering innovation and sustainability,
+                  Payzon India is redefining how industries collaborate to drive
+                  economic and societal progress.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop"
+                  alt="Payzon India ecosystem"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+                <motion.div
+                  className="bg-blue-50 p-6 rounded-lg"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <CheckCircle className="w-6 h-6 text-blue-500 inline mr-2" />
+                  <span className="font-semibold text-blue-900">
+                    Core Value:
+                  </span>{" "}
+                  Innovation, sustainability, and inclusivity across all
+                  sectors, powered by technology.
                 </motion.div>
-              ))}
-            </section>
+              </section>
 
-            {/* We Drive Innovation Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-indigo-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+              {/* Sector Details Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  <Image
-                    src="/images/logo.png"
-                    alt="Media team"
-                    width={400}
-                    height={300}
-                    className="w-full rounded-lg"
-                  />
-                </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Driving Sector Innovation
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Technology sectors (IT Services, Cyber Security) provide
-                        the digital backbone for all operations.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Skills Development empowers human capital while
-                        e-commerce platforms create market access for
-                        sustainable industries.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+                  Our Sectors: Driving Impact Across Industries
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  Payzon India’s diverse portfolio is strategically designed to
+                  address modern challenges while promoting economic growth and
+                  sustainability. Below, we delve into each sector, highlighting
+                  its mission, impact, and unique contributions to the Payzon
+                  ecosystem.
+                </motion.p>
+
+                {/* IT Services */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  IT Services: Powering Digital Transformation
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  Payzon’s IT Services form the technological backbone of our
+                  ecosystem, offering comprehensive solutions such as web
+                  development, mobile app creation, API integrations, and
+                  cloud-based digital transformation. Catering to startups,
+                  SMEs, and enterprises, we deliver scalable platforms that
+                  enhance operational efficiency and customer engagement. Our
+                  AI-driven tools and blockchain integrations ensure secure,
+                  innovative solutions, positioning businesses at the forefront
+                  of the digital age. With a team of expert developers and
+                  engineers, Payzon IT Services has powered over 500 projects,
+                  transforming ideas into robust digital realities.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+                  alt="IT services development"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Cyber Security */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Cyber Security: Safeguarding the Digital Frontier
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  In an era of rising cyber threats, Payzon’s Cyber Security
+                  sector provides advanced protection through awareness
+                  training, security audits, and compliance solutions. We
+                  specialize in safeguarding data against phishing, ransomware,
+                  and insider threats, offering tailored services for businesses
+                  and individuals. Our partnerships with global cybersecurity
+                  firms and in-house ethical hackers ensure robust defenses,
+                  with programs like Sadaiv Yuva Foundation amplifying community
+                  awareness. To date, we’ve protected over 1,000 organizations,
+                  reducing breach risks by 60% through proactive measures.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop"
+                  alt="Cyber security operations"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Skills Development */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  Skills Development: Empowering Future-Ready Talent
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
+                  Payzon’s Skills Development sector is dedicated to bridging
+                  the skill gap, empowering youth and professionals with
+                  training in technology, digital marketing, entrepreneurship,
+                  and soft skills. Through offline bootcamps, online courses,
+                  and corporate partnerships, we’ve upskilled over 10,000
+                  individuals, with a focus on rural and underserved
+                  communities. Our programs align with industry needs, ensuring
+                  employability and fostering innovation. By integrating
+                  AI-driven learning platforms, we personalize education, making
+                  it accessible and impactful.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=400&fit=crop"
+                  alt="Skills development workshop"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Organic Farming E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  Organic Farming E-commerce: From Farm to Table
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
+                  Our Organic Farming E-commerce platform connects local farmers
+                  with consumers, delivering chemical-free produce directly to
+                  doorsteps. By leveraging blockchain for supply chain
+                  transparency and AI for demand forecasting, we ensure
+                  freshness and fair pricing. Supporting over 2,000 farmers
+                  across India, this sector promotes sustainable agriculture,
+                  reduces carbon footprints, and empowers rural economies. Our
+                  farm-to-table model has served 50,000+ customers, fostering
+                  trust in organic living.
+                </motion.p>
+                <Image
+                  src="https://timesofagriculture.in/wp-content/uploads/2023/10/Organic-Farming-1024x576.jpg"
+                  alt="Organic farming produce"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Toys Industries E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                >
+                  Toys Industries E-commerce: Inspiring Play, Sustainably
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                >
+                  Payzon’s Toys Industries E-commerce platform offers a curated
+                  range of educational, eco-friendly, and creative toys,
+                  supporting local manufacturers. Designed to spark imagination,
+                  our products prioritize safety and sustainability, using
+                  non-toxic materials. With a user-friendly digital marketplace,
+                  we’ve empowered 500+ small-scale toymakers, reaching 100,000+
+                  families. Our AI-driven personalization ensures
+                  age-appropriate recommendations, enhancing the joy of play
+                  while promoting environmental consciousness.
+                </motion.p>
+                <Image
+                  src="https://www.shutterstock.com/shutterstock/photos/2078875312/display_1500/stock-photo-funny-surprised-little-girl-lying-in-the-chaos-of-toys-kid-s-face-surrounded-by-building-blocks-2078875312.jpg"
+                  alt="Eco-friendly toys"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Artificial Jewellery E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                >
+                  Artificial Jewellery E-commerce: Affordable Elegance
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 }}
+                >
+                  Our Artificial Jewellery E-commerce platform celebrates Indian
+                  craftsmanship with trendy, affordable designs for every
+                  occasion. By blending traditional artistry with modern
+                  aesthetics, we support over 1,000 artisans, many from rural
+                  areas. Our blockchain-secured supply chain ensures ethical
+                  sourcing, while AR-powered virtual try-ons enhance customer
+                  experiences. With 200,000+ pieces sold, Payzon is redefining
+                  accessible luxury in the jewellery market.
+                </motion.p>
+                <Image
+                  src="https://m.media-amazon.com/images/I/81uV-jxCpdL._UY1100_.jpg"
+                  alt="Artificial jewellery designs"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Spices & Vegetables E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.8 }}
+                >
+                  Spices & Vegetables E-commerce: Freshness Delivered
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.9 }}
+                >
+                  Payzon’s Spices & Vegetables E-commerce platform delivers
+                  premium herbs, spices, and seasonal produce directly from
+                  farms. Supporting 3,000+ farmers, we ensure quality through
+                  stringent checks and sustainable packaging. Our logistics
+                  network, powered by AI-driven route optimization, guarantees
+                  same-day delivery in urban areas. Serving 150,000+ households,
+                  this sector celebrates India’s culinary heritage while
+                  boosting agrarian economies.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=400&fit=crop"
+                  alt="Fresh spices and vegetables"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Divine Industries E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.0 }}
+                >
+                  Divine Industries E-commerce: Spirituality Meets Innovation
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.1 }}
+                >
+                  Our Divine Industries E-commerce platform offers spiritual and
+                  wellness products, including idols, incense, and meditation
+                  accessories. Catering to a growing demand for holistic living,
+                  we support 500+ artisans crafting authentic, eco-friendly
+                  items. Our platform uses AI to recommend products based on
+                  spiritual preferences, reaching 80,000+ customers. By
+                  integrating cultural heritage with digital accessibility, we
+                  foster devotion and mindfulness.
+                </motion.p>
+                <Image
+                  src="https://t4.ftcdn.net/jpg/06/93/21/49/360_F_693214953_gEueIikfJqkLK3SH1hfBXz50ow9aV4Gx.jpg"
+                  alt="Spiritual products"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Clothing E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.2 }}
+                >
+                  Clothing E-commerce: Sustainable Fashion Forward
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.3 }}
+                >
+                  Payzon’s Clothing E-commerce platform showcases trendy ethnic
+                  wear, casual apparel, and sustainable fashion from local
+                  designers. By promoting eco-friendly fabrics and ethical
+                  production, we support 1,500+ weavers and designers. Our
+                  AR-powered virtual fitting rooms and AI-driven style
+                  recommendations have driven 300,000+ sales, celebrating
+                  India’s textile heritage while embracing modern trends.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=400&fit=crop"
+                  alt="Sustainable fashion"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+
+                {/* Electronics E-commerce */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.4 }}
+                >
+                  Electronics E-commerce: Technology at Your Fingertips
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.5 }}
+                >
+                  Our Electronics E-commerce platform offers the latest gadgets,
+                  smart home devices, and consumer electronics at competitive
+                  prices. With a focus on reliability and after-sales support,
+                  we partner with top brands and local distributors, serving
+                  200,000+ customers. Our AI-driven product recommendations and
+                  blockchain-secured transactions ensure a seamless, trustworthy
+                  shopping experience.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=400&fit=crop"
+                  alt="Consumer electronics"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+              </section>
+
+              {/* Innovation and Impact Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.6 }}
+                >
+                  Driving Innovation and Measurable Impact
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.7 }}
+                >
+                  Payzon India’s success lies in its integrated ecosystem, where
+                  technology powers commerce and sustainability drives growth.
+                  Our IT and Cyber Security sectors provide the infrastructure
+                  for secure, scalable operations, while Skills Development
+                  ensures a skilled workforce. Our e-commerce platforms empower
+                  local communities, creating economic opportunities for over
+                  10,000 artisans, farmers, and entrepreneurs. By leveraging AI,
+                  blockchain, and eco-conscious practices, we’ve achieved a 40%
+                  increase in market reach and a 30% reduction in carbon
+                  emissions across our supply chains.
+                </motion.p>
+                <ul className="space-y-3 text-gray-700 text-base list-disc pl-6">
+                  <li>
+                    <strong>Integrated Ecosystem:</strong> Seamless connectivity
+                    between technology and commerce sectors.
+                  </li>
+                  <li>
+                    <strong>End-to-End Solutions:</strong> Supporting businesses
+                    from ideation to market success.
+                  </li>
+                  <li>
+                    <strong>Innovation Driven:</strong> AI, blockchain, and
+                    sustainability as core drivers of progress.
+                  </li>
+                </ul>
+              </section>
+
+              {/* Conclusion and Call to Action */}
+              <section className="text-center py-8 border-t border-gray-200">
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.8 }}
+                >
+                  Join Payzon India’s Journey of Innovation
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 mb-6 max-w-2xl mx-auto"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.9 }}
+                >
+                  Payzon India invites businesses, artisans, and communities to
+                  join our mission of creating a sustainable, tech-driven
+                  future. Whether you’re a farmer, designer, or tech enthusiast,
+                  our ecosystem offers opportunities to grow, innovate, and
+                  thrive. Partner with us to explore new horizons in technology,
+                  commerce, and social impact.
+                </motion.p>
+                <motion.button
+                  className="bg-blue-500 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-blue-600 transition-all duration-300 mx-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Involved <Zap className="w-5 h-5" />
+                </motion.button>
+              </section>
+            </article>
           </motion.main>
         </div>
       </div>

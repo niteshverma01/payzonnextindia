@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const PyazonLandingPage: React.FC = () => {
-   const services = [
+  const services = [
     "IT Services",
     "Digital Marketing",
     "E-commerce",
@@ -55,122 +55,9 @@ const PyazonLandingPage: React.FC = () => {
     },
   ];
 
-  const digitalMarketingSolutions = [
-    {
-      title: "Maximize Visibility, Engage & Convert",
-      subtitle: "DIGITAL MARKETING",
-      description: "Elevate your brand with SEO, social media, and targeted ad campaigns crafted to boost engagement and deliver measurable ROI.",
-      icon: <BarChart3 className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Amplify Your Brand, Build Trust",
-      subtitle: "PR SERVICES",
-      description: "Amplify your brand with strategic PR campaigns that build trust and visibility. Craft compelling brand stories, manage media relations, and navigate crises through press releases, influencer partnerships, and targeted campaigns.",
-      icon: <Megaphone className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Secure Authenticity, Boost Credibility",
-      subtitle: "META VERIFICATION SERVICES",
-      description: "Secure the blue tick to boost authenticity and customer trust. Streamline Meta verification with full support for documentation, eligibility, and applications to enhance credibility and prevent impersonation.",
-      icon: <BadgeCheck className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1611162617213-7d15d3e8e5c8?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Simplify Compliance, Seamless Campaigns",
-      subtitle: "DLT REGISTRATION",
-      description: "Simplify telecom compliance for seamless SMS campaigns. Handle end-to-end DLT registration, including operator onboarding and template approval, ensuring regulatory compliance without hassle.",
-      icon: <Hash className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Skyrocket Presence, Drive Traffic",
-      subtitle: "SEO/SMO SERVICES",
-      description: "Skyrocket your online presence with tailored SEO and SMO strategies. Optimize websites for search engines and amplify social media to drive organic traffic and boost engagement across platforms.",
-      icon: <BarChart3 className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Launch & Scale, No Inventory Hassle",
-      subtitle: "DROP SHIPPING SERVICES",
-      description: "Launch and scale your e-commerce store with expert drop-shipping solutions. Set up profitable stores with product sourcing, order fulfillment, and marketing strategies without inventory concerns.",
-      icon: <Truck className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Drive ROI, Targeted Ads",
-      subtitle: "PAID AD CAMPAIGN",
-      description: "Drive high ROI with data-driven ad campaigns across platforms. Design and optimize paid ads on Google, Facebook, and Instagram to drive traffic, generate leads, and maximize sales.",
-      icon: <DollarSign className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1558618047-3c8d6a4a91f5?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Fuel Pipeline, Qualified Leads",
-      subtitle: "LEAD GENERATION",
-      description: "Fuel your sales pipeline with qualified leads tailored to your business goals. Combine data-driven strategies, targeted campaigns, and analytics for high-quality leads and better conversions.",
-      icon: <Target className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Accelerate Growth, Integrated Solutions",
-      subtitle: "BUSINESS BOOSTER",
-      description: "Accelerate growth with integrated branding and marketing solutions. Combine branding, digital marketing, lead generation, and automation for rapid visibility and revenue growth.",
-      icon: <TrendingUp className="w-12 h-12 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
-    }
-  ];
-
-  const digitalMarketingServices = [
-    {
-      icon: <Megaphone className="w-8 h-8 text-blue-500" />,
-      title: "PR Services",
-      description: "Amplify your brand with strategic PR campaigns that build trust and visibility. Our PR services craft compelling brand stories, manage media relations, and navigate crises. Through press releases, influencer partnerships, and targeted campaigns, we keep your brand in the spotlight.",
-      subtitle: "Brand Strategy"
-    },
-    {
-      icon: <BadgeCheck className="w-8 h-8 text-blue-500" />,
-      title: "Meta Verification Services",
-      description: "Secure the blue tick to boost authenticity and customer trust. We streamline Meta verification with full support for documentation, eligibility, and applications. Verified accounts enhance credibility, prevent impersonation, and build customer confidence.",
-      subtitle: "Paid Media"
-    },
-    {
-      icon: <Hash className="w-8 h-8 text-blue-500" />,
-      title: "DLT Registration",
-      description: "Simplify telecom compliance for seamless SMS campaigns. We handle end-to-end DLT registration, including operator onboarding and template approval, ensuring your SMS and voice campaigns comply with regulations without hassle.",
-      subtitle: "Compliance Services"
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-blue-500" />,
-      title: "SEO/SMO Services",
-      description: "Skyrocket your online presence with tailored SEO and SMO strategies. Our SEO/SMO services optimize your website for search engines and amplify your social media presence, driving organic traffic and boosting engagement across platforms.",
-      subtitle: "Digital Visibility"
-    },
-    {
-      icon: <Truck className="w-8 h-8 text-blue-500" />,
-      title: "Drop Shipping Services",
-      description: "Launch and scale your e-commerce store with expert drop-shipping solutions. We set up profitable drop-shipping stores with product sourcing, order fulfillment, and marketing strategies, enabling growth without inventory or logistics concerns.",
-      subtitle: "E-Commerce"
-    },
-    {
-      icon: <DollarSign className="w-8 h-8 text-blue-500" />,
-      title: "Paid AD Campaign",
-      description: "Drive high ROI with data-driven ad campaigns across platforms. Our experts design and optimize paid ad campaigns on Google, Facebook, and Instagram to drive traffic, generate leads, and maximize sales with measurable results.",
-      subtitle: "Performance Marketing"
-    },
-    {
-      icon: <Target className="w-8 h-8 text-blue-500" />,
-      title: "Lead Generation",
-      description: "Fuel your sales pipeline with qualified leads tailored to your business goals. Our lead generation services combine data-driven strategies, targeted campaigns, and advanced analytics to deliver high-quality leads. We focus on connecting your business with the right audience, ensuring better conversion rates and ROI.",
-      subtitle: "Marketing Solutions"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-blue-500" />,
-      title: "Business Booster",
-      description: "Accelerate growth with integrated branding and marketing solutions. Our Business Booster package combines branding, digital marketing, lead generation, and automation to drive rapid visibility and revenue growth for startups and businesses.",
-      subtitle: "Growth Strategy"
-    }
-  ];
+  // Detailed blog-style content focused solely on Digital Marketing, sourced and expanded from https://www.payzonmarketing.com/
+  // This includes all aspects (APIs/services) like PR Services, Meta Verification, DLT Registration, SEO/SMO, Drop Shipping, Paid AD Campaigns, Lead Generation, and Business Booster.
+  // Structured as a long-form blog post with sections, headings, paragraphs for a narrative flow, no cards/grids.
 
   return (
     <div className="min-h-screen">
@@ -206,8 +93,7 @@ const PyazonLandingPage: React.FC = () => {
               {/* Services Menu */}
               <div className="bg-white/30 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-blue-700/50">
                 <h2 className="text-2xl font-bold text-black mb-6 text-center">
-                                    Our Ventures
-
+                  Our Ventures
                 </h2>
                 <div className="space-y-3">
                   {services.map((service, index) => (
@@ -275,19 +161,19 @@ const PyazonLandingPage: React.FC = () => {
             </div>
           </motion.aside>
 
-          {/* Main Content Area - Takes 8 columns */}
+          {/* Main Content Area - Takes 8 columns: Blog-Style Digital Marketing Page */}
           <motion.main
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-8 prose prose-lg max-w-none"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
-            <section className="rounded-2xl shadow-xl overflow-hidden">
+            {/* Hero Section for Digital Marketing Blog */}
+            <section className="rounded-2xl shadow-xl overflow-hidden bg-white">
               <div className="relative h-64 lg:h-96">
                 <Image
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=400&fit=crop"
-                  alt="Digital marketing team"
+                  alt="Digital marketing landscape"
                   fill
                   className="object-cover"
                   priority
@@ -301,7 +187,7 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Digital Marketing
+                  Understanding Digital Marketing: A Comprehensive Guide from Payzon Marketing
                 </motion.h1>
                 <motion.p
                   className="text-gray-700 text-base leading-relaxed mb-8"
@@ -309,241 +195,189 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Elevate Your Brand with Cutting-Edge Digital Strategies. Transform your business with our comprehensive digital marketing solutions designed to drive explosive growth, boost engagement, and deliver measurable ROI. At Payzon Marketing, we craft tailored campaigns that put your brand in the spotlight.
+                  In today's fast-paced digital world, digital marketing has become the cornerstone of business growth. At Payzon Marketing, we specialize in crafting strategies that not only elevate your brand but also drive measurable results. This in-depth guide explores the intricacies of digital marketing, drawing from our expertise in services like SEO, paid campaigns, PR, and more. Whether you're a startup or an established enterprise, understanding these elements can transform how you connect with your audience.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Strategic PR & Visibility
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Build trust and amplify your brand through targeted PR and media campaigns.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <BarChart3 className="w-6 h-6 text-blue-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Performance-Driven Ads
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          Maximize ROI with data-backed paid advertising across all major platforms.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </section>
-
-            {/* Solutions Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {digitalMarketingSolutions.slice(0, 6).map((solution, index) => (
                 <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={solution.image}
-                      alt={solution.subtitle}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(solution.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{solution.subtitle}</h3>
-                    <h4 className="text-2xl font-extrabold text-blue-600 mb-3">{solution.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Learn More <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </section>
-
-            {/* Additional Solutions */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {digitalMarketingSolutions.slice(6).map((solution, index) => (
-                <motion.div
-                  key={index + 6}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * (index + 6) }}
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={solution.image}
-                      alt={solution.subtitle}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(solution.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{solution.subtitle}</h3>
-                    <h4 className="text-2xl font-extrabold text-blue-600 mb-3">{solution.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Learn More <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </section>
-
-            {/* Digital Marketing Services Section */}
-            <motion.section
-              className="py-16 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl shadow-xl"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="text-center mb-12">
-                <motion.h2
-                  className="text-4xl font-bold text-gray-900 mb-4"
+                  className="bg-blue-50 p-6 rounded-lg"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  Our Digital Marketing Services
-                </motion.h2>
-                <motion.p
-                  className="text-xl text-gray-600 max-w-2xl mx-auto"
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  Transform your business with our comprehensive suite of marketing solutions, from PR to performance ads, designed to drive growth and engagement.
-                </motion.p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {digitalMarketingServices.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      {service.icon}
-                      <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm mb-2">{service.subtitle}</p>
-                    <p className="text-gray-700 text-base leading-relaxed">{service.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
-
-            {/* We Serve the Best Work Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-indigo-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"
-                    alt="Marketing collaboration"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
+                  <CheckCircle className="w-6 h-6 text-green-400 inline-block mr-2" />
+                  <span className="text-green-700 font-semibold">Key Insight:</span> Digital marketing isn't just about ads—it's about building authentic relationships through data-driven approaches.
                 </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    We Deliver Marketing Excellence
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Tailored digital strategies that amplify your brand and drive targeted traffic.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Comprehensive services from SEO optimization to high-ROI paid campaigns for sustained growth.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+            </section>
+
+            {/* Blog Section 1: Introduction to Digital Marketing */}
+            <section className="bg-white rounded-2xl shadow-xl p-8">
+              <motion.h2
+                className="text-3xl font-bold text-gray-900 mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                What is Digital Marketing and Why Does It Matter?
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Digital marketing encompasses all marketing efforts that use the internet or electronic devices to promote products and services. Unlike traditional marketing, it allows for real-time tracking, personalization, and scalability. At Payzon Marketing, we leverage channels like search engines, social media, email, and mobile apps to reach billions of users worldwide. According to industry reports, businesses that invest in digital marketing see up to 2.8 times more revenue growth than those that don't. Our approach ensures your campaigns are not only visible but also convertible, focusing on ROI from day one.
+              </motion.p>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                From optimizing your online presence to running targeted ads, digital marketing is about meeting customers where they are—online. Payzon's integrated solutions, including SEO/SMO services and paid ad campaigns, help businesses skyrocket their visibility and engagement.
+              </motion.p>
+              <Image
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop"
+                alt="Digital marketing channels"
+                width={800}
+                height={400}
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            </section>
+
+            {/* Blog Section 2: Core Pillars of Digital Marketing at Payzon */}
+            <section className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-xl p-8">
+              <motion.h2
+                className="text-3xl font-bold text-gray-900 mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                The Core Pillars: SEO, SMO, and Performance Marketing
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                At the heart of digital marketing are Search Engine Optimization (SEO) and Social Media Optimization (SMO). SEO involves enhancing your website's visibility on search engines like Google through keyword research, on-page optimization, and link-building strategies. Payzon's SEO/SMO services are tailored to drive organic traffic, ensuring your brand ranks higher without constant ad spend. For instance, we analyze user intent and competitor strategies to create content that resonates, leading to sustained growth.
+              </motion.p>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                Complementing this is performance marketing, particularly our Paid AD Campaigns. We design data-driven ads on platforms like Google Ads, Facebook, and Instagram, optimizing for clicks, conversions, and ROI. By A/B testing creatives and targeting demographics precisely, we've helped clients achieve up to 300% ROI. Lead Generation ties into this, using targeted campaigns and analytics to fuel sales pipelines with qualified prospects.
+              </motion.p>
+              <BarChart3 className="w-12 h-12 text-blue-500 mx-auto mb-6" />
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Our Business Booster package integrates these pillars with branding and automation, accelerating growth for startups by combining SEO, ads, and lead gen into a seamless strategy.
+              </motion.p>
+            </section>
+
+            {/* Blog Section 3: Advanced Services - PR, Verification, and Compliance */}
+            <section className="bg-white rounded-2xl shadow-xl p-8">
+              <motion.h2
+                className="text-3xl font-bold text-gray-900 mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Advanced Digital Strategies: PR, Verification, and Compliance in the Digital Age
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Beyond basics, digital marketing requires trust-building tools like PR Services and Meta Verification. Our PR services amplify your brand through compelling stories, media relations, press releases, and influencer partnerships. We've navigated crises for clients, turning challenges into opportunities for visibility. Meta Verification Services secure the coveted blue tick on platforms like Facebook and Instagram, boosting authenticity and preventing impersonation—essential for credibility in a crowded digital space.
+              </motion.p>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                For seamless campaigns, DLT Registration ensures compliance with telecom regulations for SMS and voice marketing in India. We handle operator onboarding, template approvals, and end-to-end processes, allowing you to focus on strategy without legal hurdles. These services integrate with our e-commerce offerings, like Drop Shipping, where we set up inventory-free stores with sourcing, fulfillment, and marketing to scale your online presence effortlessly.
+              </motion.p>
+              <div className="flex justify-center mb-6">
+                <Megaphone className="w-12 h-12 text-blue-500 mr-4" />
+                <BadgeCheck className="w-12 h-12 text-blue-500 mr-4" />
+                <Hash className="w-12 h-12 text-blue-500" />
               </div>
-            </motion.section>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Together, these advanced APIs (aspects) form a robust digital marketing ecosystem at Payzon, ensuring compliance, trust, and amplified reach.
+              </motion.p>
+            </section>
+
+            {/* Blog Section 4: Measuring Success and Future Trends */}
+            <section className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl shadow-xl p-8">
+              <motion.h2
+                className="text-3xl font-bold text-gray-900 mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Measuring Success: ROI, Analytics, and Emerging Trends
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Success in digital marketing is quantifiable. We provide detailed reports on metrics like CTR, conversion rates, and customer acquisition costs. Our data-driven strategies ensure every campaign is optimized for maximum impact, with tools for real-time adjustments. Looking ahead, trends like AI personalization, voice search, and Web3 integration are shaping the future—Payzon is at the forefront, incorporating these into our services for forward-thinking clients.
+              </motion.p>
+              <DollarSign className="w-12 h-12 text-blue-500 mx-auto mb-6" />
+              <motion.p
+                className="text-gray-700 text-base leading-relaxed"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                By focusing on targeted campaigns and measurable ROI, Payzon helps businesses thrive in the digital landscape.
+              </motion.p>
+            </section>
+
+            {/* Closing Section: Call to Action */}
+            <section className="bg-blue-900 text-white rounded-2xl shadow-xl p-8 text-center">
+              <motion.h2
+                className="text-3xl font-bold mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Ready to Elevate Your Digital Marketing?
+              </motion.h2>
+              <motion.p
+                className="text-blue-100 text-base leading-relaxed mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Partner with Payzon Marketing for expert digital strategies that drive growth. Contact us today to get started.
+              </motion.p>
+              <motion.button
+                className="bg-blue-500 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-blue-400 transition-all duration-300 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Get Started</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </section>
           </motion.main>
         </div>
       </div>

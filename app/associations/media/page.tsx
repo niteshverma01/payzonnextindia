@@ -8,90 +8,8 @@ import { motion } from "framer-motion";
 const PyazonLandingPage: React.FC = () => {
   const services = [
     "Media",
-    "Social Walfare",
+    "Social Welfare",
     "Finance Audits",
-    
-  ];
-
-  const features = [
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-        </svg>
-      ),
-      title: "Latest Video Coverage",
-      description: "Watch live and on-demand video news on our channel, keeping you connected to every major event.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-        </svg>
-      ),
-      title: "In-Depth Political Analysis",
-      description: "Expert articles and opinions providing deep insights into political events.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-        </svg>
-      ),
-      title: "Crypto Updates",
-      description: "Latest news and trends on blockchain, cryptocurrency, and digital finance.",
-    },
-  ];
-
-  const mediaContent = [
-    {
-      title: "The Future of Sustainable Living",
-      subtitle: "Eco-Friendly Lifestyle",
-      description: "How adopting an eco-friendly lifestyle can help protect Earth's resources and ensure a clean, green, and balanced future for the next generations.",
-      icon: <Zap className="w-12 h-12 text-blue-500" />,
-      author: "Sadaiv Satya News Team",
-      date: "2 hours ago",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Can There Be a War Between America and Pakistan?",
-      subtitle: "International Relations",
-      description: "Amid global tensions, an analysis of potential conflicts between the US and Pakistan. Expert opinions and historical context.",
-      icon: <Shield className="w-12 h-12 text-blue-500" />,
-      author: "Political Expert",
-      date: "1 day ago",
-      image: "https://images.unsplash.com/photo-1568033105626-3f9c12e5a5e9?w=800&h=600&fit=crop"
-    },
-    {
-      title: "New Heights in Crypto Market",
-      subtitle: "Digital Currency Trends",
-      description: "Recent surges in Bitcoin and other cryptocurrencies, with advice for investors.",
-      icon: <BarChart3 className="w-12 h-12 text-blue-500" />,
-      author: "Financial Analyst",
-      date: "Just now",
-      image: "https://images.unsplash.com/photo-1640630825079-32f4a85decd5?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Latest Business World News",
-      subtitle: "Business Updates",
-      description: "Recent developments in the Indian economy, stock market trends, and corporate news.",
-      icon: <DollarSign className="w-12 h-12 text-blue-500" />,
-      author: "Business Desk",
-      date: "3 hours ago",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
-    }
   ];
 
   return (
@@ -196,24 +114,24 @@ const PyazonLandingPage: React.FC = () => {
             </div>
           </motion.aside>
 
-          {/* Main Content Area - Takes 8 columns */}
+          {/* Main Content Area - Takes 8 columns: Blog-like Detailed Article on Sadaiv Satya News */}
           <motion.main
-            className="lg:col-span-8 space-y-8"
+            className="lg:col-span-8 space-y-8 prose prose-lg max-w-none"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Hero Section */}
+            {/* Hero Section - Integrated into Blog Introduction */}
             <section className="rounded-2xl shadow-xl overflow-hidden">
               <div className="relative h-64 lg:h-96">
                 <Image
                   src="/images/Sadaiv MEDIA 1.png"
-                  alt="News broadcast"
+                  alt="Sadaiv Satya News"
                   fill
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-red-900/10"></div>
+                <div className="absolute inset-0 bg-red-900/30"></div>
               </div>
               <div className="p-8">
                 <motion.h1
@@ -222,7 +140,7 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  Sadaiv Satya News
+                  Exploring Sadaiv Satya News: Your Gateway to Unbiased Truth in Media
                 </motion.h1>
                 <motion.p
                   className="text-gray-700 text-base leading-relaxed mb-8"
@@ -230,164 +148,281 @@ const PyazonLandingPage: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Sadaiv Satya News, a trusted media platform under the Payzon India umbrella, delivers unbiased reporting and insightful analysis across multiple fields. We specialize in video news, political articles, business updates, and crypto trends, covering topics like environmental sustainability, international relations, and economic developments. Our mission is to empower informed decisions with real-time updates and in-depth content. As part of Payzon India, we align with their vision of providing innovative digital solutions, ensuring accessibility and reliability for our audience.
+                  Sadaiv Satya News stands as a beacon of integrity in the fast-evolving world of digital media, committed to the relentless pursuit of truth. Under the innovative umbrella of Payzon India, this platform delivers a dynamic blend of video news, in-depth political articles, timely business updates, and cutting-edge crypto insights. Our mission is clear: to empower audiences with credible, unbiased information that fosters informed decision-making. From breaking news alerts to analytical deep-dives, Sadaiv Satya News covers a spectrum of categories including media, social welfare, and finance audits, ensuring comprehensive coverage that resonates with diverse viewers. As part of Payzon India's ecosystem, we leverage advanced digital tools to provide accessible, reliable content that bridges the gap between complex events and everyday understanding.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-600 rounded-full transform translate-x-8 -translate-y-8"></div>
-                    <div className="relative flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Video News
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          View all videos and get live updates.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="bg-blue-900 p-6 rounded-lg relative overflow-hidden hover:bg-blue-500 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-600 rounded-full transform -translate-x-10 translate-y-10"></div>
-                    <div className="relative flex items-center gap-3">
-                      <Newspaper className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-blue-100 font-semibold text-lg">
-                          Political Articles
-                        </h3>
-                        <p className="text-blue-200 text-sm">
-                          In-depth analysis and expert opinions.
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
               </div>
             </section>
 
-            {/* Featured Stories Grid */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {mediaContent.map((story, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+            {/* Blog-like Detailed Content: Continuous Article on Sadaiv Satya News */}
+            <article className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              {/* About Us Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={story.image}
-                      alt={story.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/20"></div>
-                    <div className="absolute top-4 left-4">
-                      {React.cloneElement(story.icon, { className: "text-white drop-shadow-lg" })}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{story.subtitle}</h3>
-                    <h4 className="text-xl font-extrabold text-blue-600 mb-2">{story.title}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{story.description}</p>
-                    <div className="flex justify-between items-center text-sm text-gray-500">
-                      <span>{story.author}</span>
-                      <span><Calendar className="w-4 h-4 inline mr-1" /> {story.date}</span>
-                    </div>
-                    <motion.button
-                      className="text-blue-500 font-semibold flex items-center gap-2 hover:text-blue-700 mt-4"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      Read Full Story <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </section>
-
-            {/* We Deliver Truth Section */}
-            <motion.section
-              className="rounded-2xl shadow-xl p-8 bg-gradient-to-r from-blue-50 to-indigo-50"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row gap-6 mb-8 items-center">
-                <motion.div
-                  className="md:w-64 flex-shrink-0"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+                  About Sadaiv Satya News
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <Image
-  src="/images/Sadaiv MEDIA 1.png"
-  alt="Media team"
-  width={400}
-  height={300}
-  className="w-full rounded-lg"
-/>
-
+                  Founded on the principle of "Sadaiv Satya" – always the truth – Sadaiv Satya News is a premier digital media outlet dedicated to delivering factual, unbiased reporting. As an integral part of Payzon India, a leader in digital solutions, we harness cutting-edge technology to broadcast real-time news and foster public discourse. Our platform spans video news for dynamic storytelling, political articles for nuanced analysis, business sections for economic insights, and crypto updates for the digital finance frontier. With a focus on categories like media, social welfare initiatives, and finance audits, we aim to not only inform but also inspire action towards societal betterment. Our team of seasoned journalists and experts ensures every piece of content upholds the highest standards of accuracy and ethical journalism, building trust in an era of information overload.
+                </motion.p>
+                <Image
+                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=400&fit=crop"
+                  alt="Media broadcast studio"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+                <motion.div
+                  className="bg-blue-50 p-6 rounded-lg"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <Newspaper className="w-6 h-6 text-blue-500 inline mr-2" />
+                  <span className="font-semibold text-blue-900">Core Value:</span> Unwavering commitment to truth, transparency, and timeliness in every story we tell.
                 </motion.div>
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h2
-                    className="text-3xl font-bold text-black mb-4"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    About Sadaiv Satya News
-                  </motion.h2>
-                  <ul className="space-y-3 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        Part of Payzon India, Sadaiv Satya News focuses on delivering credible news in video news, political analysis, business updates, and crypto trends.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-700 mr-3 mt-1 text-lg">•</span>
-                      <span>
-                        We provide real-time coverage and expert insights on critical issues like sustainability, global politics, and financial markets, ensuring truth and transparency.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-700/50">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-lg hover:bg-blue-900/30 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                  >
-                    <div className="bg-blue-900 p-3 rounded-full flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-700 text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-700">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+              </section>
+
+              {/* Categories and Coverage Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  Our Core Categories: Media, Social Welfare, and Finance Audits
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  At Sadaiv Satya News, our content is thoughtfully categorized to address the multifaceted interests of our audience. The Media section features live video coverage and on-demand clips that bring global events to life, from press conferences to community stories. Social Welfare delves into humanitarian efforts, policy impacts, and grassroots movements, highlighting initiatives that promote equity and well-being. Finance Audits provide rigorous examinations of corporate practices, regulatory compliance, and economic transparency, equipping viewers with tools to navigate financial complexities. These categories are interconnected, reflecting our holistic approach to journalism that links societal issues with economic realities.
+                </motion.p>
+
+                {/* Media Category */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  Media: Dynamic Video News and Live Updates
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  Our Media category is the heartbeat of Sadaiv Satya News, offering high-quality video content that captures the pulse of current affairs. From breaking news to investigative reports, our videos are produced with state-of-the-art equipment and edited for clarity and impact. We cover everything from local elections to international summits, ensuring viewers receive unfiltered, real-time insights. Integrated with Payzon India's digital infrastructure, our platform supports seamless streaming across devices, making truth accessible anytime, anywhere.
+                </motion.p>
+
+                {/* Social Welfare Category */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  Social Welfare: Championing Causes for a Better Society
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  Social Welfare at Sadaiv Satya News spotlights stories that matter to the underserved and underrepresented. We explore government programs, NGO efforts, and community-driven change, such as environmental conservation projects and welfare reforms. Our in-depth articles and video series aim to raise awareness and drive policy discussions, embodying our commitment to social justice. By partnering with experts and activists, we provide balanced perspectives that encourage viewer engagement and advocacy.
+                </motion.p>
+
+                {/* Finance Audits Category */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
+                  Finance Audits: Ensuring Transparency in Economic Affairs
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
+                  In the Finance Audits section, we scrutinize financial statements, corporate governance, and market irregularities with forensic precision. Our reports expose discrepancies and celebrate ethical practices, aiding investors and regulators alike. Covering audits of major firms and emerging fintech, this category underscores the importance of accountability in building economic trust. As part of Payzon India's financial ecosystem, our audits align with broader goals of sustainable growth and regulatory compliance.
+                </motion.p>
+                <Image
+                  src="https://static.vecteezy.com/system/resources/previews/035/630/209/non_2x/hand-with-magnifying-glass-and-calculator-analysis-of-financial-report-financial-audit-concept-calculation-auditing-tax-process-business-background-illustration-in-flat-design-vector.jpg"
+                  alt="Finance audit analysis"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+              </section>
+
+              {/* Featured Topics Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  Spotlight Stories: Key Topics in Focus
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
+                  Sadaiv Satya News thrives on diverse, impactful stories that shape public discourse. Here, we delve into select topics that exemplify our coverage.
+                </motion.p>
+
+                {/* Sustainable Living */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                >
+                  The Future of Sustainable Living: Eco-Friendly Practices for Tomorrow
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                >
+                  In an era of climate urgency, adopting eco-friendly lifestyles is imperative. This article explores practical steps like reducing plastic use, embracing renewable energy, and community gardening. By integrating global case studies and expert interviews, we illustrate how individual actions can safeguard Earth's resources, ensuring a balanced future. Sadaiv Satya News advocates for sustainability through multimedia content that inspires change.
+                </motion.p>
+
+                {/* International Relations */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                >
+                  Can There Be a War Between America and Pakistan? Analyzing Global Tensions
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 }}
+                >
+                  Geopolitical strains between the United States and Pakistan raise alarms about potential escalation. This in-depth analysis reviews historical alliances, current diplomatic frictions, and military postures. Drawing on insights from international relations experts, we assess risks and pathways to de-escalation, emphasizing the human cost of conflict. Sadaiv Satya News provides balanced reporting to promote understanding over division.
+                </motion.p>
+
+                {/* Crypto Market */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.8 }}
+                >
+                  New Heights in Crypto Market: Navigating Bitcoin Surges and Investor Strategies
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.9 }}
+                >
+                  The cryptocurrency market is soaring, with Bitcoin shattering records amid institutional adoption. This piece examines market drivers, volatility factors, and prudent investment tips. From blockchain innovations to regulatory shifts, our coverage equips readers with knowledge for informed participation in digital finance. At Sadaiv Satya News, we demystify crypto to empower economic inclusion.
+                </motion.p>
+
+                {/* Business News */}
+                <motion.h3
+                  className="text-2xl font-semibold text-gray-800 mb-3"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.0 }}
+                >
+                  Latest Business World News: Trends Shaping India's Economy
+                </motion.h3>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.1 }}
+                >
+                  India's business landscape is buzzing with stock market highs, startup booms, and corporate mergers. This update covers key developments, from policy reforms to sectoral growth in tech and manufacturing. With data visualizations and expert commentary, we help navigate the opportunities and challenges in this dynamic economy. Sadaiv Satya News is your reliable source for business intelligence.
+                </motion.p>
+                <Image
+                  src="https://coindcx.com/blog/wp-content/uploads/2023/10/What-is-_-Top-Crypto-Trends-1-1200x675.webp"
+                  alt="Crypto and business trends"
+                  width={800}
+                  height={400}
+                  className="w-full rounded-lg object-cover mb-6"
+                />
+              </section>
+
+              {/* Mission and Impact Section */}
+              <section>
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.2 }}
+                >
+                  Our Mission: Pursuit of Truth and Societal Impact
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 leading-relaxed mb-6"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.3 }}
+                >
+                  The ethos of Sadaiv Satya News is rooted in journalistic integrity and public service. We strive to uncover truths that influence policy, spark conversations, and drive positive change. Through collaborations with Payzon India, we innovate in content delivery, from AI-enhanced analytics to interactive video formats. Our impact is measured not just in views, but in the actions inspired – from community welfare drives to informed voting.
+                </motion.p>
+                <ul className="space-y-3 text-gray-700 text-base list-disc pl-6">
+                  <li>Credible Reporting: Fact-checked content across all platforms.</li>
+                  <li>Innovative Delivery: Leveraging Payzon tech for immersive experiences.</li>
+                  <li>Community Engagement: Forums and feedback loops for audience voices.</li>
+                </ul>
+              </section>
+
+              {/* Conclusion and Call to Action */}
+              <section className="text-center py-8 border-t border-gray-200">
+                <motion.h2
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.4 }}
+                >
+                  Join the Pursuit of Truth with Sadaiv Satya News
+                </motion.h2>
+                <motion.p
+                  className="text-gray-700 mb-6 max-w-2xl mx-auto"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 2.5 }}
+                >
+                  In a world flooded with information, Sadaiv Satya News cuts through the noise to deliver clarity and context. Subscribe today to stay ahead with our video news, political insights, business alerts, and crypto trends. As part of Payzon India, we're committed to your journey towards enlightenment. Contact us to share your story or collaborate on impactful narratives.
+                </motion.p>
+                <motion.button
+                  className="bg-blue-500 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-blue-600 transition-all duration-300 mx-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Subscribe Now <PlayCircle className="w-5 h-5" />
+                </motion.button>
+              </section>
+            </article>
           </motion.main>
         </div>
       </div>

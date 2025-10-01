@@ -112,7 +112,7 @@ const navigationItems: NavigationItem[] = [
     href: "#audit",
     hasDropdown: true,
     dropdownItems: [
-      // { name: "Financial Reports", href: "#financial-reports" },
+      { name: "Current Audit Reports", href: "#financial-reports" },
       // { name: "Compliance Documents", href: "#compliance-documents" },
       // { name: "Annual Reviews", href: "#annual-reviews" },
       // { name: "Transparency Reports", href: "#transparency-reports" },
