@@ -13,10 +13,10 @@ interface Company {
 const companies: Company[] = [
   {
     id: 1,
-    name: "Payzon India",
+    name: "Payzon Marketing",
     logo: "/images/logo.png",
-    url: "https://www.payzonindia.com",
-    url1: "www.payzonindia.com",
+    url: "https://www.payzonmarketing.com",
+    url1: "www.payzonmarketing.com",
   },
   {
     id: 2,
