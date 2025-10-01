@@ -123,7 +123,7 @@ const navigationItems: NavigationItem[] = [
     href: "#investor",
     hasDropdown: true,
     dropdownItems: [
-      // { name: "Investment Opportunities", href: "#investment-opportunities" },
+      { name: "Our Investor Program", href: "#investment-opportunities" },
       // { name: "Funding Rounds", href: "#funding-rounds" },
       // { name: "Returns Analysis", href: "#returns-analysis" },
       // { name: "Join Program", href: "#join-program" },

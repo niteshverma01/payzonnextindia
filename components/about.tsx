@@ -133,7 +133,7 @@ export default function About() {
               <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                 Payzon India, a dynamic group from Central India, excels in IT
                 services, fintech APIs, e-commerce platforms, digital marketing,
-                cyber security, and social welfare. Since 2029, we've empowered
+                cyber security, and social welfare. Since 2009, we've empowered
                 businesses and communities globally with secure, scalable, and
                 innovative solutions across industries like organic farming,
                 toys, artificial jewellery, and more.

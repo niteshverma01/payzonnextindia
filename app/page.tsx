@@ -21,6 +21,7 @@ import ITSolutionsSection from "@/components/blogs";
 import DigitalMarketingUI from "@/components/marketingpage";
 import CybersecuritySliderUI from "@/components/cyber1";
 import HowItWorks from "@/components/onemore";
+import CompanySection from "@/components/company";
 
 export default function Home() {
   return (
@@ -35,7 +36,8 @@ export default function Home() {
       {/* <Services /> */}
       <DigitalMarketingUI />
       {/* <Stats /> */}
-      <ITSolutionsSection />
+      <CompanySection/>
+      {/* <ITSolutionsSection /> */}
       <CybersecuritySliderUI />
       <HowItWorks/>
       {/* <Team /> */}
