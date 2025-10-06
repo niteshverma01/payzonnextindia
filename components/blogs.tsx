@@ -8,7 +8,7 @@ const teamMembers = [
     hoverName: "Connect With Us",
     hoverRole: "Get IT Solutions",
     image:
-      "https://asocap.com/wp-content/uploads/2020/06/api-development.webp",
+      "/images/21.webp",
     description:
       "Custom API development for secure, scalable, and efficient integration across platforms and services.",
   },
@@ -18,7 +18,7 @@ const teamMembers = [
     hoverName: "Digital Marketing",
     hoverRole: "Grow Your Brand",
     image:
-      "https://bizanosa.com/wp-content/uploads/2025/03/Bizanosa-Hosting-web-hosting-background.jpg",
+      "/images/21.webp",
     description:
       "High-performance web hosting with 99.9% uptime, SSL certificates, and enterprise-grade security.",
   },
@@ -28,7 +28,7 @@ const teamMembers = [
     hoverName: "Business Solutions",
     hoverRole: "Expert Consultation",
     image:
-      "https://www.digiwebart.com/wp-content/uploads/2018/10/KYC-verification.jpeg",
+      "/images/23.jpeg",
     description:
       "Advanced KYC verification systems ensuring regulatory compliance and secure user authentication.",
   },
@@ -38,7 +38,7 @@ const teamMembers = [
     hoverName: "Technology Leader",
     hoverRole: "Innovation Expert",
     image:
-      "https://itseeze.com/_webedit/cached-images/3214-0-792-1736-8416-6312-1132.png",
+      "/images/24.png",
     description:
       "Full-stack e-commerce portals with payment integration, inventory management, and customer analytics.",
   },
@@ -48,7 +48,7 @@ const teamMembers = [
     hoverName: "Strategic Planning",
     hoverRole: "Business Growth",
     image:
-      "https://fortitudemsp.co.uk/wp-content/uploads/2024/09/cyber-security-in-derby.jpg",
+      "/images/25.jpg",
     description:
       "Comprehensive cyber security solutions including penetration testing, firewall management, and data encryption.",
   },
@@ -58,7 +58,7 @@ const teamMembers = [
     hoverName: "Project Management",
     hoverRole: "Delivery Excellence",
     image:
-      "https://www.globalb2bmart.com/assets/b2b-marketplace-blog.jpeg",
+      "/images/26.jpeg",
     description:
       "Robust B2B portals for seamless business-to-business interactions, order management, and supply chain integration.",
   },

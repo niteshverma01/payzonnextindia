@@ -11,16 +11,16 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 const ventures = [
-  { id: 1, image: "https://sevenit.in/assets/images/Picture1.jpg", title: "IT Services", description: "Cutting-edge technology solutions" },
-  { id: 2, image: "https://eu-images.contentstack.com/v3/assets/blt69509c9116440be8/blt8ffb90a2f64bacfa/6776f4544b281ca5e2bc465a/cybersecurity_NicoElNino-AlamyStockPhoto.jpg", title: "Cyber Security", description: "Advanced digital protection" },
-  { id: 3, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuY0jAR_6dAVhCvoQ8zGPqTnL8z8bJ1EuLFQ&s", title: "Skills Development", description: "Empowering human potential" },
-  { id: 4, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhY-ikHeC_3NCeXFQ3Za5AniBqnH4BELmbA&s", title: "Organic Farming", description: "Sustainable agriculture solutions" },
-  { id: 5, image: "https://wellify.in/cdn/shop/products/Littles-Junior-Ring-Top-Tile-02.jpg?v=1674021250", title: "Toy Industries", description: "Creative play experiences" },
-  { id: 6, image: "https://www.latrendzjewellery.com/wp-content/uploads/2020/08/Artificial-jewellery-industry-in-India.jpg", title: "Artificial Jewellery", description: "Elegant fashion accessories" },
-  { id: 7, image: "https://c4.wallpaperflare.com/wallpaper/942/112/901/table-fruit-nuts-vegetables-wood-hd-wallpaper-preview.jpg", title: "Spices & Vegetables", description: "Premium natural products" },
-  { id: 8, image: "https://thumbs.dreamstime.com/b/banner-featuring-lotus-incense-sticks-petals-spiritual-awakening-calmness-embodying-zen-design-concept-high-quality-333067525.jpg", title: "Divine Industries", description: "Spiritual wellness products" },
-  { id: 9, image: "https://img.freepik.com/free-photo/shop-clothing-clothes-shop-hanger-modern-shop-boutique_1150-8886.jpg", title: "Fashion & Clothing", description: "Trendsetting apparel solutions" },
-  { id: 10, image: "https://thumbs.dreamstime.com/b/many-used-modern-electronic-gadgets-use-white-floor-reuse-recycle-concept-top-view-153892434.jpg", title: "Electronics", description: "Smart technology integration" },
+  { id: 1, image: "/images/27.jpg", title: "IT Services", description: "Cutting-edge technology solutions" },
+  { id: 2, image: "/images/28.jpg", title: "Cyber Security", description: "Advanced digital protection" },
+  { id: 3, image: "/images/29.jpeg", title: "Skills Development", description: "Empowering human potential" },
+  { id: 4, image: "/images/30.jpeg", title: "Organic Farming", description: "Sustainable agriculture solutions" },
+  { id: 5, image: "/images/31.jpg", title: "Toy Industries", description: "Creative play experiences" },
+  { id: 6, image: "/images/32.jpg", title: "Artificial Jewellery", description: "Elegant fashion accessories" },
+  { id: 7, image: "/images/33.jpg", title: "Spices & Vegetables", description: "Premium natural products" },
+  { id: 8, image: "/images/34.jpg", title: "Divine Industries", description: "Spiritual wellness products" },
+  { id: 9, image: "/images/35.jpg", title: "Fashion & Clothing", description: "Trendsetting apparel solutions" },
+  { id: 10, image: "/images/36.jpg", title: "Electronics", description: "Smart technology integration" },
 ];
 
 export default function OngoingVentures() {
