@@ -7,6 +7,7 @@ import {
   Phone,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -81,24 +82,24 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex space-x-6 justify-center mt-6">
-              <a
+              <Link
                 href="/about"
                 className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
               >
                 Profile
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="portfolio"
                 className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
               >
                 Portfolio
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
               >
                 Contact
-              </a>
+              </Link>
             </div>{" "}
           </div>
 
