@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Phone,
-  MapPin,
+  WalletCards,
   Mail,
   ChevronDown,
   Menu,
@@ -129,7 +129,10 @@ const navigationItems: NavigationItem[] = [
     hasDropdown: true,
     dropdownItems: [
       { name: "Sign In", href: "https://ekyc.payzonindia.com/account/sign-in" },
-      { name: "Create Accounts", href: "https://ekyc.payzonindia.com/account/sign-in" },
+      {
+        name: "Create Accounts",
+        href: "https://ekyc.payzonindia.com/account/sign-in",
+      },
       { name: "Payments", href: "/sector" },
     ],
   },
@@ -308,7 +311,7 @@ export default function Navbar() {
                         }`}
                       ></div>
                       <div className="flex items-center space-x-2 whitespace-nowrap">
-                        <span className="text-sm md:text-base lg:text-sm font-medium  uppercase bg-blue-600 px-4 py-2 rounded-3xl ">
+                        <span className="text-sm md:text-base lg:text-sm font-medium text-white uppercase bg-blue-600 px-4 py-2 rounded-3xl ">
                           Payments
                         </span>
                       </div>
@@ -541,6 +544,22 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
+
+          <div className="mx-6 mb-6 px-6 py-3 bg-gradient-to-br from-white via-blue-50 to-blue-50 rounded-2xl shadow-md hover:shadow-xl border border-blue-200 transition-shadow duration-300 cursor-pointer">
+            <div className="flex items-center space-x-4">
+              {/* Optional icon */}
+              <div className="p-3 bg-blue-100 rounded-full">
+                   <WalletCards className="text-blue-600"/>
+              </div>
+              <div>
+                <span className="text-lg font-semibold text-gray-800">
+                  Payments
+                </span>
+                
+              </div>
+            </div>
+          </div>
+
           <div className="mx-6 mb-6 p-6 bg-gradient-to-br from-white via-blue-50 to-blue-50 rounded-3xl shadow-lg border border-blue-100">
             <div className="flex items-center gap-2 mb-4">
               <Star className="w-5 h-5 text-blue-600" />

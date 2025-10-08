@@ -177,9 +177,13 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-gray-400" />
                   <p className="text-white">+91 755 485 9540</p>
                 </div>
+                 <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-gray-400" />
+                  <p className="text-white">+91 755 492 3296</p>
+                </div>
                 <div className="flex items-center space-x-2">
                   <FaWhatsapp className="w-4 h-4 text-green-500" />
-                  <p className="text-white">+91 755 492 3296</p>
+                  <p className="text-white">+91 924 383 7546</p>
                 </div>
               </div>
             </div>
