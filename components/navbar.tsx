@@ -245,14 +245,14 @@ export default function Navbar() {
                       ></div>
 
                       <div className="flex items-center gap-2 whitespace-nowrap px-3 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                        <FaWhatsapp className="text-4xl text-green-400" />
+                        <Phone className="text-4xl text-blue-600" />
                         <a
-                          href="https://wa.me/919243837546"
+                          href="https://wa.me/917554859540"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-bold text-lg"
                         >
-                          +91 9243837546
+                          +91 7554859540
                         </a>
                       </div>
 
@@ -613,20 +613,20 @@ export default function Navbar() {
 
             <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 hover:border-green-300 transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md">
               <a
-                href="https://wa.me/919243837546"
+                href="https://wa.me/91755 485 9540"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
-                  <FaWhatsapp className="text-2xl text-white group-hover:scale-110 transition-transform duration-200" />
+                  <Phone className="text-2xl text-white group-hover:scale-110 transition-transform duration-200" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-green-700 font-medium uppercase tracking-wider">
-                    WhatsApp
+                    Contact No.
                   </p>
                   <p className="font-bold text-green-800 text-lg group-hover:text-green-600 transition-colors duration-200">
-                    +91 9243837546
+                    +91 755 485 9540
                   </p>
                 </div>
               </a>

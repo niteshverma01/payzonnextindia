@@ -163,7 +163,7 @@ export default function Footer() {
               <div>
                 <p className="text-gray-400 mb-1">Address :</p>
                 <p className="text-white">
-                  B1, Patel Nagar, Raisen road Near HP Petrol Pump, Bhopal (MP)
+                  Sector B Plot 1, Patel Nagar, Raisen road , Bhopal (MP)
                 </p>
                 <p className="text-white">Pin: 462022</p>
               </div>

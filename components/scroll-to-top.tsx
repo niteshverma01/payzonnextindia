@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronUp } from "lucide-react"
+import { ChevronUp, MessageCircle } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -16,7 +17,6 @@ export default function ScrollToTop() {
     }
 
     window.addEventListener("scroll", toggleVisibility)
-
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
@@ -29,15 +29,28 @@ export default function ScrollToTop() {
 
   return (
     <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          aria-label="Scroll to top"
+      {/* Fixed Icons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        {/* WhatsApp Icon — Always Visible */}
+        <a
+          href="https://wa.me/919243837546" // ✅ Your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
         >
-          <ChevronUp className="w-6 h-6" />
-        </button>
-      )}
+          <FaWhatsapp className="w-6 h-6" />
+        </a>
+
+        {/* Scroll To Top — Visible only when scrolled */}
+        {isVisible && (
+          <button
+            onClick={scrollToTop}
+            className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+          >
+            <ChevronUp className="w-6 h-6" />
+          </button>
+        )}
+      </div>
     </>
   )
 }
